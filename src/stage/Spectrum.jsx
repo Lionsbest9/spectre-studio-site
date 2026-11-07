@@ -311,7 +311,8 @@ function Ribbon({ reduced }) {
 
   useFrame((state) => {
     const time = reduced ? 0 : state.clock.elapsedTime;
-    const show = 1 - scroll.dark;
+    // dim the ribbon while the work gallery is pinned so the screens stay the focus
+    const show = (1 - scroll.dark) * (1 - 0.6 * Math.sin(Math.PI * Math.min(1, Math.max(0, scroll.galleryP))));
     material.uniforms.uOpacity.value = show * 0.9;
     material.uniforms.uTime.value = time;
     if (show <= 0.001) return;

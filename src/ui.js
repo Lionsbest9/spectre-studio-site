@@ -1,5 +1,5 @@
 // Shared header, footer and small helpers used by every page.
-import { studio } from "./content.js";
+import { studio, footerCols } from "./content.js";
 
 export const WA_ICON =
   '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4 5.2 5.2 0 0 0 3.2.7 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3Z"/></svg>';
@@ -33,14 +33,27 @@ export function mountChrome(current) {
   const contacts = [
     `<a href="${waLink()}" target="_blank" rel="noopener">WhatsApp +${studio.whatsapp}</a>`,
     studio.email ? `<a href="mailto:${studio.email}">${studio.email}</a>` : "",
-    studio.instagram ? `<a href="https://instagram.com/${studio.instagram}" target="_blank" rel="noopener">@${studio.instagram}</a>` : "",
-  ]
-    .filter(Boolean)
-    .join("");
+    studio.instagram ? `<a href="https://instagram.com/${studio.instagram}" target="_blank" rel="noopener">Instagram @${studio.instagram}</a>` : "",
+  ].filter(Boolean);
   footer.innerHTML = `
-    <div class="wrap">
-      <span>${studio.name}${studio.owner ? `, ${studio.owner}` : ""}. ${studio.city}.</span>
-      <span class="contacts">${contacts}</span>
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="./">${MARK}<span>${studio.name}</span></a>
+        <p>Websites and web apps, designed and coded by hand in ${studio.city}.</p>
+        <a class="btn btn-wa" href="${waLink()}" target="_blank" rel="noopener">${WA_ICON}Message on WhatsApp</a>
+      </div>
+      ${footerCols
+        .map((c) => `<div class="foot-col"><h3>${c.title}</h3>${c.links.map(([href, label]) => `<a href="${href}">${label}</a>`).join("")}</div>`)
+        .join("")}
+      <div class="foot-col">
+        <h3>Contact</h3>
+        ${contacts.join("")}
+        <span class="foot-time">${studio.city.split(",").pop().trim()}, <time id="local-time">--:--</time> local</span>
+      </div>
+    </div>
+    <div class="wrap foot-base">
+      <span>${studio.name}${studio.owner ? `, ${studio.owner}` : ""}. ${new Date().getFullYear()}.</span>
+      <span class="foot-mark">Built by hand, not from a template.</span>
     </div>`;
 }
 

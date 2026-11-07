@@ -3,6 +3,9 @@ import { createRoot } from "react-dom/client";
 import { lazy, Suspense } from "react";
 import { plans, care, faq, featured, about, studio, steps } from "./content.js";
 import { mountChrome, waLink, WA_ICON, imgSrc, tilt } from "./ui.js";
+import { readyReveal, revealOnEnter, headerAutoHide, countUp, kigaliClock, pointerGlow, anchorScroll } from "./polish.js";
+
+readyReveal();
 
 const page = document.body.dataset.page;
 mountChrome(`${page}.html`);
@@ -19,7 +22,7 @@ if (page === "work") {
   document.getElementById("case-summary").textContent = f.summary;
   document.getElementById("case-client").textContent = f.client;
   document.getElementById("case-link").href = f.link;
-  document.getElementById("case-numbers").innerHTML = f.numbers.map((n) => `<li><b>${n.big}</b><span>${n.small}</span></li>`).join("");
+  document.getElementById("case-numbers").innerHTML = f.numbers.map((n) => /^\d+$/.test(n.big) ? `<li><b data-count="${n.big}">0</b><span>${n.small}</span></li>` : `<li><b>${n.big}</b><span>${n.small}</span></li>`).join("");
   const HeroDevices = lazy(() => import("./stage/HeroDevices.jsx"));
   const screens = f.screens.map((sc) => imgSrc(sc.file));
   createRoot(document.getElementById("case-stage")).render(
@@ -68,3 +71,10 @@ if (page === "about") {
   document.getElementById("tools").innerHTML = about.tools.map((t) => `<li>${t}</li>`).join("");
   document.getElementById("about-who").textContent = studio.owner ? `${studio.owner}, ${studio.city}` : studio.city;
 }
+
+revealOnEnter();
+countUp();
+headerAutoHide(document.getElementById("site-header"));
+kigaliClock(document.getElementById("local-time"));
+pointerGlow();
+anchorScroll();

@@ -199,3 +199,10 @@ export const principles = [
   { title: "Build it by hand", text: "No page builders. Clean code that is fast, accessible and easy to change later." },
   { title: "Ship and stay", text: "Live on your domain, set up on Google, and looked after on the care plan." },
 ];
+
+export const ticker = ["Websites", "Web apps", "Dashboards", "Online bookings", "3D pages", "Google setup", "WhatsApp first", "Kigali"];
+
+export const footerCols = [
+  { title: "Pages", links: [["./", "Home"], ["work.html", "Work"], ["services.html", "Services"], ["about.html", "About"]] },
+  { title: "Start", links: [["services.html#how", "How it works"], ["services.html#faq", "Questions"], ["work.html", "AuditPro case study"]] },
+];

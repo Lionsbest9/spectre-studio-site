@@ -1,7 +1,10 @@
 import "./style.css";
 import { createRoot } from "react-dom/client";
 import { lazy, Suspense } from "react";
-import { heroChapters, statement, gallery, aboutCard, principles, capabilities, faq } from "./content.js";
+import { heroChapters, statement, gallery, aboutCard, principles, capabilities, faq, ticker } from "./content.js";
+import { readyReveal, revealOnEnter, headerAutoHide, kigaliClock, pointerGlow, anchorScroll } from "./polish.js";
+
+readyReveal();
 import { mountChrome, waLink, WA_ICON, imgSrc, tilt } from "./ui.js";
 import { scroll, startScrollTracking } from "./stage/scroll.js";
 
@@ -27,6 +30,10 @@ $("chapters").innerHTML = heroChapters
   .join("");
 $("ticks").innerHTML = heroChapters.map((_, i) => `<i data-t="${i}"${i === 0 ? ' class="is-on"' : ""}></i>`).join("");
 $("intro").style.setProperty("--chapters", heroChapters.length);
+
+// ----- ticker -----
+const tickerItems = ticker.map((t) => `<span>${t}</span><i></i>`).join("");
+$("ticker").innerHTML = tickerItems + tickerItems;
 
 // ----- statement -----
 $("statement-text").innerHTML = rich(statement.lead);
@@ -105,6 +112,8 @@ const header = $("site-header");
 const work = $("work");
 const track = $("work-track");
 const darkLayer = document.querySelector(".bd-dark");
+const workIndex = $("work-index");
+const hud = document.querySelector(".intro-hud");
 let current = 0;
 
 function sizeGallery() {
@@ -138,7 +147,11 @@ function render(s) {
   if (work.classList.contains("is-pinned")) {
     const extra = parseFloat(work.style.getPropertyValue("--extra")) || 0;
     track.style.transform = `translate3d(${-s.galleryP * extra}px, 0, 0)`;
+    const cards = track.children.length;
+    const idx = Math.min(cards, Math.floor(s.galleryP * cards) + 1);
+    workIndex.textContent = `${String(idx).padStart(2, "0")} / ${String(cards).padStart(2, "0")}`;
   }
+  hud.style.opacity = s.dark;
 }
 
 sizeGallery();
@@ -146,6 +159,12 @@ addEventListener("resize", sizeGallery);
 addEventListener("load", sizeGallery);
 startScrollTracking({ heroId: "intro", galleryId: "work", chapters: heroChapters.length, onChange: render });
 render(scroll);
+
+revealOnEnter();
+headerAutoHide(header);
+kigaliClock($("local-time"));
+pointerGlow();
+anchorScroll();
 
 $("replay").addEventListener("click", () => {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;

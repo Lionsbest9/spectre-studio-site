@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#070b14">
+    <meta name="view-transition" content="same-origin">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,8 +36,11 @@
         </div>
       </section>
 
+      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+
       <section class="statement" aria-labelledby="statement-text">
-        <div class="wrap">
+        <div class="wrap" data-reveal>
+          <p class="kicker sec-n">01, the studio</p>
           <p class="display statement-text" id="statement-text"></p>
           <p class="statement-sub" id="statement-sub"></p>
         </div>
@@ -44,52 +48,60 @@
 
       <section class="work" id="work" aria-labelledby="work-heading">
         <div class="work-pin">
-          <div class="wrap work-head">
-            <h2 class="display" id="work-heading">Work, <em>shipped.</em></h2>
+          <div class="wrap work-head" data-reveal>
+            <div>
+              <p class="kicker sec-n">02, selected work</p>
+              <h2 class="display" id="work-heading">Work, <em>shipped.</em></h2>
+            </div>
             <p>Real screens from AuditPro, a platform for public-sector audit teams. Built end to end by Spectre Studio.</p>
-            <a class="link" href="work.html">Read the case study</a>
+            <div class="work-meta"><a class="link" href="work.html">Read the case study</a><span class="kicker" id="work-index">01 / 06</span></div>
           </div>
           <div class="work-track" id="work-track"></div>
         </div>
       </section>
 
       <section class="about" id="about" aria-labelledby="about-heading">
-        <div class="wrap about-grid">
+        <div class="wrap about-grid" data-reveal>
           <div class="code-card tile" id="code-card"></div>
           <div class="about-copy">
+            <p class="kicker sec-n">03, the person</p>
             <h2 class="display" id="about-heading"></h2>
             <p id="about-text"></p>
             <a class="link" href="about.html">More about Spectre Studio</a>
           </div>
         </div>
         <div class="wrap">
-          <ol class="principles" id="principles"></ol>
+          <ol class="principles" id="principles" data-reveal></ol>
         </div>
       </section>
 
       <section class="section caps" id="build" aria-labelledby="build-heading">
         <div class="wrap">
-          <div class="section-head">
+          <div class="section-head" data-reveal>
             <div>
+              <p class="kicker sec-n">04, services</p>
               <h2 class="display" id="build-heading">What I <em>build.</em></h2>
               <p>The same care that went into AuditPro, sized for your business.</p>
             </div>
             <a class="link" href="services.html">Prices and process</a>
           </div>
-          <div class="cap-grid" id="capabilities"></div>
+          <div class="cap-grid" id="capabilities" data-reveal></div>
         </div>
       </section>
 
       <section class="section faq-sec" id="faq" aria-labelledby="faq-heading">
-        <div class="wrap faq-grid">
-          <h2 class="display" id="faq-heading">Straight <em>answers.</em></h2>
+        <div class="wrap faq-grid" data-reveal>
+          <div>
+            <p class="kicker sec-n">05, questions</p>
+            <h2 class="display" id="faq-heading">Straight <em>answers.</em></h2>
+          </div>
           <ul class="faq" id="faq-list"></ul>
         </div>
       </section>
 
       <section class="finale" aria-labelledby="finale-heading">
-        <div class="wrap">
-          <p class="kicker">Starter sites from 150,000 RWF, with a free demo first</p>
+        <div class="wrap" data-reveal>
+          <p class="kicker">06, next: starter sites from 150,000 RWF, with a free demo first</p>
           <h2 class="display finale-title" id="finale-heading">Let&rsquo;s build something <em>real.</em></h2>
           <div class="actions">
             <a class="btn btn-wa btn-lg" id="finale-wa" href="#" target="_blank" rel="noopener"></a>

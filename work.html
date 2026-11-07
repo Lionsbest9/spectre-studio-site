@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#070b14">
+    <meta name="view-transition" content="same-origin">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +15,7 @@
   <body data-page="work">
     <header id="site-header"></header>
     <section class="page-hero">
-      <div class="wrap case-top">
+      <div class="wrap case-top" data-reveal>
         <div>
           <p class="kind" id="case-kind"></p>
           <h1 id="case-title"></h1>
@@ -28,12 +29,12 @@
       <div class="wrap case-stage" id="case-stage"></div>
     </section>
     <section class="section">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <ul class="numbers" id="case-numbers" style="grid-template-columns: repeat(4, auto); gap: 1rem 3rem; margin: 0"></ul>
       </div>
     </section>
     <section class="section alt">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <div class="section-head">
           <div>
             <h2>Thirteen modules, one system</h2>
@@ -44,7 +45,7 @@
       </div>
     </section>
     <section class="section">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <div class="section-head">
           <div>
             <h2>Screens</h2>
@@ -55,13 +56,13 @@
       </div>
     </section>
     <section class="section alt">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <div class="section-head"><div><h2>Built with</h2></div></div>
         <ul class="tools" id="case-stack" style="margin:0"></ul>
       </div>
     </section>
     <section class="section closing">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <h2>Want a system or a site like this for your business?</h2>
         <div class="actions">
           <a class="btn btn-wa" data-wa="Message on WhatsApp" href="#" target="_blank" rel="noopener"></a>

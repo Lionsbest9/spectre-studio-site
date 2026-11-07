@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#070b14">
+    <meta name="view-transition" content="same-origin">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,19 +15,20 @@
   <body data-page="about">
     <header id="site-header"></header>
     <section class="page-hero">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
+        <p class="kicker">About the studio</p>
         <h1 id="about-title"></h1>
         <p class="lead" id="about-who"></p>
       </div>
     </section>
     <section class="section" style="padding-top:0">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <div class="prose" id="about-prose"></div>
         <ul class="tools" id="tools"></ul>
       </div>
     </section>
     <section class="section closing">
-      <div class="wrap">
+      <div class="wrap" data-reveal>
         <h2>Let's talk about your website.</h2>
         <div class="actions">
           <a class="btn btn-wa" data-wa="Message on WhatsApp" href="#" target="_blank" rel="noopener"></a>

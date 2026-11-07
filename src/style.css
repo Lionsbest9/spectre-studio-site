@@ -1554,3 +1554,385 @@ footer a:hover {
     background: var(--white);
   }
 }
+
+/* =====================================================================
+   Polish pass: page transitions, font-ready reveal, section rises, header
+   auto-hide, ticker, gallery index, pointer glow, richer footer.
+   ===================================================================== */
+
+/* cross-document page transitions (Chromium); other browsers just navigate */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: vt-out 220ms ease both;
+}
+
+::view-transition-new(root) {
+  animation: vt-in 360ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* hold the page until fonts are in, then reveal in one movement */
+html:not(.is-ready) body > * {
+  opacity: 0;
+}
+
+html.is-ready body > * {
+  animation: page-in 600ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/* one rise per section as it enters */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms ease, transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal] > * {
+  transition: opacity 700ms ease, transform 800ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+
+/* chapter copy arrives in order: kicker, title, text, buttons */
+.chap > * {
+  transition: opacity 600ms ease, transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.chap.is-on > * {
+  opacity: 1;
+  transform: none;
+}
+
+.chap.is-on > :nth-child(1) { transition-delay: 60ms; }
+.chap.is-on > :nth-child(2) { transition-delay: 140ms; }
+.chap.is-on > :nth-child(3) { transition-delay: 240ms; }
+.chap.is-on > :nth-child(4) { transition-delay: 320ms; }
+
+/* section numbers */
+.sec-n {
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+}
+
+.home .intro .sec-n {
+  color: var(--accent-dark);
+}
+
+/* header: hide on the way down, return on the way up */
+.top {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, transform 360ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.top.is-hidden {
+  transform: translateY(-100%);
+}
+
+.intro-hud {
+  transition: opacity 200ms linear;
+}
+
+/* ticker between the dark intro and the light page */
+.ticker {
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: rgba(251, 250, 247, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.9rem 0;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--muted);
+  animation: ticker 32s linear infinite;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-track i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--prism);
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* work: index + hover pill */
+.work-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.work-meta .kicker {
+  color: var(--muted);
+}
+
+.work-card figure {
+  position: relative;
+}
+
+.work-card figure::after {
+  content: "Open the case study";
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(251, 250, 247, 0.92);
+  color: var(--ink);
+  font: 500 0.8rem / 1 var(--body);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+a.work-card:hover figure::after {
+  opacity: 1;
+  transform: none;
+}
+
+.work-next .next-inner {
+  position: relative;
+  overflow: hidden;
+}
+
+.work-next .next-inner::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(from 0deg, transparent, rgba(76, 240, 255, 0.18), transparent 30%, rgba(255, 143, 97, 0.16), transparent 60%);
+  animation: spin 18s linear infinite;
+  pointer-events: none;
+}
+
+.next-inner > * {
+  position: relative;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* pointer glow over dark surfaces */
+.has-glow .intro-pin::before,
+.has-glow .page-hero::before,
+.has-glow .closing::before,
+.has-glow .finale::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(320px 320px at var(--mx, -999px) var(--my, -999px), rgba(76, 240, 255, 0.1), transparent 70%);
+  z-index: 0;
+}
+
+.intro-pin,
+.page-hero,
+.closing,
+.finale {
+  position: relative;
+}
+
+.intro-pin > *,
+.page-hero > *,
+.closing > *,
+.finale > * {
+  position: relative;
+  z-index: 1;
+}
+
+.has-glow .finale::before {
+  background: radial-gradient(360px 360px at var(--mx, -999px) var(--my, -999px), rgba(255, 226, 122, 0.22), transparent 70%);
+}
+
+.has-glow .intro-pin::before,
+.has-glow .page-hero::before,
+.has-glow .closing::before {
+  position: fixed;
+}
+
+/* inner page heroes: prism rule under the heading, numbers count up */
+.page-hero h1 {
+  position: relative;
+  padding-bottom: 1.2rem;
+}
+
+.page-hero h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4.5rem;
+  height: 2px;
+  background: var(--prism);
+}
+
+.page-hero .kicker {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.numbers b {
+  font-variant-numeric: tabular-nums;
+}
+
+/* footer */
+footer {
+  background: var(--night);
+  color: var(--on-dark-2);
+  border-top: 0;
+}
+
+footer .foot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
+  padding-block: 4rem 3rem;
+}
+
+footer .brand {
+  color: var(--on-dark);
+}
+
+.foot-brand p {
+  margin: 1rem 0 1.4rem;
+  max-width: 30ch;
+}
+
+.foot-col {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.foot-col h3 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 0.78rem;
+  color: var(--on-dark);
+  margin-bottom: 0.4rem;
+}
+
+.foot-col a {
+  width: fit-content;
+  background: linear-gradient(currentColor, currentColor) no-repeat left bottom / 0 1px;
+  transition: background-size 220ms ease, color 160ms ease;
+}
+
+.foot-col a:hover {
+  color: var(--on-dark);
+  background-size: 100% 1px;
+}
+
+.foot-time {
+  margin-top: 0.6rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+}
+
+.foot-time time {
+  color: var(--accent-dark);
+}
+
+.foot-base {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.6rem 2rem;
+  padding-block: 1.4rem 2.2rem;
+  border-top: 1px solid var(--line-dark);
+  font-size: 0.82rem;
+}
+
+.foot-mark {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+}
+
+@media (max-width: 860px) {
+  footer .foot-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  footer .foot-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  footer .foot-base {
+    padding-bottom: 5rem;
+  }
+}
+
+/* keep the replay button clear of the footer buttons on phones */
+@media (max-width: 640px) {
+  .replay {
+    bottom: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  html.is-ready body > *,
+  .ticker-track,
+  .work-next .next-inner::before {
+    animation: none;
+  }
+  [data-reveal],
+  [data-reveal] > *,
+  .chap > *,
+  .top {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
