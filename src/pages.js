@@ -41,7 +41,7 @@ if (page === "services") {
           <header><h3>${p.name}</h3><div class="price">${p.price}</div></header>
           <p class="for">${p.for}</p>
           <ul>${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
-          <a class="btn ${p.featured ? "btn-wa" : "btn-ink"}" href="${waLink(`Hello Spectre Studio, I am interested in the ${p.name} (${p.price}).`)}" target="_blank" rel="noopener">${p.featured ? WA_ICON : ""}Ask about this</a>
+          <a class="btn ${p.featured ? "btn-wa" : "btn-ghost"}" href="${waLink(`Hello Spectre Studio, I am interested in the ${p.name} (${p.price}).`)}" target="_blank" rel="noopener">${p.featured ? WA_ICON : ""}Ask about this</a>
         </article>`
       )
       .join("") + `<div class="care"><div><h3>${care.name}</h3><p>${care.text}</p></div><div class="price">${care.price}</div></div>`;

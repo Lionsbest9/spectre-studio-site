@@ -25,7 +25,7 @@ export function mountChrome(current) {
       <a class="brand" href="./">${MARK}<span>${studio.name}</span></a>
       <nav aria-label="Main">
         ${pages.map(([href, label]) => `<a class="nav-link" href="${href}"${current === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}
-        <a class="btn btn-wa" href="${waLink()}" target="_blank" rel="noopener">${WA_ICON}WhatsApp</a>
+        <a class="btn btn-wa" href="${waLink()}" target="_blank" rel="noopener">${WA_ICON}<span class="label-long">Chat on WhatsApp</span><span class="label-short">WhatsApp</span></a>
       </nav>
     </div>`;
 

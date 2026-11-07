@@ -5,7 +5,7 @@
 // shadow maps, DPR capped at 1.5 and dropped to 1 when frames get slow, loop
 // stopped when the stage is off screen or the tab is hidden.
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Component, useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame, useThree, useLoader } from "@react-three/fiber";
 import * as THREE from "three";
 
@@ -347,11 +347,36 @@ function AdaptiveDpr({ max }) {
   return null;
 }
 
-export default function Stage({ urls, caption }) {
+function webglAvailable() {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch {
+    return false;
+  }
+}
+
+// If the browser refuses a WebGL context (or the renderer throws), show the first screen as a still.
+class GlBoundary extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { failed: false };
+  }
+  static getDerivedStateFromError() {
+    return { failed: true };
+  }
+  render() {
+    return this.state.failed ? this.props.fallback : this.props.children;
+  }
+}
+
+export default function Stage({ urls, caption, still }) {
   const host = useRef(null);
   const pointer = useRef({ x: 0, y: 0 });
   const [active, setActive] = useState(true);
   const [dragging, setDragging] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [gl] = useState(webglAvailable);
   const reduced = useMemo(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches, []);
   const maxDpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
@@ -373,10 +398,32 @@ export default function Stage({ urls, caption }) {
     };
   }, []);
 
-  const frameloop = !active ? "never" : reduced ? "demand" : "always";
+  const frameloop = !active ? "never" : reduced || paused ? "demand" : "always";
+
+  const fallback = (
+    <div className="stage-still">
+      <img src={still} alt={caption} width="1280" height="800" />
+    </div>
+  );
+  if (!gl) return fallback;
 
   return (
+    <GlBoundary fallback={fallback}>
     <div ref={host} className={`stage${dragging ? " is-dragging" : ""}`} aria-label={caption} role="img">
+      <button
+        type="button"
+        className="stage-pause"
+        aria-pressed={paused}
+        aria-label={paused ? "Resume motion" : "Pause motion"}
+        title={paused ? "Resume motion" : "Pause motion"}
+        onClick={() => setPaused((p) => !p)}
+      >
+        {paused ? (
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" /></svg>
+        ) : (
+          <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.5 2.5h3v11h-3zm6 0h3v11h-3z" /></svg>
+        )}
+      </button>
       <Canvas
         frameloop={frameloop}
         dpr={maxDpr}
@@ -387,9 +434,10 @@ export default function Stage({ urls, caption }) {
         <ambientLight intensity={0.85} />
         <directionalLight position={[2.5, 3, 4]} intensity={0.55} />
         <directionalLight position={[-3, -1, 2]} intensity={0.18} color="#9fb3ff" />
-        <Stack urls={urls} reduced={reduced} pointer={pointer} onDragChange={setDragging} />
+        <Stack urls={urls} reduced={reduced || paused} pointer={pointer} onDragChange={setDragging} />
         <AdaptiveDpr max={maxDpr} />
       </Canvas>
     </div>
+    </GlBoundary>
   );
 }

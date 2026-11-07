@@ -18,7 +18,7 @@ export const hero = {
   lead: "Websites for shops, clinics, guest houses, schools and companies in Kigali. Built fast, found on Google, one tap to your WhatsApp.",
   primary: "Message on WhatsApp",
   secondary: "See the work",
-  stageCaption: "AuditPro, an audit management platform built by Spectre Studio. Drag a screen, tap to bring one forward.",
+  stageCaption: "Screens from AuditPro, an audit management platform built by Spectre Studio. Drag a screen to move it, tap one to bring it forward.",
 };
 
 export const facts = [
