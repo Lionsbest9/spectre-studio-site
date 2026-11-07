@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
-    <title>Spectre Studio · Websites for Kigali businesses, built in days</title>
+    <title>Spectre Studio · Websites and web apps, built in Kigali</title>
     <meta name="description" content="Fast, modern websites for Kigali shops, clinics, guest houses, schools and companies. Starter sites from 150,000 RWF, free demo before you pay.">
     <meta property="og:title" content="Spectre Studio">
     <meta property="og:description" content="Websites for Kigali businesses, built in days. Free demo before you pay.">
@@ -17,70 +17,67 @@
   <body>
     <header id="site-header"></header>
 
-    <section class="hero" aria-label="Introduction">
-      <div class="wrap">
-        <div class="hero-copy">
-          <h1 id="hero-title"></h1>
-          <p class="lead" id="hero-lead"></p>
+    <main>
+      <section class="hero" aria-label="Introduction">
+        <div class="wrap">
+          <div class="hero-copy">
+            <h1 id="hero-title"></h1>
+            <p class="lead" id="hero-lead"></p>
+            <div class="actions">
+              <a class="btn btn-wa" id="hero-primary" href="#" target="_blank" rel="noopener"></a>
+              <a class="btn btn-ghost" id="hero-secondary" href="#work"></a>
+            </div>
+            <ul class="facts" id="facts"></ul>
+          </div>
+          <div class="stage-col" id="hero-stage"></div>
+        </div>
+      </section>
+
+      <section class="case" id="work" aria-labelledby="case-heading">
+        <div class="case-pin">
+          <div class="wrap case-grid">
+            <div class="case-copy">
+              <p class="kind">Selected work</p>
+              <h2 id="case-heading">AuditPro</h2>
+              <p class="case-intro">An audit management platform for public-sector audit teams in Rwanda. Designed and built end to end by Spectre Studio.</p>
+              <ol class="chapters" id="chapters"></ol>
+              <div class="case-links">
+                <a class="btn btn-ghost" href="work.html">Read the case study</a>
+                <a class="link" id="live-link" href="#" target="_blank" rel="noopener">Open the live product</a>
+              </div>
+            </div>
+            <div class="case-stage">
+              <div id="case-stage-root"></div>
+              <div class="dots" aria-hidden="true" id="dots"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="build" aria-labelledby="build-heading">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <h2 id="build-heading">What I build</h2>
+              <p>The same care that went into AuditPro, sized for your business.</p>
+            </div>
+            <a class="link" href="services.html">Prices and process</a>
+          </div>
+          <div class="cap-grid" id="capabilities"></div>
+        </div>
+      </section>
+
+      <section class="section closing">
+        <div class="wrap">
+          <h2>Starter sites from 150,000 RWF. You see a demo first.</h2>
           <div class="actions">
-            <a class="btn btn-wa" id="hero-primary" href="#" target="_blank" rel="noopener"></a>
-            <a class="btn btn-ghost" id="hero-secondary" href="#work"></a>
+            <a class="btn btn-wa" id="closing-wa" href="#" target="_blank" rel="noopener"></a>
+            <a class="btn btn-ghost on-dark" href="services.html">See every price</a>
           </div>
-          <ul class="facts" id="facts"></ul>
+          <p class="note">Send one message. A demo link arrives within 48 hours.</p>
         </div>
-        <div class="stage-col">
-          <div id="stage-root"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt" id="work">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2>Featured work</h2>
-            <p>A full business platform, designed and coded by hand. The same care goes into a one-page site for a shop.</p>
-          </div>
-        </div>
-        <div class="feature-grid" id="featured"></div>
-      </div>
-    </section>
-
-    <section class="section" id="prices">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2>What it costs</h2>
-            <p>Clear prices, no hourly rates. Half when you approve the demo, half when it is live.</p>
-          </div>
-          <a class="link" href="services.html">Everything that is included</a>
-        </div>
-        <div class="sheet" id="plans"></div>
-      </div>
-    </section>
-
-    <section class="section alt" id="how">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <h2>How it works</h2>
-            <p>Three steps from first chat to a live website.</p>
-          </div>
-        </div>
-        <ol class="steps-list" id="steps"></ol>
-      </div>
-    </section>
-
-    <section class="section closing">
-      <div class="wrap">
-        <h2>Send one message. Get a demo in 48 hours.</h2>
-        <div class="actions">
-          <a class="btn btn-wa" id="closing-wa" href="#" target="_blank" rel="noopener"></a>
-          <a class="btn btn-ghost on-dark" href="work.html">Look at the work first</a>
-        </div>
-        <p class="note">Nothing to pay until you have seen your site.</p>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer id="site-footer"></footer>
     <script type="module" src="/src/main.jsx"></script>

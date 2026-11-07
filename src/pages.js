@@ -1,5 +1,5 @@
 import "./style.css";
-import { plans, care, faq, featured, about, studio } from "./content.js";
+import { plans, care, faq, featured, about, studio, steps } from "./content.js";
 import { mountChrome, waLink, WA_ICON, imgSrc, tilt } from "./ui.js";
 
 const page = document.body.dataset.page;
@@ -45,6 +45,7 @@ if (page === "services") {
         </article>`
       )
       .join("") + `<div class="care"><div><h3>${care.name}</h3><p>${care.text}</p></div><div class="price">${care.price}</div></div>`;
+  document.getElementById("steps").innerHTML = steps.map((st) => `<li><h3>${st.title}</h3><p>${st.text}</p></li>`).join("");
   document.getElementById("faq").innerHTML = faq.map((f) => `<li><details><summary>${f.q}</summary><p>${f.a}</p></details></li>`).join("");
 }
 

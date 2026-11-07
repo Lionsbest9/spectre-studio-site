@@ -14,17 +14,43 @@ export const studio = {
 };
 
 export const hero = {
-  headline: "Your business, online within a week.",
-  lead: "Websites for shops, clinics, guest houses, schools and companies in Kigali. Built fast, found on Google, one tap to your WhatsApp.",
+  headline: "Websites and web apps, built properly in Kigali.",
+  lead: "Spectre Studio designs and codes business websites, dashboards and full platforms by hand. Turn the laptop to look around a real one.",
   primary: "Message on WhatsApp",
   secondary: "See the work",
-  stageCaption: "Screens from AuditPro, an audit management platform built by Spectre Studio. Drag a screen to move it, tap one to bring it forward.",
+  stageCaption: "A 3D laptop and phone showing AuditPro, a platform built by Spectre Studio. Drag to turn them; tap the laptop screen for the next screen.",
 };
 
 export const facts = [
-  { big: "150,000 RWF", small: "starter sites from" },
-  { big: "5 days", small: "to your first page live" },
-  { big: "Free demo", small: "see it before you pay" },
+  { big: "31 screens", small: "in the AuditPro platform" },
+  { big: "5 days", small: "to a first page live" },
+  { big: "Free demo", small: "before you pay anything" },
+];
+
+// The scroll-driven case study on the home page: one chapter per screen of scrolling.
+export const chapters = [
+  {
+    screen: "auditpro-workflow",
+    title: "Plan the audit year",
+    text: "Build the audit universe, score risk for every entity and turn it into an annual plan mapped to the fiscal year.",
+  },
+  {
+    screen: "auditpro-features",
+    title: "Record findings as they happen",
+    text: "Fieldwork, working papers and findings in one place, each with a risk rating, a responsible officer and a due date.",
+  },
+  {
+    screen: "auditpro-modules",
+    title: "Report to the committee",
+    text: "Thirteen connected modules end in committee-ready reports, with every change kept in the audit trail.",
+  },
+];
+
+export const capabilities = [
+  { title: "Business websites", text: "One page or five, with your photos, prices, map and a WhatsApp button. Found on Google.", icon: "site" },
+  { title: "Web apps and dashboards", text: "Logins, roles, approvals, reports and data your team works in every day.", icon: "app" },
+  { title: "Bookings and online orders", text: "Customers book a room, a table or a visit, or order and pay, without calling.", icon: "cart" },
+  { title: "3D and interactive pages", text: "Product showcases and launch pages that people stop to play with.", icon: "cube" },
 ];
 
 export const plans = [
@@ -92,8 +118,6 @@ export const featured = {
   phone: { file: "auditpro-phone", alt: "AuditPro on a phone" },
 };
 
-// Screens shown in the floating stack on the home page, front first.
-export const stageScreens = ["auditpro-dashboard", "auditpro-features", "auditpro-modules", "auditpro-login"];
 
 export const about = {
   title: "Who builds your site",

@@ -1,8 +1,8 @@
 import "./style.css";
 import { createRoot } from "react-dom/client";
 import { Suspense, lazy } from "react";
-import { studio, hero, facts, plans, care, steps, featured, stageScreens } from "./content.js";
-import { mountChrome, waLink, WA_ICON, tilt, imgSrc } from "./ui.js";
+import { hero, facts, featured, chapters, capabilities } from "./content.js";
+import { mountChrome, waLink, WA_ICON, imgSrc } from "./ui.js";
 
 mountChrome("index.html");
 
@@ -15,51 +15,55 @@ primary.innerHTML = `${WA_ICON}${hero.primary}`;
 document.getElementById("hero-secondary").textContent = hero.secondary;
 document.getElementById("facts").innerHTML = facts.map((f) => `<li><b>${f.big}</b><span>${f.small}</span></li>`).join("");
 
-// ----- featured work -----
-const fw = document.getElementById("featured");
-fw.innerHTML = `
-  <a class="feature-shot tile" href="work.html">
-    <figure><img src="${imgSrc(featured.screens[0].file)}" srcset="${imgSrc(featured.screens[0].file, true)} 640w, ${imgSrc(featured.screens[0].file)} 1280w" sizes="(max-width: 860px) 92vw, 640px" alt="${featured.screens[0].alt}" width="1280" height="800" loading="lazy"></figure>
-  </a>
-  <div class="feature-copy">
-    <p class="kind">${featured.kind}</p>
-    <h3>${featured.title}</h3>
-    <p class="summary">${featured.summary}</p>
-    <ul class="numbers">${featured.numbers.map((n) => `<li><b>${n.big}</b><span>${n.small}</span></li>`).join("")}</ul>
-    <div class="actions">
-      <a class="btn btn-ghost" href="work.html">Read the case study</a>
-      <a class="link" href="${featured.link}" target="_blank" rel="noopener">Open the live product</a>
-    </div>
-  </div>`;
-tilt(fw, ".tile");
+// ----- case study chapters -----
+document.getElementById("chapters").innerHTML = chapters
+  .map((c, i) => `<li data-chapter="${i}" data-n="${i + 1}"${i === 0 ? ' class="is-current"' : ""}><h3>${c.title}</h3><p>${c.text}</p></li>`)
+  .join("");
+document.getElementById("dots").innerHTML = chapters.map((_, i) => `<span data-dot="${i}"${i === 0 ? ' class="is-current"' : ""}></span>`).join("");
+document.getElementById("live-link").href = featured.link;
 
-// ----- price sheet -----
-document.getElementById("plans").innerHTML =
-  plans
-    .map(
-      (p) => `
-      <article class="plan${p.featured ? " featured" : ""}">
-        <header><h3>${p.name}</h3><div class="price">${p.price}</div></header>
-        <p class="for">${p.for}</p>
-        <ul>${p.includes.map((i) => `<li>${i}</li>`).join("")}</ul>
-        <a class="btn ${p.featured ? "btn-wa" : "btn-ghost"}" href="${waLink(`Hello Spectre Studio, I am interested in the ${p.name} (${p.price}).`)}" target="_blank" rel="noopener">${p.featured ? WA_ICON : ""}Ask about this</a>
-      </article>`
-    )
-    .join("") + `<div class="care"><div><h3>${care.name}</h3><p>${care.text}</p></div><div class="price">${care.price}</div></div>`;
-
-// ----- steps -----
-document.getElementById("steps").innerHTML = steps.map((s) => `<li><h3>${s.title}</h3><p>${s.text}</p></li>`).join("");
+// ----- capabilities -----
+const ICONS = {
+  site: '<path d="M3 5.5A2.5 2.5 0 0 1 5.5 3h13A2.5 2.5 0 0 1 21 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5z"/><path d="M3 8.5h18M6.5 5.8h.01M9 5.8h.01"/>',
+  app: '<rect x="3" y="3" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="3" width="7.5" height="11" rx="1.8"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.8"/><rect x="13.5" y="17" width="7.5" height="4" rx="1.8"/>',
+  cart: '<path d="M3 4h2.2l2.3 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.3"/><circle cx="10" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/>',
+  cube: '<path d="m12 2.8 8.5 4.6v9.2L12 21.2l-8.5-4.6V7.4z"/><path d="m3.6 7.4 8.4 4.6 8.4-4.6M12 12v9.2"/>',
+};
+document.getElementById("capabilities").innerHTML = capabilities
+  .map(
+    (c) => `
+    <a class="cap" href="services.html">
+      <span class="cap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[c.icon]}</svg></span>
+      <h3>${c.title}</h3>
+      <p>${c.text}</p>
+    </a>`
+  )
+  .join("");
 
 // ----- closing -----
 const closing = document.getElementById("closing-wa");
 closing.href = waLink();
 closing.innerHTML = `${WA_ICON}Message on WhatsApp`;
 
-// ----- 3D stage, loaded after the copy is on screen -----
-const Stage = lazy(() => import("./stage/Stage.jsx"));
-const mount = document.getElementById("stage-root");
-createRoot(mount).render(
-  <Suspense fallback={<div className="stage stage-loading" aria-hidden="true" />}>
-    <Stage urls={stageScreens.map((s) => imgSrc(s))} caption={hero.stageCaption} still={imgSrc(stageScreens[0])} />
+// ----- 3D scenes, loaded after the copy is on screen -----
+const HeroDevices = lazy(() => import("./stage/HeroDevices.jsx"));
+const CaseScene = lazy(() => import("./stage/CaseScene.jsx"));
+const heroScreens = ["auditpro-dashboard", "auditpro-features", "auditpro-modules", "auditpro-workflow", "auditpro-login"].map((s) => imgSrc(s));
+
+createRoot(document.getElementById("hero-stage")).render(
+  <Suspense fallback={<div className="devices devices-loading" aria-hidden="true" />}>
+    <HeroDevices screens={heroScreens} phone={imgSrc("auditpro-phone")} caption={hero.stageCaption} still={heroScreens[0]} />
+  </Suspense>
+);
+
+createRoot(document.getElementById("case-stage-root")).render(
+  <Suspense fallback={<div className="case-canvas" aria-hidden="true" />}>
+    <CaseScene
+      sectionId="work"
+      screens={chapters.map((c) => imgSrc(c.screen))}
+      still={chapters.map((c) => imgSrc(c.screen))}
+      chapters={chapters}
+      caption="AuditPro on a laptop that turns as you scroll through planning, fieldwork and reporting."
+    />
   </Suspense>
 );
