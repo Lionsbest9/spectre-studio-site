@@ -135,3 +135,67 @@ export const faq = [
   { q: "Does it work on phones?", a: "Every site is designed on a phone first, because that is where your customers are." },
   { q: "How do customers find it?", a: "Each site is set up on Google Search and Google Maps so that searching your business name or 'pharmacy Gikondo' shows you." },
 ];
+
+// ===================== Home page (spectral redesign) =====================
+
+// The pinned hero: one chapter per screen of scrolling. `shape` picks what the point field
+// inside the ring becomes: 0 sphere, 1 browser window, 2 data grid, 3 lattice.
+export const heroChapters = [
+  {
+    kicker: "Spectre Studio, Kigali",
+    title: ["Websites that work. With a little ", "magic", "."],
+    text: "I design and code websites, web apps and dashboards for businesses in Kigali, by hand, from the first sketch to the live link.",
+    shape: 0,
+  },
+  {
+    kicker: "01, the plan",
+    title: ["Clear by ", "design", "."],
+    text: "Every project starts with what your customers need to do: book, buy, call or find you. The layout follows from that, never from a template.",
+    shape: 1,
+  },
+  {
+    kicker: "02, the build",
+    title: ["Solid by ", "code", "."],
+    text: "Hand-written code that loads fast on a cheap phone and shows up on Google. AuditPro runs 31 screens for audit teams on the same foundations.",
+    shape: 2,
+  },
+  {
+    kicker: "03, the launch",
+    title: ["Shipped, ", "not shelved", "."],
+    text: "A demo link within 48 hours, a live site within a week, and changes whenever your business changes.",
+    shape: 3,
+  },
+];
+
+export const statement = {
+  lead: ["Half engineering, half ", "craft", ", and nothing left to chance."],
+  text: "Code reviews, real devices and real users before anything goes live.",
+};
+
+export const gallery = [
+  { screen: "auditpro-dashboard", title: "AuditPro", kind: "Platform, landing and dashboard", href: "work.html" },
+  { screen: "auditpro-features", title: "Findings and risk", kind: "AuditPro, product screens", href: "work.html" },
+  { screen: "auditpro-modules", title: "Thirteen modules", kind: "AuditPro, information design", href: "work.html" },
+  { screen: "auditpro-workflow", title: "Plan to report", kind: "AuditPro, workflow", href: "work.html" },
+  { screen: "auditpro-login", title: "Secure sign-in", kind: "AuditPro, accounts and approvals", href: "work.html" },
+];
+
+export const aboutCard = {
+  title: ["An engineer's rigour.", "A designer's eye.", "A ", "Kigali", " address."],
+  text: "Spectre Studio is an independent web developer in Gikondo, Kigali. Clients deal with the person who writes the code, from the first message to the last fix.",
+  file: "about.json",
+  json: [
+    ["studio", '"Spectre Studio"'],
+    ["based", '"Gikondo, Kigali"'],
+    ["builds", '["websites", "web apps", "dashboards", "3D pages"]'],
+    ["stack", '["React", "Next.js", "Three.js", "Supabase"]'],
+    ["firstDemo", '"within 48 hours"'],
+    ["available", "true"],
+  ],
+};
+
+export const principles = [
+  { title: "Plan it properly", text: "What the page must do, who uses it and on which phone, written down before any code." },
+  { title: "Build it by hand", text: "No page builders. Clean code that is fast, accessible and easy to change later." },
+  { title: "Ship and stay", text: "Live on your domain, set up on Google, and looked after on the care plan." },
+];

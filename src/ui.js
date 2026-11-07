@@ -6,7 +6,7 @@ export const WA_ICON =
 
 // Two offset layers: the studio mark reads as depth.
 export const MARK =
-  '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="19" height="19" rx="5" fill="#2E5BFF" opacity=".55"/><rect x="10" y="10" width="19" height="19" rx="5" fill="currentColor"/></svg>';
+  '<svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="19" height="19" rx="5" fill="#4cf0ff" opacity=".7"/><rect x="10" y="10" width="19" height="19" rx="5" fill="currentColor"/></svg>';
 
 export function waLink(message = studio.waMessage) {
   return `https://wa.me/${studio.whatsapp}?text=${encodeURIComponent(message)}`;

@@ -1,4 +1,6 @@
 import "./style.css";
+import { createRoot } from "react-dom/client";
+import { lazy, Suspense } from "react";
 import { plans, care, faq, featured, about, studio, steps } from "./content.js";
 import { mountChrome, waLink, WA_ICON, imgSrc, tilt } from "./ui.js";
 
@@ -18,7 +20,18 @@ if (page === "work") {
   document.getElementById("case-client").textContent = f.client;
   document.getElementById("case-link").href = f.link;
   document.getElementById("case-numbers").innerHTML = f.numbers.map((n) => `<li><b>${n.big}</b><span>${n.small}</span></li>`).join("");
-  document.getElementById("case-hero").innerHTML = `<figure><img src="${imgSrc(f.screens[0].file)}" alt="${f.screens[0].alt}" width="1280" height="800"></figure>`;
+  const HeroDevices = lazy(() => import("./stage/HeroDevices.jsx"));
+  const screens = f.screens.map((sc) => imgSrc(sc.file));
+  createRoot(document.getElementById("case-stage")).render(
+    <Suspense fallback={<div className="devices devices-loading" aria-hidden="true" />}>
+      <HeroDevices
+        screens={screens}
+        phone={imgSrc(f.phone.file)}
+        still={screens[0]}
+        caption="A 3D laptop and phone showing AuditPro. Drag to turn them; tap the laptop screen for the next screen."
+      />
+    </Suspense>
+  );
   document.getElementById("case-modules").innerHTML = f.modules
     .map((m) => `<div class="module"><h3>${m.group}</h3><ul>${m.items.map((i) => `<li>${i}</li>`).join("")}</ul></div>`)
     .join("");

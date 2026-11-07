@@ -3,62 +3,75 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#f6f5f2">
+    <meta name="theme-color" content="#070b14">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400&display=swap" rel="stylesheet">
-    <title>Spectre Studio · Websites and web apps, built in Kigali</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <title>Spectre Studio · Web developer in Kigali</title>
     <meta name="description" content="Fast, modern websites for Kigali shops, clinics, guest houses, schools and companies. Starter sites from 150,000 RWF, free demo before you pay.">
     <meta property="og:title" content="Spectre Studio">
     <meta property="og:description" content="Websites for Kigali businesses, built in days. Free demo before you pay.">
     <meta property="og:image" content="./work/auditpro-dashboard.jpg">
   </head>
-  <body>
+  <body class="home">
+    <div class="backdrop" aria-hidden="true"><div class="bd-dark"></div><div class="bd-light"></div></div>
+    <div class="spectrum" id="spectrum" aria-hidden="true"></div>
+    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    <a class="skip" href="#work">Skip to the work</a>
     <header id="site-header"></header>
 
     <main>
-      <section class="hero" aria-label="Introduction">
+      <section class="intro" id="intro" aria-label="Introduction">
+        <div class="intro-pin">
+          <div class="wrap intro-grid">
+            <div class="intro-copy" id="chapters"></div>
+          </div>
+          <div class="wrap intro-hud">
+            <span class="counter" id="counter">01 / 04</span>
+            <span class="ticks" id="ticks"></span>
+            <span class="hint">Scroll to explore</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="statement" aria-labelledby="statement-text">
         <div class="wrap">
-          <div class="hero-copy">
-            <h1 id="hero-title"></h1>
-            <p class="lead" id="hero-lead"></p>
-            <div class="actions">
-              <a class="btn btn-wa" id="hero-primary" href="#" target="_blank" rel="noopener"></a>
-              <a class="btn btn-ghost" id="hero-secondary" href="#work"></a>
-            </div>
-            <ul class="facts" id="facts"></ul>
-          </div>
-          <div class="stage-col" id="hero-stage"></div>
+          <p class="display statement-text" id="statement-text"></p>
+          <p class="statement-sub" id="statement-sub"></p>
         </div>
       </section>
 
-      <section class="case" id="work" aria-labelledby="case-heading">
-        <div class="case-pin">
-          <div class="wrap case-grid">
-            <div class="case-copy">
-              <p class="kind">Selected work</p>
-              <h2 id="case-heading">AuditPro</h2>
-              <p class="case-intro">An audit management platform for public-sector audit teams in Rwanda. Designed and built end to end by Spectre Studio.</p>
-              <ol class="chapters" id="chapters"></ol>
-              <div class="case-links">
-                <a class="btn btn-ghost" href="work.html">Read the case study</a>
-                <a class="link" id="live-link" href="#" target="_blank" rel="noopener">Open the live product</a>
-              </div>
-            </div>
-            <div class="case-stage">
-              <div id="case-stage-root"></div>
-              <div class="dots" aria-hidden="true" id="dots"></div>
-            </div>
+      <section class="work" id="work" aria-labelledby="work-heading">
+        <div class="work-pin">
+          <div class="wrap work-head">
+            <h2 class="display" id="work-heading">Work, <em>shipped.</em></h2>
+            <p>Real screens from AuditPro, a platform for public-sector audit teams. Built end to end by Spectre Studio.</p>
+            <a class="link" href="work.html">Read the case study</a>
           </div>
+          <div class="work-track" id="work-track"></div>
         </div>
       </section>
 
-      <section class="section alt" id="build" aria-labelledby="build-heading">
+      <section class="about" id="about" aria-labelledby="about-heading">
+        <div class="wrap about-grid">
+          <div class="code-card tile" id="code-card"></div>
+          <div class="about-copy">
+            <h2 class="display" id="about-heading"></h2>
+            <p id="about-text"></p>
+            <a class="link" href="about.html">More about Spectre Studio</a>
+          </div>
+        </div>
+        <div class="wrap">
+          <ol class="principles" id="principles"></ol>
+        </div>
+      </section>
+
+      <section class="section caps" id="build" aria-labelledby="build-heading">
         <div class="wrap">
           <div class="section-head">
             <div>
-              <h2 id="build-heading">What I build</h2>
+              <h2 class="display" id="build-heading">What I <em>build.</em></h2>
               <p>The same care that went into AuditPro, sized for your business.</p>
             </div>
             <a class="link" href="services.html">Prices and process</a>
@@ -67,19 +80,27 @@
         </div>
       </section>
 
-      <section class="section closing">
+      <section class="section faq-sec" id="faq" aria-labelledby="faq-heading">
+        <div class="wrap faq-grid">
+          <h2 class="display" id="faq-heading">Straight <em>answers.</em></h2>
+          <ul class="faq" id="faq-list"></ul>
+        </div>
+      </section>
+
+      <section class="finale" aria-labelledby="finale-heading">
         <div class="wrap">
-          <h2>Starter sites from 150,000 RWF. You see a demo first.</h2>
+          <p class="kicker">Starter sites from 150,000 RWF, with a free demo first</p>
+          <h2 class="display finale-title" id="finale-heading">Let&rsquo;s build something <em>real.</em></h2>
           <div class="actions">
-            <a class="btn btn-wa" id="closing-wa" href="#" target="_blank" rel="noopener"></a>
-            <a class="btn btn-ghost on-dark" href="services.html">See every price</a>
+            <a class="btn btn-wa btn-lg" id="finale-wa" href="#" target="_blank" rel="noopener"></a>
+            <a class="btn btn-ghost btn-lg" href="services.html">See every price</a>
           </div>
-          <p class="note">Send one message. A demo link arrives within 48 hours.</p>
         </div>
       </section>
     </main>
 
     <footer id="site-footer"></footer>
+    <button class="replay" id="replay" type="button">Replay intro</button>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
