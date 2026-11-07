@@ -7,7 +7,7 @@ export const studio = {
   tagline: "Websites for Kigali businesses, built in days.",
   city: "Gikondo, Kigali",
   owner: "", // your name, shown in the footer and on About when set
-  whatsapp: "250700000000", // <-- replace with your number
+  whatsapp: "250787660135",
   email: "",
   instagram: "",
   waMessage: "Hello Spectre Studio, I saw your portfolio and I want a website for my business.",

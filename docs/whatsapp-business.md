@@ -9,7 +9,7 @@ Takes about 20 minutes. Do it on the phone that will carry the business number.
   ideal; your personal number can stay on normal WhatsApp.
 - The business name cannot be changed after it is verified, so type it exactly: `Spectre Studio`.
 - Put the same number in `src/content.js` (`studio.whatsapp`) so every button on the site opens
-  this chat. Format: `2507XXXXXXXX`, no plus sign, no spaces.
+  this chat. It is set to `250787660135` (+250 787 660 135).
 
 ## 1. Install and register
 
