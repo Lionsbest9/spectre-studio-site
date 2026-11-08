@@ -1,4 +1,4 @@
-import{D as e,O as t,S as n,_ as r,m as i,t as a,v as o,x as s,y as c}from"./three.module-BuwqUnba.js";import{i as l,r as u}from"./preload-helper-CBi3aOpi.js";var d=8,f=`
+import{D as e,O as t,S as n,_ as r,m as i,t as a,v as o,x as s,y as c}from"./three.module-BuwqUnba.js";import{i as l,r as u}from"./preload-helper-KUf-B2w_.js";var d=8,f=`
   varying vec2 vUv;
   void main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }
 `,p=`
