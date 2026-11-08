@@ -52,7 +52,7 @@ $("work-track").innerHTML =
     .join("") +
   `<div class="work-card work-next">
      <div class="next-inner">
-       <p class="kicker">06</p>
+       <p class="kicker">${String(gallery.length + 1).padStart(2, "0")}</p>
        <h3 class="display">Your project, <em>next.</em></h3>
        <p>Send one message. A demo link arrives within 48 hours.</p>
        <a class="btn btn-wa" href="${waLink()}" target="_blank" rel="noopener">${WA_ICON}Start on WhatsApp</a>

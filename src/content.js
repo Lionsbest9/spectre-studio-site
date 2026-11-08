@@ -40,7 +40,7 @@ export const chapters = [
     text: "Fieldwork, working papers and findings in one place, each with a risk rating, a responsible officer and a due date.",
   },
   {
-    screen: "auditpro-modules",
+    screen: "auditpro-report",
     title: "Report to the committee",
     text: "Thirteen connected modules end in committee-ready reports, with every change kept in the audit trail.",
   },
@@ -109,11 +109,14 @@ export const featured = {
   ],
   stack: ["Next.js 16", "React 19", "TypeScript", "Supabase Postgres", "Row-level security, multi-tenant", "Tailwind CSS 4", "Installable desktop app"],
   screens: [
-    { file: "auditpro-dashboard", alt: "AuditPro landing page with the dashboard preview" },
-    { file: "auditpro-features", alt: "AuditPro findings and analytics features" },
+    { file: "auditpro-landing", alt: "AuditPro landing page: audit management for the public sector, with the 3D audit universe" },
+    { file: "auditpro-dashboard", alt: "AuditPro dashboard showing plan coverage, open findings and overdue actions (demo data)" },
+    { file: "auditpro-workflow", alt: "AuditPro chapter 02: score every entity, then plan the quarters" },
+    { file: "auditpro-features", alt: "AuditPro chapter 03: working papers, evidence and review in one file" },
+    { file: "auditpro-risk", alt: "AuditPro chapter 04: the 5 by 5 likelihood and impact risk matrix" },
+    { file: "auditpro-report", alt: "AuditPro chapter 05: committee reports, then every action closed" },
     { file: "auditpro-modules", alt: "AuditPro's 13 modules grouped by planning, execution, reporting and governance" },
-    { file: "auditpro-workflow", alt: "AuditPro three-step workflow from plan to report" },
-    { file: "auditpro-login", alt: "AuditPro secure sign-in screen" },
+    { file: "auditpro-login", alt: "AuditPro sign-in screen with the live risk matrix" },
   ],
   phone: { file: "auditpro-phone", alt: "AuditPro on a phone" },
 };
@@ -173,11 +176,12 @@ export const statement = {
 };
 
 export const gallery = [
-  { screen: "auditpro-dashboard", title: "AuditPro", kind: "Platform, landing and dashboard", href: "work.html" },
-  { screen: "auditpro-features", title: "Findings and risk", kind: "AuditPro, product screens", href: "work.html" },
-  { screen: "auditpro-modules", title: "Thirteen modules", kind: "AuditPro, information design", href: "work.html" },
-  { screen: "auditpro-workflow", title: "Plan to report", kind: "AuditPro, workflow", href: "work.html" },
-  { screen: "auditpro-login", title: "Secure sign-in", kind: "AuditPro, accounts and approvals", href: "work.html" },
+  { screen: "auditpro-landing", title: "AuditPro", kind: "Platform, public landing", href: "work.html" },
+  { screen: "auditpro-dashboard", title: "AuditPro dashboard", kind: "AuditPro, workspace (demo data)", href: "work.html" },
+  { screen: "auditpro-risk", title: "Risk in 3D", kind: "AuditPro, likelihood by impact", href: "work.html" },
+  { screen: "clinic-hero", title: "Polyclinique du Carrefour", kind: "Clinic website preview, awaiting the clinic's approval", href: "demos/clinique-carrefour/" },
+  { screen: "clinic-services", title: "What we treat and test", kind: "Clinic preview, services", href: "demos/clinique-carrefour/" },
+  { screen: "thread-waterline", title: "The Thread", kind: "Spectre Studio, 3D scroll story", href: "thread/" },
 ];
 
 export const aboutCard = {
