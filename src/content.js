@@ -47,10 +47,10 @@ export const chapters = [
 ];
 
 export const capabilities = [
-  { title: "Business websites", text: "One page or five, with your photos, prices, map and a WhatsApp button. Found on Google.", icon: "site" },
-  { title: "Web apps and dashboards", text: "Logins, roles, approvals, reports and data your team works in every day.", icon: "app" },
-  { title: "Bookings and online orders", text: "Customers book a room, a table or a visit, or order and pay, without calling.", icon: "cart" },
-  { title: "3D and interactive pages", text: "Product showcases and launch pages that people stop to play with.", icon: "cube" },
+  { title: "Business websites", text: "One page or five, with your photos, prices, map and a WhatsApp button. Found on Google.", icon: "site", tags: ["Google Maps", "WhatsApp", "Live in 5 days"] },
+  { title: "Web apps and dashboards", text: "Logins, roles, approvals, reports and data your team works in every day.", icon: "app", tags: ["Logins and roles", "Approvals", "Reports"] },
+  { title: "Bookings and online orders", text: "Customers book a room, a table or a visit, or order and pay, without calling.", icon: "cart", tags: ["Bookings", "Orders", "Payments"] },
+  { title: "3D and interactive pages", text: "Product showcases and launch pages that people stop to play with.", icon: "cube", tags: ["Three.js", "Showcases", "Launch pages"] },
 ];
 
 export const plans = [
@@ -146,7 +146,7 @@ export const faq = [
 export const heroChapters = [
   {
     kicker: "Spectre Studio, Kigali",
-    title: ["Websites that work. With a little ", "magic", "."],
+    title: ["Websites that work. ", "With a little magic."],
     text: "I design and code websites, web apps and dashboards for businesses in Kigali, by hand, from the first sketch to the live link.",
     shape: 0,
   },
@@ -205,6 +205,9 @@ export const principles = [
 ];
 
 export const ticker = ["Websites", "Web apps", "Dashboards", "Online bookings", "3D pages", "Google setup", "WhatsApp first", "Kigali"];
+
+// The second marquee row, set in italic and running the other way: promises the site already makes.
+export const tickerPromises = ["Free demo before you pay", "Designed on a phone first", "Found on Google", "Built by hand", "Your domain, your files", "Looked after on the care plan"];
 
 export const footerCols = [
   { title: "Pages", links: [["./", "Home"], ["work.html", "Work"], ["services.html", "Services"], ["about.html", "About"]] },

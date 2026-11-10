@@ -8,7 +8,9 @@
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..900&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"></noscript>
     <title>Spectre Studio · Web developer in Kigali</title>
     <meta name="description" content="Fast, modern websites for Kigali shops, clinics, guest houses, schools and companies. Starter sites from 150,000 RWF, free demo before you pay.">
     <meta property="og:title" content="Spectre Studio">
@@ -18,7 +20,7 @@
   <body class="home">
     <div class="backdrop" aria-hidden="true"><div class="bd-dark"></div><div class="bd-light"></div></div>
     <div class="spectrum" id="spectrum" aria-hidden="true"></div>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+    <div class="rail" aria-hidden="true"><span class="rail-ticks" id="rail-ticks"></span><i class="rail-dot" id="rail-dot"></i></div>
     <a class="skip" href="#work">Skip to the work</a>
     <header id="site-header"></header>
 
@@ -29,19 +31,16 @@
             <div class="intro-copy" id="chapters"></div>
           </div>
           <div class="wrap intro-hud">
-            <span class="counter" id="counter">01 / 04</span>
+            <span class="counter" id="counter"><b>01</b> / 04</span>
             <span class="ticks" id="ticks"></span>
-            <span class="hint">Scroll to explore</span>
           </div>
         </div>
       </section>
 
-      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
-
       <section class="statement" aria-labelledby="statement-text">
         <div class="wrap" data-reveal>
-          <p class="kicker sec-n">01, the studio</p>
-          <p class="display statement-text" id="statement-text"></p>
+          <p class="eyebrow"><i>01</i>The studio</p>
+          <h2 class="display statement-text" id="statement-text"></h2>
           <p class="statement-sub" id="statement-sub"></p>
         </div>
       </section>
@@ -50,11 +49,11 @@
         <div class="work-pin">
           <div class="wrap work-head" data-reveal>
             <div>
-              <p class="kicker sec-n">02, selected work</p>
+              <p class="eyebrow"><i>02</i>Selected work</p>
               <h2 class="display" id="work-heading">Work, <em>shipped.</em></h2>
             </div>
             <p>Real screens from AuditPro, a platform for public-sector audit teams, a clinic website preview and a 3D scroll story. Built end to end by Spectre Studio.</p>
-            <div class="work-meta"><a class="link" href="work.html">Read the case study</a><span class="kicker" id="work-index">01 / 06</span></div>
+            <div class="work-meta"><a class="link" href="work.html">Read the case study</a><span class="count" id="work-index"><b>01</b> / 06</span></div>
           </div>
           <div class="work-track" id="work-track"></div>
         </div>
@@ -64,7 +63,7 @@
         <div class="wrap about-grid" data-reveal>
           <div class="code-card tile" id="code-card"></div>
           <div class="about-copy">
-            <p class="kicker sec-n">03, the person</p>
+            <p class="eyebrow"><i>03</i>The person</p>
             <h2 class="display" id="about-heading"></h2>
             <p id="about-text"></p>
             <a class="link" href="about.html">More about Spectre Studio</a>
@@ -79,20 +78,26 @@
         <div class="wrap">
           <div class="section-head" data-reveal>
             <div>
-              <p class="kicker sec-n">04, services</p>
+              <p class="eyebrow"><i>04</i>Services</p>
               <h2 class="display" id="build-heading">What I <em>build.</em></h2>
               <p>The same care that went into AuditPro, sized for your business.</p>
             </div>
             <a class="link" href="services.html">Prices and process</a>
           </div>
-          <div class="cap-grid" id="capabilities" data-reveal></div>
+          <ol class="svc" id="capabilities" data-reveal></ol>
         </div>
+      </section>
+
+      <section class="marquee" aria-label="Everything under one roof">
+        <p class="wrap eyebrow plain">Everything else, under one roof</p>
+        <div class="mq mq-a" aria-hidden="true"><div class="mq-track" id="mq-a"></div></div>
+        <div class="mq mq-b" aria-hidden="true"><div class="mq-track" id="mq-b"></div></div>
       </section>
 
       <section class="section faq-sec" id="faq" aria-labelledby="faq-heading">
         <div class="wrap faq-grid" data-reveal>
           <div>
-            <p class="kicker sec-n">05, questions</p>
+            <p class="eyebrow"><i>05</i>Questions</p>
             <h2 class="display" id="faq-heading">Straight <em>answers.</em></h2>
           </div>
           <ul class="faq" id="faq-list"></ul>
@@ -101,11 +106,11 @@
 
       <section class="finale" aria-labelledby="finale-heading">
         <div class="wrap" data-reveal>
-          <p class="kicker">06, next: starter sites from 150,000 RWF, with a free demo first</p>
+          <p class="eyebrow"><i>06</i>Next: starter sites from 150,000 RWF, with a free demo first</p>
           <h2 class="display finale-title" id="finale-heading">Let&rsquo;s build something <em>real.</em></h2>
           <div class="actions">
             <a class="btn btn-wa btn-lg" id="finale-wa" href="#" target="_blank" rel="noopener"></a>
-            <a class="btn btn-ghost btn-lg" href="services.html">See every price</a>
+            <a class="text-link" href="services.html">See every price<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-6 6 6-6 6"/></svg></a>
           </div>
         </div>
       </section>

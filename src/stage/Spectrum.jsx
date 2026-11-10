@@ -1,6 +1,7 @@
 // The home page's one WebGL scene, fixed behind the content.
-// Hero: a pearly spectral ring around a field of 3,200 light points that morphs per chapter
-// (sphere, browser window, data surface, lattice) and a few glints. After the hero the ring
+// Hero: 4,800 light points gather out of dust into the studio wordmark and part around the
+// pointer; as the first chapter turns, a pearly spectral ring arrives and the points morph per
+// chapter (browser window, data surface, lattice) with a few glints. After the hero the ring
 // fades out and a twisting spectral ribbon drifts behind the light sections.
 // About 5 draw calls, no shadow maps, DPR capped, the loop stops when the tab is hidden.
 
@@ -58,7 +59,7 @@ function makePearl({ repeat = 1.0, light = false } = {}) {
 
 // ---------- point shapes ----------
 
-const N = 3200;
+const N = 4800;
 
 function fibSphere(i, n, r) {
   const y = 1 - (i / (n - 1)) * 2;
@@ -137,7 +138,43 @@ function lattice(n) {
   return alongSegments(segs, n, 0.01);
 }
 
+// The wordmark: sample the lit pixels of "Spectre" set in Instrument Serif italic. Most points
+// sit on the letters; one in fourteen drifts in a loose cloud around them, like dust off a page.
+const WORD_W = 3.4;
+function wordPoints(n, text = "Spectre") {
+  const W = 1400, H = 420;
+  const c = document.createElement("canvas");
+  c.width = W;
+  c.height = H;
+  const ctx = c.getContext("2d", { willReadFrequently: true });
+  if (!ctx) return null;
+  ctx.fillStyle = "#fff";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.font = 'italic 400 330px "Instrument Serif", "Times New Roman", serif';
+  ctx.fillText(text, W / 2, H / 2 + 8);
+  const data = ctx.getImageData(0, 0, W, H).data;
+  const lit = [];
+  for (let y = 0; y < H; y += 2) for (let x = 0; x < W; x += 2) if (data[(y * W + x) * 4 + 3] > 150) lit.push(x, y);
+  if (lit.length < 200) return null;
+  const k = WORD_W / W;
+  const out = [];
+  for (let i = 0; i < n; i++) {
+    if (i % 14 === 13) {
+      // dust: a soft ellipse, thicker near the word
+      const a = Math.random() * Math.PI * 2;
+      const r = Math.pow(Math.random(), 1.3);
+      out.push([Math.cos(a) * r * WORD_W * 0.58, Math.sin(a) * r * 0.62, (Math.random() - 0.5) * 0.7]);
+      continue;
+    }
+    const j = ((Math.random() * (lit.length / 2)) | 0) * 2;
+    out.push([(lit[j] - W / 2) * k + (Math.random() - 0.5) * 0.008, -(lit[j + 1] - H / 2) * k + (Math.random() - 0.5) * 0.008, (Math.random() - 0.5) * 0.06]);
+  }
+  return out;
+}
+
 function PointField({ reduced }) {
+  const pts = useRef(null);
   const geo = useMemo(() => {
     const shapes = [
       Array.from({ length: N }, (_, i) => fibSphere(i, N, 1.0)),
@@ -164,15 +201,35 @@ function PointField({ reduced }) {
         transparent: true,
         depthWrite: false,
         blending: THREE.AdditiveBlending,
-        uniforms: { uW: { value: new THREE.Vector4(1, 0, 0, 0) }, uTime: { value: 0 }, uOpacity: { value: 1 }, uSize: { value: 30 } },
+        uniforms: {
+          uW: { value: new THREE.Vector4(1, 0, 0, 0) },
+          uTime: { value: 0 },
+          uOpacity: { value: 1 },
+          uSize: { value: 30 },
+          uAppear: { value: 0 },
+          uMouse: { value: new THREE.Vector3(99, 99, 0) },
+          uPush: { value: 0 },
+        },
         vertexShader: /* glsl */ `
           attribute vec3 aB; attribute vec3 aC; attribute vec3 aD; attribute float aRand;
           uniform vec4 uW; uniform float uTime; uniform float uSize;
-          varying vec3 vCol; varying float vR;
+          uniform float uAppear; uniform vec3 uMouse; uniform float uPush;
+          varying vec3 vCol; varying float vR; varying float vA;
           ${SPECTRAL}
           void main() {
             vec3 p = position * uW.x + aB * uW.y + aC * uW.z + aD * uW.w;
+            // gather: each point flies in from its own scattered start, staggered by aRand
+            vec3 from = vec3(sin(aRand * 91.0), cos(aRand * 57.0) * 0.7, sin(aRand * 23.0)) * 2.8;
+            float a = smoothstep(aRand * 0.55, aRand * 0.55 + 0.45, uAppear);
+            p = mix(p + from, p, a);
+            // the pointer parts the points like a hand through sand
+            vec2 d = p.xy - uMouse.xy;
+            float r2 = dot(d, d);
+            float fall = exp(-r2 * 14.0) * uPush;
+            p.xy += normalize(d + vec2(1e-4)) * fall * 0.16;
+            p.z += fall * (aRand - 0.5) * 0.6;
             p += 0.012 * vec3(sin(uTime * 0.9 + aRand * 31.0), cos(uTime * 0.7 + aRand * 17.0), sin(uTime * 0.5 + aRand * 11.0));
+            vA = a;
             vec4 mv = modelViewMatrix * vec4(p, 1.0);
             gl_PointSize = uSize * (0.55 + aRand * 0.9) / -mv.z;
             gl_Position = projectionMatrix * mv;
@@ -180,20 +237,74 @@ function PointField({ reduced }) {
             vR = aRand;
           }`,
         fragmentShader: /* glsl */ `
-          uniform float uOpacity; varying vec3 vCol; varying float vR;
+          uniform float uOpacity; varying vec3 vCol; varying float vR; varying float vA;
           void main() {
             float d = length(gl_PointCoord - 0.5);
             float a = smoothstep(0.5, 0.0, d);
-            gl_FragColor = vec4(mix(vCol, vec3(1.0), 0.35), a * uOpacity * (0.55 + vR * 0.45));
+            gl_FragColor = vec4(mix(vCol, vec3(1.0), 0.35), a * uOpacity * (0.55 + vR * 0.45) * (0.25 + 0.75 * vA));
           }`,
       }),
     []
   );
   const w = useMemo(() => new THREE.Vector4(), []);
   const smooth = useRef(0);
+  const ready = useRef(false);
+  const appear = useRef(reduced ? 1 : 0);
+  const push = useRef(0);
+  const moved = useRef(false);
+  const ray = useMemo(() => ({ v: new THREE.Vector3(), dir: new THREE.Vector3() }), []);
+
+  // swap the placeholder sphere for the wordmark once the serif is in
+  useEffect(() => {
+    let alive = true;
+    const fill = () => {
+      if (!alive || ready.current) return;
+      const word = wordPoints(N);
+      if (word) {
+        const arr = geo.attributes.position.array;
+        word.forEach((p, i) => arr.set(p, i * 3));
+        geo.attributes.position.needsUpdate = true;
+      }
+      ready.current = true;
+    };
+    const load = document.fonts?.load('italic 330px "Instrument Serif"');
+    if (load) load.then(fill, fill);
+    else fill();
+    const t = setTimeout(fill, 2500); // never hold the hero longer than this
+    const onMove = (e) => {
+      if (e.pointerType === "mouse" || e.pointerType === "pen" || e.pointerType === "touch") moved.current = true;
+    };
+    const onLeave = () => (moved.current = false);
+    addEventListener("pointermove", onMove, { passive: true });
+    document.documentElement.addEventListener("pointerleave", onLeave);
+    return () => {
+      alive = false;
+      clearTimeout(t);
+      removeEventListener("pointermove", onMove);
+      document.documentElement.removeEventListener("pointerleave", onLeave);
+    };
+  }, [geo]);
 
   useFrame((state, delta) => {
     const m = material;
+    const dt = Math.min(delta, 0.05);
+    // the gather runs on wall-clock time, so a slow device still finishes it in 1.6 s
+    if (ready.current && appear.current < 1) appear.current = reduced ? 1 : Math.min(1, appear.current + Math.min(delta, 0.4) / 1.6);
+    m.uniforms.uAppear.value = appear.current;
+    // pointer in the point field's own space: cast onto the z = 0 plane, then into local
+    const opening = 1 - Math.min(1, scroll.chapter);
+    const want = !reduced && moved.current && appear.current > 0.9 ? opening : 0;
+    push.current += (want - push.current) * (1 - Math.exp(-5 * dt));
+    m.uniforms.uPush.value = push.current;
+    if (pts.current && push.current > 0.001) {
+      const cam = state.camera;
+      ray.v.set(state.pointer.x, state.pointer.y, 0.5).unproject(cam);
+      ray.dir.copy(ray.v).sub(cam.position).normalize();
+      const t = -cam.position.z / ray.dir.z;
+      ray.v.copy(cam.position).addScaledVector(ray.dir, t);
+      pts.current.worldToLocal(ray.v);
+      m.uniforms.uMouse.value.lerp(ray.v, 1 - Math.exp(-14 * dt));
+    }
     const target = scroll.chapter;
     smooth.current = reduced ? Math.round(target) : smooth.current + (target - smooth.current) * (1 - Math.exp(-6 * Math.min(delta, 0.05)));
     const c = smooth.current;
@@ -205,10 +316,10 @@ function PointField({ reduced }) {
     m.uniforms.uW.value.copy(w);
     m.uniforms.uTime.value = reduced ? 0 : state.clock.elapsedTime;
     m.uniforms.uOpacity.value = scroll.dark;
-    m.uniforms.uSize.value = 30 * state.viewport.dpr;
+    m.uniforms.uSize.value = 30 * state.viewport.dpr * (1 + 0.25 * opening);
   });
 
-  return <points geometry={geo} material={material} />;
+  return <points ref={pts} geometry={geo} material={material} />;
 }
 
 function Ring({ reduced }) {
@@ -218,8 +329,9 @@ function Ring({ reduced }) {
     if (!mesh.current) return;
     const t = reduced ? 0 : state.clock.elapsedTime;
     material.uniforms.uTime.value = t;
-    material.uniforms.uOpacity.value = scroll.dark;
     const c = scroll.chapter;
+    material.uniforms.uOpacity.value = scroll.dark * THREE.MathUtils.smoothstep(c, 0.15, 0.85);
+    mesh.current.visible = material.uniforms.uOpacity.value > 0.002;
     mesh.current.rotation.set(0.35 + Math.sin(c * 1.3) * 0.18, -0.45 + c * 0.32, 0.12 + t * 0.06);
     const s = 1 + Math.sin(c * Math.PI) * 0.05;
     mesh.current.scale.set(s, s, s * 0.32);
@@ -264,7 +376,7 @@ function Glints({ reduced }) {
   useFrame((state) => {
     if (!ref.current) return;
     const t = reduced ? 0 : state.clock.elapsedTime;
-    material.uniforms.uOpacity.value = scroll.dark;
+    material.uniforms.uOpacity.value = scroll.dark * THREE.MathUtils.smoothstep(scroll.chapter, 0.15, 0.85);
     seeds.forEach((g, i) => {
       const a = g.a + t * 0.08 + scroll.chapter * 0.5;
       p.set(Math.cos(a) * g.r, Math.sin(a) * g.r * 0.8, Math.sin(a * 2.0) * 0.4);
@@ -357,14 +469,22 @@ function HeroGroup({ reduced }) {
     const g = group.current;
     if (!g) return;
     const wide = viewport.aspect > 1.05;
-    const tx = wide ? viewport.width * 0.2 : 0;
-    const ty = wide ? 0 : viewport.height * 0.22;
-    const s = wide ? Math.min(1.05, viewport.height / 5.6) : Math.min(0.78, viewport.width / 4.6);
+    // chapters 2-4: the ring sits beside the copy. Chapter 1: the wordmark is centred above the
+    // title card, wide enough to read as the studio's name.
+    const open = 1 - THREE.MathUtils.smoothstep(scroll.chapter, 0, 1);
+    const cx = wide ? viewport.width * 0.2 : 0;
+    const cy = wide ? 0 : viewport.height * 0.22;
+    const cs = wide ? Math.min(1.05, viewport.height / 5.6) : Math.min(0.78, viewport.width / 4.6);
+    const oy = wide ? viewport.height * 0.17 : viewport.height * 0.25;
+    const os = wide ? Math.min((viewport.width * 0.6) / WORD_W, (viewport.height * 0.95) / WORD_W) : (viewport.width * 0.9) / WORD_W;
+    const tx = cx + (0 - cx) * open;
+    const ty = cy + (oy - cy) * open;
+    const s = cs + (os - cs) * open;
     const k = 1 - Math.exp(-5 * Math.min(delta, 0.05));
     g.position.x += (tx + (reduced ? 0 : pointer.x * 0.12) - g.position.x) * k;
     g.position.y += (ty + (reduced ? 0 : pointer.y * 0.08) + (1 - scroll.dark) * 1.2 - g.position.y) * k;
     g.scale.setScalar(s);
-    g.rotation.y += ((reduced ? 0 : pointer.x * 0.25) - g.rotation.y) * k;
+    g.rotation.y += ((reduced ? 0 : pointer.x * (0.25 - 0.17 * open)) - g.rotation.y) * k;
     g.visible = scroll.dark > 0.002;
   });
   return (
@@ -385,7 +505,13 @@ export default function Spectrum() {
     document.addEventListener("visibilitychange", vis);
     return () => document.removeEventListener("visibilitychange", vis);
   }, []);
-  if (!gl) return null;
+  // no GPU: the wordmark as type, grained with the same prism, fading with the hero
+  if (!gl)
+    return (
+      <div className="spectrum-still">
+        <span>Spectre</span>
+      </div>
+    );
   return (
     <Canvas
       className="spectrum-canvas"

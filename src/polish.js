@@ -93,10 +93,14 @@ export function countUp(selector = "[data-count]") {
 // 5. Local time in Kigali, refreshed every 20 s.
 export function kigaliClock(el) {
   if (!el) return;
-  const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Kigali" });
-  const draw = () => (el.textContent = fmt.format(new Date()));
-  draw();
-  setInterval(draw, 20000);
+  // the formatter is costly to build on a slow phone and the footer is far below: wait for idle
+  const start = () => {
+    const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Kigali" });
+    const draw = () => (el.textContent = fmt.format(new Date()));
+    draw();
+    setInterval(draw, 20000);
+  };
+  window.requestIdleCallback ? requestIdleCallback(start, { timeout: 4000 }) : setTimeout(start, 1500);
 }
 
 // 6. A soft light that follows the mouse over dark surfaces.
@@ -124,4 +128,89 @@ export function anchorScroll() {
     e.preventDefault();
     target.scrollIntoView({ behavior: reduced() ? "auto" : "smooth", block: "start" });
   });
+}
+
+// 8. A marquee row that drifts on its own and leans into the scroll: scroll speed adds to its
+// pace and eases back out. The track holds its items three times; it wraps every third.
+// Runs only while on screen, and stands still under reduced motion.
+export function marquee(track, dir = -1, pace = 38) {
+  if (!track) return;
+  if (reduced()) return;
+  let x = 0;
+  let boost = 0;
+  let lastY = scrollY;
+  let lastT = 0;
+  let span = 0;
+  let raf = 0;
+  const measure = () => (span = track.scrollWidth / 3);
+  const frame = (t) => {
+    const dt = lastT ? Math.min(0.05, (t - lastT) / 1000) : 0;
+    lastT = t;
+    const dy = scrollY - lastY;
+    lastY = scrollY;
+    // scroll velocity in px/s, eased so a flick swells and then settles
+    const v = dt ? Math.abs(dy) / dt : 0;
+    boost += (Math.min(v * 0.35, 900) - boost) * (1 - Math.exp(-8 * dt));
+    x += dir * (pace + boost) * dt;
+    if (span) x = ((x % span) - span) % span;
+    track.style.transform = `translate3d(${x}px,0,0)`;
+    raf = requestAnimationFrame(frame);
+  };
+  const io = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !raf) {
+      measure();
+      lastT = 0;
+      lastY = scrollY;
+      raf = requestAnimationFrame(frame);
+    } else if (!e.isIntersecting && raf) {
+      cancelAnimationFrame(raf);
+      raf = 0;
+    }
+  });
+  io.observe(track.parentElement);
+  addEventListener("resize", measure);
+  document.fonts?.ready.then(measure);
+}
+
+// 9. The ruler on the right edge: one tick per section, a marker that rides the page.
+export function scrollRail(ticksEl, dot, selectors) {
+  if (!ticksEl || !dot) return { set() {} };
+  let marks = [];
+  let height = 0;
+  let last = -1;
+  const layout = () => {
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    marks = selectors
+      .map((s) => document.querySelector(s))
+      .filter(Boolean)
+      .map((el) => Math.min(1, Math.max(0, (el.getBoundingClientRect().top + scrollY) / max)));
+    ticksEl.innerHTML = marks.map((m) => `<i style="top:${(m * 100).toFixed(2)}%"></i>`).join("");
+    height = Math.max(0, ticksEl.clientHeight - dot.offsetHeight);
+    last = -1;
+  };
+  const set = (p) => {
+    dot.style.transform = `translate3d(0,${(p * height).toFixed(1)}px,0)`;
+    let on = 0;
+    marks.forEach((m, i) => {
+      if (p + 0.002 >= m) on = i;
+    });
+    if (on !== last) {
+      [...ticksEl.children].forEach((t, i) => t.classList.toggle("is-on", i === on));
+      last = on;
+    }
+  };
+  // measuring every section forces a full layout: do it once the page is idle, then only when
+  // asked (the caller re-runs it after resizes that change section heights)
+  let pending = 0;
+  const schedule = () => {
+    if (pending) return;
+    const run = () => {
+      pending = 0;
+      layout();
+    };
+    pending = window.requestIdleCallback ? requestIdleCallback(run, { timeout: 1500 }) : setTimeout(run, 300);
+  };
+  schedule();
+  document.fonts?.ready.then(schedule);
+  return { set, layout: schedule };
 }
