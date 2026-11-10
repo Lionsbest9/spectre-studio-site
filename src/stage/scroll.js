@@ -41,7 +41,9 @@ export function startScrollTracking({ heroId, galleryId, chapters, onChange }) {
   };
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", onScroll);
-  read();
+  // first read on the first frame: the defaults above are right at the top of the page, and
+  // reading now would force a layout while the page is still being built
+  onScroll();
   return () => {
     removeEventListener("scroll", onScroll);
     removeEventListener("resize", onScroll);
