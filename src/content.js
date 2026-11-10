@@ -187,14 +187,15 @@ export const gallery = [
 export const aboutCard = {
   title: ["An engineer's rigour.", "A designer's eye.", "A ", "Kigali", " address."],
   text: "Spectre Studio is an independent web developer in Gikondo, Kigali. Clients deal with the person who writes the code, from the first message to the last fix.",
-  file: "about.json",
+  // a live readout of this page, not a costume: values marked live are measured in the browser
+  file: "this-page.json · live",
   json: [
-    ["studio", '"Spectre Studio"'],
-    ["based", '"Gikondo, Kigali"'],
-    ["builds", '["websites", "web apps", "dashboards", "3D pages"]'],
-    ["stack", '["React", "Next.js", "Three.js", "Supabase"]'],
+    ["studio", '"Spectre Studio, Gikondo, Kigali"'],
+    ["wordmark", '"4,800 points, one draw call"'],
+    ["framesPerSecond", '<span data-live="fps">60</span>'],
+    ["kigaliTime", '"<span data-live="time">--:--</span>"'],
     ["firstDemo", '"within 48 hours"'],
-    ["available", "true"],
+    ["builtBy", '"hand, not a template"'],
   ],
 };
 

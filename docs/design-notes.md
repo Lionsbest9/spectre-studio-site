@@ -39,3 +39,12 @@ bone for reading; back to ink at the finale so the page ends where it began.
 
 - `--ease: cubic-bezier(0.16, 1, 0.3, 1)` for every transform transition.
 - Fixed spacing snapped to 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96 px.
+
+## Jury round 1 (2026-11-10): 7.25, 1st of 4 beside Lusion, Noomo and Aino; creativity 6.5 under the floor
+
+Fixes, creativity first: one idea instead of two. The ribbon is retired; the stipple of the
+wordmark carries into the work, where every screenshot resolves from dots into the finished
+screen as it enters. One accent on the italic instead of the prism gradient. The stippled
+wordmark is on screen from the first frame and hands over to the particles once they gather.
+The about card is a live readout of this page (frame rate, Kigali time), not a costume.
+Mono labels 12 to 14 px; the WhatsApp buttons lift on hover. The canvas stops after the hero.
