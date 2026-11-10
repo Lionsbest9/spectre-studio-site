@@ -128,7 +128,7 @@ p {
 .kicker,
 .num {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.875rem;
   letter-spacing: 0.02em;
 }
 
@@ -406,10 +406,7 @@ p {
 
 .chap-title em,
 .home .intro .display em {
-  color: transparent;
-  background: var(--prism);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--accent-dark); /* one accent: the italic carries the voice, not a rainbow */
   padding-right: 0.06em;
 }
 
@@ -2296,10 +2293,7 @@ footer .brand {
 }
 
 .finale .display em {
-  color: transparent;
-  background: var(--prism);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--accent-dark); /* one accent: the italic carries the voice, not a rainbow */
   padding-right: 0.06em;
 }
 
@@ -2322,10 +2316,7 @@ footer .brand {
   font-weight: 400;
   font-size: 1.1em;
   letter-spacing: -0.012em;
-  color: transparent;
-  background: var(--prism);
-  -webkit-background-clip: text;
-  background-clip: text;
+  color: var(--accent-dark); /* one accent: the italic carries the voice, not a rainbow */
   padding-right: 0.06em;
 }
 
@@ -2376,4 +2367,35 @@ footer .brand {
   .spectrum-still span {
     animation: none;
   }
+}
+
+/* the still wordmark hands over to the particles once they have gathered */
+.spectrum-still-layer { z-index: -1; transition: opacity 0.9s var(--ease); }
+.spectrum-still-layer.is-handed { opacity: 0; }
+
+/* ---------- work screens resolve from the wordmark's dots ---------- */
+@property --resolve { syntax: "<number>"; inherits: false; initial-value: 1; }
+.work.is-pinned .work-card figure:not(.is-resolved),
+.work:not(.is-pinned) .work-card figure.is-resolving {
+  -webkit-mask-image: radial-gradient(circle, #000 calc(0.6px + var(--resolve) * 6px), transparent calc(1.2px + var(--resolve) * 6px));
+  mask-image: radial-gradient(circle, #000 calc(0.6px + var(--resolve) * 6px), transparent calc(1.2px + var(--resolve) * 6px));
+  -webkit-mask-size: 9px 9px;
+  mask-size: 9px 9px;
+}
+.work.is-pinned .work-card figure { --resolve: 0; }
+.work:not(.is-pinned) .work-card figure { --resolve: 0; }
+.work:not(.is-pinned) .work-card figure.is-resolving { animation: resolve-in 1.1s var(--ease) forwards; }
+@keyframes resolve-in { to { --resolve: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .work .work-card figure { --resolve: 1; -webkit-mask-image: none !important; mask-image: none !important; animation: none !important; }
+}
+
+/* the green action answers the pointer clearly: lift, brighter fill, a glow */
+.btn-wa:hover {
+  transform: translateY(-2px);
+  background: #13924a;
+  box-shadow: 0 10px 26px -10px rgba(19, 146, 74, 0.75);
+}
+.btn-wa:active {
+  transform: translateY(0);
 }

@@ -1,8 +1,8 @@
 // The home page's one WebGL scene, fixed behind the content.
 // Hero: 4,800 light points gather out of dust into the studio wordmark and part around the
 // pointer; as the first chapter turns, a pearly spectral ring arrives and the points morph per
-// chapter (browser window, data surface, lattice) with a few glints. After the hero the ring
-// fades out and a twisting spectral ribbon drifts behind the light sections.
+// chapter (browser window, data surface, lattice) with a few glints. After the hero the scene
+// rests: the work itself carries the idea below (screens resolve from dots as they enter).
 // About 5 draw calls, no shadow maps, DPR capped, the loop stops when the tab is hidden.
 
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -26,7 +26,7 @@ const SPECTRAL = /* glsl */ `
   }
 `;
 
-// ---------- pearly iridescent material (ring and ribbon) ----------
+// ---------- pearly iridescent material (the ring) ----------
 
 function makePearl({ repeat = 1.0, light = false } = {}) {
   return new THREE.ShaderMaterial({
@@ -250,6 +250,7 @@ function PointField({ reduced }) {
   const smooth = useRef(0);
   const ready = useRef(false);
   const appear = useRef(reduced ? 1 : 0);
+  const announced = useRef(false);
   const push = useRef(0);
   const moved = useRef(false);
   const ray = useMemo(() => ({ v: new THREE.Vector3(), dir: new THREE.Vector3() }), []);
@@ -290,6 +291,7 @@ function PointField({ reduced }) {
     const dt = Math.min(delta, 0.05);
     // the gather runs on wall-clock time, so a slow device still finishes it in 1.6 s
     if (ready.current && appear.current < 1) appear.current = reduced ? 1 : Math.min(1, appear.current + Math.min(delta, 0.4) / 1.6);
+    if (appear.current > 0.55 && !announced.current) { announced.current = true; dispatchEvent(new Event("spectre:wordmark")); }
     m.uniforms.uAppear.value = appear.current;
     // pointer in the point field's own space: cast onto the z = 0 plane, then into local
     const opening = 1 - Math.min(1, scroll.chapter);
@@ -394,73 +396,6 @@ function Glints({ reduced }) {
   );
 }
 
-function Ribbon({ reduced }) {
-  const SEG = 260;
-  const geo = useMemo(() => {
-    const g = new THREE.BufferGeometry();
-    g.setAttribute("position", new THREE.BufferAttribute(new Float32Array((SEG + 1) * 2 * 3), 3));
-    g.setAttribute("normal", new THREE.BufferAttribute(new Float32Array((SEG + 1) * 2 * 3), 3));
-    const uv = new Float32Array((SEG + 1) * 2 * 2);
-    const idx = [];
-    for (let i = 0; i <= SEG; i++) {
-      uv.set([i / SEG, 0, i / SEG, 1], i * 4);
-      if (i < SEG) {
-        const a = i * 2;
-        idx.push(a, a + 1, a + 2, a + 1, a + 3, a + 2);
-      }
-    }
-    g.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
-    g.setIndex(idx);
-    g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 20);
-    return g;
-  }, []);
-  const material = useMemo(() => makePearl({ repeat: 1.4, light: true }), []);
-  const tmp = useMemo(
-    () => ({ p: new THREE.Vector3(), t: new THREE.Vector3(), n: new THREE.Vector3(), b: new THREE.Vector3(), up: new THREE.Vector3(0, 0, 1), q: new THREE.Quaternion() }),
-    []
-  );
-  const viewport = useThree((s) => s.viewport);
-
-  useFrame((state) => {
-    const time = reduced ? 0 : state.clock.elapsedTime;
-    // dim the ribbon while the work gallery is pinned so the screens stay the focus
-    const show = (1 - scroll.dark) * (1 - 0.6 * Math.sin(Math.PI * Math.min(1, Math.max(0, scroll.galleryP))));
-    material.uniforms.uOpacity.value = show * 0.9;
-    material.uniforms.uTime.value = time;
-    if (show <= 0.001) return;
-    const pos = geo.attributes.position.array;
-    const nor = geo.attributes.normal.array;
-    const W = viewport.width * 0.62;
-    const drift = scroll.pageP * 6.0;
-    const width = Math.min(0.42, viewport.width * 0.05);
-    for (let i = 0; i <= SEG; i++) {
-      const u = i / SEG;
-      const x = (u - 0.5) * 2 * W;
-      const y = Math.sin(u * 5.2 + drift + time * 0.15) * viewport.height * 0.16 + Math.sin(u * 13.0 - time * 0.2) * 0.12 + viewport.height * 0.12;
-      const z = Math.cos(u * 4.0 + drift) * 0.8 - 1.2;
-      tmp.p.set(x, y, z);
-      const u2 = Math.min(1, u + 1 / SEG);
-      const x2 = (u2 - 0.5) * 2 * W;
-      const y2 = Math.sin(u2 * 5.2 + drift + time * 0.15) * viewport.height * 0.16 + Math.sin(u2 * 13.0 - time * 0.2) * 0.12 + viewport.height * 0.12;
-      const z2 = Math.cos(u2 * 4.0 + drift) * 0.8 - 1.2;
-      tmp.t.set(x2 - x, y2 - y, z2 - z).normalize();
-      if (tmp.t.lengthSq() < 1e-6) tmp.t.set(1, 0, 0);
-      tmp.b.crossVectors(tmp.t, tmp.up).normalize();
-      const twist = u * 7.0 + time * 0.35 + drift;
-      tmp.q.setFromAxisAngle(tmp.t, twist);
-      tmp.b.applyQuaternion(tmp.q);
-      tmp.n.crossVectors(tmp.t, tmp.b).normalize();
-      const k = i * 6;
-      pos[k] = x + tmp.b.x * width; pos[k + 1] = y + tmp.b.y * width; pos[k + 2] = z + tmp.b.z * width;
-      pos[k + 3] = x - tmp.b.x * width; pos[k + 4] = y - tmp.b.y * width; pos[k + 5] = z - tmp.b.z * width;
-      nor[k] = nor[k + 3] = tmp.n.x; nor[k + 1] = nor[k + 4] = tmp.n.y; nor[k + 2] = nor[k + 5] = tmp.n.z;
-    }
-    geo.attributes.position.needsUpdate = true;
-    geo.attributes.normal.needsUpdate = true;
-  });
-  return <mesh geometry={geo} material={material} />;
-}
-
 function HeroGroup({ reduced }) {
   const group = useRef(null);
   const viewport = useThree((s) => s.viewport);
@@ -500,10 +435,17 @@ export default function Spectrum() {
   const [gl] = useState(webglAvailable);
   const reduced = useMemo(prefersReducedMotion, []);
   const [visible, setVisible] = useState(!document.hidden);
+  const [inHero, setInHero] = useState(true);
   useEffect(() => {
     const vis = () => setVisible(!document.hidden);
+    // nothing is drawn once the hero has faded: stop the loop there, restart on the way back up
+    const onScroll = () => setInHero(scroll.dark > 0.001);
     document.addEventListener("visibilitychange", vis);
-    return () => document.removeEventListener("visibilitychange", vis);
+    addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      document.removeEventListener("visibilitychange", vis);
+      removeEventListener("scroll", onScroll);
+    };
   }, []);
   // no GPU: the wordmark as type, grained with the same prism, fading with the hero
   if (!gl)
@@ -515,7 +457,7 @@ export default function Spectrum() {
   return (
     <Canvas
       className="spectrum-canvas"
-      frameloop={visible ? "always" : "never"}
+      frameloop={visible && inHero ? "always" : "never"}
       dpr={[1, 1.5]}
       camera={{ position: [0, 0, 6], fov: 35, near: 0.1, far: 50 }}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
@@ -523,7 +465,6 @@ export default function Spectrum() {
       eventPrefix="client"
     >
       <HeroGroup reduced={reduced} />
-      <Ribbon reduced={reduced} />
     </Canvas>
   );
 }

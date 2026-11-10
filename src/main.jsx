@@ -9,6 +9,15 @@ import { webglAvailable } from "./stage/gl.js";
 
 mountChrome("index.html");
 const $ = (id) => document.getElementById(id);
+// the stippled wordmark is there from the first frame for everyone; with a GPU the particles
+// gather over it and it steps back once they have formed the name
+const still = document.createElement("div");
+still.className = "spectrum spectrum-still-layer";
+still.setAttribute("aria-hidden", "true");
+still.innerHTML = '<div class="spectrum-still"><span>Spectre</span></div>';
+$("spectrum").before(still);
+addEventListener("spectre:wordmark", () => still.classList.add("is-handed"), { once: true });
+
 // title arrays alternate plain / italic: ["Clear by ", "design", "."] -> Clear by <em>design</em>.
 const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15m-5-6 6 6-6 6"/></svg>';
 const rich = (parts) => parts.map((t, i) => (i % 2 ? `<em>${t}</em>` : t)).join("");
@@ -78,6 +87,24 @@ $("principles").innerHTML = principles
   .join("");
 tilt(document.querySelector(".about-grid"), ".tile");
 
+// the card reads this page while it is on screen: frame rate from requestAnimationFrame, Kigali time
+{
+  const fpsEl = document.querySelector('[data-live="fps"]');
+  const timeEl = document.querySelector('[data-live="time"]');
+  const fmt = new Intl.DateTimeFormat("en-GB", { hour: "2-digit", minute: "2-digit", timeZone: "Africa/Kigali" });
+  let raf = 0, last = 0, avg = 60, shown = 0;
+  const tick = (t) => {
+    if (last) avg += (1000 / Math.max(1, t - last) - avg) * 0.08;
+    last = t;
+    if (t - shown > 400) { shown = t; fpsEl.textContent = Math.min(60, Math.round(avg)); timeEl.textContent = fmt.format(new Date()); }
+    raf = requestAnimationFrame(tick);
+  };
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !raf) { last = 0; raf = requestAnimationFrame(tick); }
+    else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = 0; }
+  }).observe($("code-card"));
+}
+
 // ----- capabilities: numbered rows, outlined tags, a drawn rule between them -----
 $("capabilities").innerHTML = capabilities
   .map(
@@ -109,8 +136,28 @@ const darkLayer = document.querySelector(".bd-dark");
 const workIndex = $("work-index");
 const hud = document.querySelector(".intro-hud");
 let current = 0;
-const spectrumStyle = $("spectrum").style;
+const spectrumStyle = still.style;
 const rail = scrollRail($("rail-ticks"), $("rail-dot"), ["#intro", ".statement", "#work", "#about", "#build", "#faq", ".finale"]);
+
+// work screens resolve from dots into the finished screen as they slide in: the wordmark's
+// stipple carried onto the real work (desktop: driven by the pinned rail; phones: once in view)
+let cardX = [];
+const figs = [...track.querySelectorAll("figure")];
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function resolveCards(shift) {
+  if (reduceMotion) return;
+  figs.forEach((f, i) => {
+    const [x, w] = cardX[i] || [0, 1];
+    const left = x - shift;
+    const r = Math.min(1, Math.max(0, (innerWidth * 0.95 - left) / (innerWidth * 0.45)));
+    f.style.setProperty("--resolve", r.toFixed(3));
+    f.classList.toggle("is-resolved", r >= 0.999);
+  });
+}
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && !work.classList.contains("is-pinned")) { e.target.classList.add("is-resolving"); io.unobserve(e.target); } }), { threshold: 0.35 });
+  figs.forEach((f) => io.observe(f));
+}
 
 function sizeGallery() {
   const pinned = matchMedia("(min-width: 861px)").matches;
@@ -120,6 +167,7 @@ function sizeGallery() {
     track.style.transform = "";
     return;
   }
+  cardX = [...track.children].map((c) => [c.offsetLeft, c.offsetWidth]);
   const extra = Math.max(0, track.scrollWidth - innerWidth + 48);
   work.style.setProperty("--extra", `${extra}px`);
   work.style.height = `calc(100svh + ${extra}px)`;
@@ -144,6 +192,7 @@ function render(s) {
   if (work.classList.contains("is-pinned")) {
     const extra = parseFloat(work.style.getPropertyValue("--extra")) || 0;
     track.style.transform = `translate3d(${-s.galleryP * extra}px, 0, 0)`;
+    resolveCards(s.galleryP * extra);
     const cards = track.children.length;
     const idx = Math.min(cards, Math.floor(s.galleryP * cards) + 1);
     workIndex.innerHTML = `<b>${String(idx).padStart(2, "0")}</b> / ${String(cards).padStart(2, "0")}`;
@@ -190,4 +239,3 @@ $("replay").addEventListener("click", () => {
 
 // ----- the 3D scene, loaded after the copy is on screen, and only where a GPU will draw it -----
 if (webglAvailable()) import("./stage/mount.jsx").then((m) => m.mount($("spectrum")));
-else $("spectrum").innerHTML = '<div class="spectrum-still"><span>Spectre</span></div>';
