@@ -12,11 +12,12 @@
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="./assets/index-TorfldxM.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DEObuI-z.css">
+  <!-- fonts are self-hosted and preloaded: the first layout already has the real metrics -->
+  <link rel="preload" href="./fonts/syne.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/ibm-plex-mono-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="./fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="module" crossorigin src="./assets/index-C57fraI8.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-c0HMSKgu.css">
 </head>
 <body>
   <canvas id="gl" aria-hidden="true"></canvas>
@@ -59,7 +60,12 @@
 
     <section class="intro" id="intro">
       <p class="intro-kick mono"><i></i>Spectre Studio · Kigali · 2026</p>
-      <h1 class="intro-title" id="intro-title"></h1>
+      <h1 class="intro-title" id="intro-title">3D websites that prove it, frame by frame.</h1>
+      <svg class="intro-thread" viewBox="0 0 600 24" preserveAspectRatio="none" aria-hidden="true"><path d="M2 16C90 16 120 6 190 6s110 12 190 12 120-10 218-10" pathLength="1"/></svg>
+      <a class="intro-work" href="https://audit-pro-delta.vercel.app" target="_blank" rel="noopener">
+        <img src="shots/auditpro-dashboard.jpg" alt="" width="96" height="60" decoding="async" />
+        <span><b class="mono">Live now</b> AuditPro · 13 modules for audit firms</span><i aria-hidden="true">↗</i>
+      </a>
       <p class="intro-cue mono">Scroll to follow the thread</p>
     </section>
 
@@ -67,10 +73,9 @@
     <p class="caption caption2" id="caption2">One signal, and everything wakes.</p>
     <div class="holdgate" id="holdgate" aria-live="polite">
       <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="hg-track" cx="50" cy="50" r="44"/><circle class="hg-fill" cx="50" cy="50" r="44" pathLength="1"/></svg>
-      <p class="hg-t">Hold to break the surface</p>
-      <p class="hg-k mono">press and hold<span class="hg-key"> · or hold <kbd>Space</kbd></span></p>
+      <p class="hg-t">Break the surface</p>
+      <p class="hg-k mono">keep scrolling · or press and hold<span class="hg-key"> <kbd>Space</kbd></span></p>
     </div>
-    <div class="letterbox" aria-hidden="true"><i></i><i></i></div>
 
     <section class="chapter" id="chapter" aria-live="polite">
       <div class="ch-meta mono"><span id="ch-num">01</span><span class="ch-rule"></span><span>Chapter</span></div>
