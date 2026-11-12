@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-architecture="index-to-detail">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inside Afrika Boutique Hotel, Kiyovu, Kigali: nine rooms, a pool and a winery</title>
-    <meta name="description" content="Inside Afrika Boutique Hotel on KN 46 Street, Kiyovu, Kigali. Nine rooms, an outdoor pool, a winery and breakfast from 06:00. Preview site." />
+    <title>Inside Afrika Boutique Hotel, Kiyovu, Kigali: nine doors</title>
+    <meta name="description" content="Inside Afrika Boutique Hotel on KN 46 Street, Kiyovu, Kigali. An Art Deco house with an outdoor pool, a winery and breakfast from 06:00. Open a door. Preview site." />
     <meta name="robots" content="noindex" />
     <meta property="og:title" content="Inside Afrika Boutique Hotel, Kigali" />
-    <meta property="og:description" content="Nine rooms, an outdoor pool and a winery in Kiyovu." />
+    <meta property="og:description" content="An Art Deco house in Kiyovu with a pool and a winery. Open a door." />
     <meta property="og:image" content="../insideafrika-og.jpg" />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#e9ebe3" />
@@ -15,109 +15,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="../trio-assets/insideafrika-7AJCcQxp.js"></script>
-    <link rel="modulepreload" crossorigin href="../trio-assets/util-DhFPUTE9.js">
-    <link rel="stylesheet" crossorigin href="../trio-assets/insideafrika-4otywIOT.css">
+    <script type="module" crossorigin src="../trio-assets/insideafrika-CddJY_et.js"></script>
+    <link rel="modulepreload" crossorigin href="../trio-assets/util-CygybDpK.js">
+    <link rel="stylesheet" crossorigin href="../trio-assets/insideafrika-PauoyIK0.css">
   </head>
   <body>
-    <a class="skip" href="#day">Skip to content</a>
-
-    <!-- side rail on wide screens, bottom bar on phones -->
-    <aside class="rail" aria-label="Inside Afrika">
-      <a class="mono" href="#top" aria-label="Inside Afrika, top of page">IA</a>
-      <span class="vert" aria-hidden="true">Inside Afrika · Kiyovu · Kigali</span>
-      <span class="gauge" aria-hidden="true"><i></i></span>
-      <a class="reserve" href="#reserve">Reserve</a>
-    </aside>
-
-    <main id="top">
-      <p class="preview">Preview made for Inside Afrika by Spectre Studio. Not yet the official site. <mark>To confirm</mark> marks wait for the owner.</p>
-
-      <!-- I. Nine doors -->
-      <section class="hall" aria-labelledby="h-hero">
+    <main>
+      <!-- the index: a corridor of nine doors -->
+      <section class="lobby" id="lobby" data-view="corridor" aria-labelledby="h-hero">
+        <a class="ring" href="#/reserve">Reserve</a>
         <svg class="fan" viewBox="0 0 200 100" aria-hidden="true"><g id="rays"></g><path d="M40 100a60 60 0 0 1 120 0" /><path d="M70 100a30 30 0 0 1 60 0" /></svg>
         <p class="over">Boutique hotel · Kiyovu, Kigali</p>
         <h1 id="h-hero">Inside Afrika</h1>
-        <p class="lead">Nine rooms. <em>Open a door.</em></p>
-
-        <ul class="doors" id="doors">
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Nine rooms</b><span>Only nine in the house, some with a balcony.</span></span><span class="leaf" aria-hidden="true"><i>I</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Sleep</b><span>Memory foam under Egyptian cotton sheets.</span></span><span class="leaf" aria-hidden="true"><i>II</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Breakfast</b><span>Included, from 06:00 to 10:00 each day.</span></span><span class="leaf" aria-hidden="true"><i>III</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>The pool</b><span>An outdoor pool, open to guests.</span></span><span class="leaf" aria-hidden="true"><i>IV</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>The winery</b><span>A winery on the premises.</span></span><span class="leaf" aria-hidden="true"><i>V</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Connected</b><span>Free Wi-Fi and wired internet in the rooms.</span></span><span class="leaf" aria-hidden="true"><i>VI</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Arriving</b><span>Free parking, and help with tours and tickets.</span></span><span class="leaf" aria-hidden="true"><i>VII</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Working</b><span>A business centre on site.</span></span><span class="leaf" aria-hidden="true"><i>VIII</i></span></button></li>
-          <li><button class="door" type="button" aria-expanded="false"><span class="room"><b>Kept</b><span>Housekeeping daily. Coffee and tea in the lobby.</span></span><span class="leaf" aria-hidden="true"><i>IX</i></span></button></li>
-        </ul>
-        <p class="hint" id="hint">Each door holds one fact about the stay.</p>
+        <p class="lead">An Art Deco house with a pool and a winery. <em>Choose a door.</em></p>
+        <nav class="doors" id="doors" aria-label="The nine doors"></nav>
+        <p class="foot">KN 46 Street, Kiyovu · <a href="tel:+250722503698">+250 722 503 698</a> · Kigali time <b id="clock">--:--</b><span class="pv">Preview made for Inside Afrika by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the official site.</span></p>
       </section>
 
-      <!-- II. A day inside -->
-      <section class="day" id="day" aria-labelledby="h-day">
-        <header class="title" data-rise>
-          <span class="num">II</span>
-          <h2 id="h-day">A day inside</h2>
+      <!-- the detail: one room at a time, filled by main.js from content.js -->
+      <section class="room" id="room" hidden aria-live="polite" data-fit>
+        <header class="bar">
+          <a class="back" href="#/">← The corridor</a>
+          <p class="where"><a id="prev" href="#/">‹</a><span id="num">I</span><a id="next" href="#/">›</a></p>
+          <a class="ring small" href="#/reserve">Reserve</a>
         </header>
-        <div class="arches">
-          <article class="arch" data-rise style="--sun: 12%">
-            <svg viewBox="0 0 120 60" aria-hidden="true"><path d="M5 60a55 55 0 0 1 110 0" /><circle r="7" /></svg>
-            <p class="hour">06:00</p>
-            <h3>Morning</h3>
-            <p>Breakfast is included and runs until 10:00. There is coffee and tea in the lobby all day.</p>
-          </article>
-          <article class="arch" data-rise style="--sun: 50%">
-            <svg viewBox="0 0 120 60" aria-hidden="true"><path d="M5 60a55 55 0 0 1 110 0" /><circle r="7" /></svg>
-            <p class="hour">Noon</p>
-            <h3>Afternoon</h3>
-            <p>The outdoor pool, then the winery. The Convention Centre is close by for those here to work.</p>
-          </article>
-          <article class="arch" data-rise style="--sun: 88%">
-            <svg viewBox="0 0 120 60" aria-hidden="true"><path d="M5 60a55 55 0 0 1 110 0" /><circle r="7" /></svg>
-            <p class="hour">Dusk</p>
-            <h3>Evening</h3>
-            <p>A balcony in some rooms, satellite television in all, and a bed made with Egyptian cotton.</p>
-          </article>
-        </div>
+        <div class="plate" id="plate" aria-hidden="true"></div>
+        <article class="sheet" id="sheet" tabindex="-1"></article>
       </section>
-
-      <!-- III. Where -->
-      <section class="where" aria-labelledby="h-where">
-        <header class="title" data-rise>
-          <span class="num">III</span>
-          <h2 id="h-where">Where</h2>
-        </header>
-        <dl class="facts">
-          <div data-rise><dt>Street</dt><dd>KN 46 Street, Kiyovu</dd></div>
-          <div data-rise><dt>City</dt><dd>Kigali, Rwanda</dd></div>
-          <div data-rise><dt>Airport</dt><dd>About 8 km <small>per booking listings</small></dd></div>
-          <div data-rise><dt>Rooms</dt><dd>Nine <mark>names and rates to confirm</mark></dd></div>
-        </dl>
-        <a class="maplink" data-rise href="https://www.google.com/maps/search/?api=1&query=Inside%20Afrika%20Boutique%20Hotel%20Kigali" rel="noopener">Open in Google Maps</a>
-      </section>
-
-      <!-- IV. Reserve -->
-      <section class="reserve-sec" id="reserve" aria-labelledby="h-res">
-        <div class="plate" data-rise>
-          <span class="num">IV</span>
-          <h2 id="h-res">Reserve a room</h2>
-          <p>Speak to the hotel directly. No booking site, no commission.</p>
-          <div class="acts">
-            <a class="btn" href="tel:+250722503698">Call +250 722 503 698</a>
-            <a class="btn ghost" href="https://wa.me/250722503698?text=Hello%20Inside%20Afrika%2C%20I%20would%20like%20to%20reserve%20a%20room." rel="noopener">Write on WhatsApp</a>
-          </div>
-          <p class="small"><mark>Number to confirm</mark> Two numbers are listed publicly for the hotel.</p>
-        </div>
-      </section>
-
-      <footer class="foot">
-        <p class="fname">Inside Afrika</p>
-        <p>KN 46 Street, Kiyovu, Kigali · <a href="tel:+250722503698">+250 722 503 698</a></p>
-        <p>Kigali time <b id="clock">--:--</b> · Breakfast 06:00 to 10:00</p>
-        <p class="made">Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>, Kigali.</p>
-      </footer>
     </main>
-
   </body>
 </html>

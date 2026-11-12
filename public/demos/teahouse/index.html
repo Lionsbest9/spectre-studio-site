@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-architecture="map-and-drawers">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tea House B&amp;B, Kigali: a bed and breakfast 1.5 km from the airport</title>
-    <meta name="description" content="Tea House B&amp;B in Kimironko, Kigali. Airport pickup, check-in from 7 in the morning, breakfast included. Rated 9.2 by guests. Preview site." />
+    <meta name="description" content="Tea House B&amp;B in Kimironko, Kigali. Airport pickup, check-in from 7 in the morning, breakfast every day. Rated 9.2 by guests. Preview site." />
     <meta name="robots" content="noindex" />
     <meta property="og:title" content="Tea House B&amp;B, Kigali" />
     <meta property="og:description" content="A bed and breakfast 1.5 km from Kigali International Airport, with airport pickup." />
@@ -15,145 +15,129 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="../trio-assets/teahouse-Cg0YhsHJ.js"></script>
-    <link rel="modulepreload" crossorigin href="../trio-assets/util-DhFPUTE9.js">
-    <link rel="stylesheet" crossorigin href="../trio-assets/teahouse-Byx2gtxw.css">
+    <script type="module" crossorigin src="../trio-assets/teahouse-B8KZC5dR.js"></script>
+    <link rel="modulepreload" crossorigin href="../trio-assets/util-CygybDpK.js">
+    <link rel="stylesheet" crossorigin href="../trio-assets/teahouse-CL6W1ixY.css">
   </head>
   <body>
-    <a class="skip" href="#arrive">Skip to content</a>
+    <main class="app" id="app" data-at="arriving">
+      <!-- the map is the page -->
+      <div class="stage" id="stage">
+        <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="mapwrap" aria-hidden="true"><div class="plane" id="plane"><svg class="map" id="map" viewBox="-1400 -800 2800 1600"></svg></div></div>
+        <a class="mark" href="#arriving" aria-label="Tea House B&amp;B">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 13h16v5a8 8 0 0 1-16 0z" /><path d="M22 14h2.5a3 3 0 0 1 0 6H22" fill="none" /><path class="steam" d="M11 9c0-2 2-2 2-4M16 9c0-2 2-2 2-4" fill="none" /></svg>
+          <span>Tea House <em>B&amp;B</em></span>
+        </a>
+        <a class="chip" href="#guests"><b>9.2</b>/10 from 55 guests</a>
+        <div class="lede">
+          <p class="eyebrow">Kimironko, Kigali</p>
+          <h1>Land. <em>We will be waiting.</em></h1>
+          <p class="meter"><b>1.5 km</b> from the terminal in a straight line. Guests put the drive at 5 to 10 minutes.</p>
+        </div>
+        <div class="passdock" id="passdock"></div>
+        <p class="credit">Preview made for Tea House B&amp;B by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the official site. Map © OpenStreetMap contributors.</p>
+      </div>
 
-    <p class="preview">Preview made for Tea House B&amp;B by Spectre Studio. Not yet the official site. Items marked <mark>to confirm</mark> wait for the owner.</p>
-
-    <header class="top">
-      <a class="mark" href="#top" aria-label="Tea House B&amp;B, top of page">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M6 13h16v5a8 8 0 0 1-16 0z" /><path d="M22 14h2.5a3 3 0 0 1 0 6H22" fill="none" /><path class="steam" d="M11 9c0-2 2-2 2-4M16 9c0-2 2-2 2-4" fill="none" /></svg>
-        <span>Tea House <em>B&amp;B</em></span>
-      </a>
-      <nav aria-label="Sections">
-        <a href="#arrive">Arriving</a>
-        <a href="#guests">Guests</a>
-        <a href="#house">The house</a>
-      </nav>
-      <a class="btn small" href="#ask">Ask for a room</a>
-      <span class="flight" aria-hidden="true"></span>
-    </header>
-
-    <main id="top">
-      <!-- 01 Hero: the route from the runway to the door, drawn on real streets -->
-      <section class="route" id="route" aria-labelledby="h-hero">
-        <div class="stage">
-          <div class="sky" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div class="mapwrap" aria-hidden="true">
-            <div class="plane"><svg class="map" id="map" viewBox="-1400 -800 2800 1600"></svg></div>
-          </div>
-          <div class="lede">
-            <p class="eyebrow">Kimironko, Kigali</p>
-            <h1 id="h-hero">Land. <em>We will be waiting.</em></h1>
-            <p class="sub">A small bed and breakfast 1.5 km from Kigali International Airport. We collect you from arrivals, and your room is ready from 7 in the morning.</p>
-            <div class="acts">
-              <a class="btn" href="#ask">Ask for a room</a>
-              <a class="link" href="tel:+250782181209">+250 782 181 209</a>
-            </div>
-          </div>
-          <dl class="meter" aria-label="Distance from the airport">
-            <div><dt>From the terminal</dt><dd><span id="km">0.0</span> km</dd></div>
-            <div><dt>Measured</dt><dd class="smalldd">in a straight line, on OpenStreetMap</dd></div>
+      <!-- facts live in drawers over the map -->
+      <aside class="drawer" id="drawer" data-fit tabindex="-1">
+        <section class="view" data-view="arriving" id="v-arriving">
+          <h2>From the runway to your room</h2>
+          <ol class="steps">
+            <li><b>You land</b><span>Send us your flight number before you fly.</span></li>
+            <li><b>Ask us to fetch you</b><span>Guests put the drive at five to ten minutes. <mark>Pickup and fee to confirm</mark></span></li>
+            <li><b>Check in from 07:00</b><span>A morning flight still means a bed. The desk is staffed 24 hours. Landing before 07:00? Ask us. <mark>To confirm</mark></span></li>
+            <li><b>Check out by 11:00</b><span>Ask us about a ride back to departures.</span></li>
+          </ol>
+          <p class="addr">KG 121 St, Kimironko <mark>street to confirm</mark> <a href="https://www.google.com/maps/search/?api=1&query=Tea%20House%20B%26B%20-1.95663%2C30.12379" rel="noopener">Open in Google Maps</a></p>
+          <dl class="near">
+            <div><dt>Airport terminal</dt><dd>1.5 km</dd></div>
+            <div><dt>Amahoro Stadium</dt><dd>1.1 km</dd></div>
+            <div><dt>Genocide Memorial</dt><dd>7.6 km</dd></div>
           </dl>
-          <p class="cue" aria-hidden="true">Scroll to follow the route</p>
-        </div>
-      </section>
+        </section>
 
-      <!-- 02 Arriving -->
-      <section class="arrive" id="arrive" aria-labelledby="h-arrive">
-        <header class="shead" data-rise>
-          <span class="no">02</span>
-          <h2 id="h-arrive">Your arrival, hour by hour</h2>
-        </header>
-        <ol class="strip">
-          <li data-rise><b>You land</b><span>Send us your flight number on WhatsApp before you fly.</span></li>
-          <li data-rise><b>We fetch you</b><span>Airport pickup to the house, 1.5 km away. <mark>Fee to confirm</mark></span></li>
-          <li data-rise><b>From 07:00</b><span>Check-in opens early, so a morning flight still means a bed. The front desk is staffed 24 hours.</span></li>
-          <li data-rise><b>Breakfast</b><span>À la carte, every morning. It is what guests write about most.</span></li>
-          <li data-rise><b>By 11:00</b><span>Check-out. Ask us about a ride back to departures.</span></li>
-        </ol>
-      </section>
+        <section class="view" data-view="house" id="v-house" hidden>
+          <h2>A small house in a quiet part of Kimironko</h2>
+          <dl class="have">
+            <div><dt>Bedrooms</dt><dd>Four <mark>to confirm</mark></dd></div>
+            <div><dt>Your room</dt><dd>Air conditioning, private bathroom, hairdryer, free Wi-Fi</dd></div>
+            <div><dt>Outside</dt><dd>A garden, a terrace, and parking for your car</dd></div>
+            <div><dt>Looked after</dt><dd>24-hour front desk, room service, laundry</dd></div>
+            <div><dt>With children</dt><dd>Babysitting can be arranged</dd></div>
+            <div><dt>Getting about</dt><dd>Airport shuttle, and bicycles to rent</dd></div>
+            <div><dt>Small things</dt><dd>Currency exchange and a gift shop on site</dd></div>
+          </dl>
+          <figure class="slot"><svg class="draw" viewBox="0 0 240 90" aria-hidden="true"><path d="M20 80h200M52 80V46l40-28 40 28v34M80 80V58h24v22M118 50h10M160 80V52h44v28M172 62h8M188 62h8M40 80q-8-14 0-26 8 12 0 26M222 80q-6-10 0-20 6 10 0 20"/><path d="M148 30c0-6 6-6 6-12M160 30c0-6 6-6 6-12"/></svg><figcaption><mark>To confirm</mark> A photograph of a room goes here, with the house's permission.</figcaption></figure>
+          <p class="fine"><mark>To confirm</mark> Room names and nightly rates.</p>
+        </section>
 
-      <!-- 03 Guests -->
-      <section class="guests" id="guests" aria-labelledby="h-guests">
-        <div class="score" data-rise>
-          <p class="big"><span data-count="9.2" data-dec="1">9.2</span><small>/10</small></p>
-          <p class="src">from 55 verified guest reviews on HotelsCombined, read on 12 November 2026</p>
-        </div>
-        <div class="said">
-          <header class="shead" data-rise>
-            <span class="no">03</span>
-            <h2 id="h-guests">What guests mention most</h2>
-          </header>
+        <section class="view" data-view="breakfast" id="v-breakfast" hidden>
+          <h2>Breakfast</h2>
+          <p class="big-line">À la carte or Italian, <em>every morning.</em></p>
+          <dl class="have">
+            <div><dt>Breakfast</dt><dd>Included with your room. Choose from the card or take the Italian breakfast</dd></div>
+            <div><dt>Later</dt><dd>The restaurant serves African cuisine</dd></div>
+            <div><dt>Evening</dt><dd>A bar, and the terrace to sit on</dd></div>
+            <div><dt>In your room</dt><dd>Room service is available</dd></div>
+            <div><dt>Guests say</dt><dd>"Great breakfast" comes up in four reviews</dd></div>
+          </dl>
+          <figure class="slot"><svg class="draw" viewBox="0 0 240 90" aria-hidden="true"><path d="M20 80h200M70 80a36 36 0 0 1 72 0M150 60h34v8a17 17 0 0 1-34 0zM184 62h5a6 6 0 0 1 0 12h-6M160 52c0-6 5-6 5-11M172 52c0-6 5-6 5-11M44 80V58M36 58v8a8 8 0 0 0 16 0v-8M200 80V56"/><path d="M92 62q14-10 28 0"/></svg><figcaption><mark>To confirm</mark> A photograph of breakfast goes here, with the house's permission.</figcaption></figure>
+          <p class="fine"><mark>To confirm</mark> Breakfast hours and today's card.</p>
+        </section>
+
+        <section class="view" data-view="guests" id="v-guests" hidden>
+          <h2 class="score"><span id="score">9.2</span><small>/10</small></h2>
+          <p class="src">55 verified ratings on HotelsCombined and Kayak, read 12 November 2026. Booking.com: 9.2 from 43.</p>
+          <ul class="bars" aria-label="How the 55 ratings divide">
+            <li style="--n: 39"><span>Wonderful</span><i></i><b>39</b></li>
+            <li style="--n: 10"><span>Very good</span><i></i><b>10</b></li>
+            <li style="--n: 4"><span>Good</span><i></i><b>4</b></li>
+            <li style="--n: 2"><span>Okay or fair</span><i></i><b>2</b></li>
+          </ul>
+          <p class="tag second">What they mention</p>
           <ul class="themes">
-            <li data-rise>Very friendly staff</li>
-            <li data-rise>A great breakfast</li>
-            <li data-rise>Close to the airport</li>
-            <li data-rise>Airport pickup</li>
-            <li data-rise>Clean rooms</li>
-            <li data-rise>Birdsong in the morning</li>
+            <li>Near the airport <b>10</b></li><li>Friendly staff <b>7</b></li><li>Quiet neighbourhood <b>4</b></li><li>Great breakfast <b>4</b></li>
           </ul>
-          <p class="note" data-rise>These are the themes the review site lists, not quotes. With your say, real guest words go here.</p>
-        </div>
-      </section>
+          <p class="fine">The small numbers are how many reviews raise each point. <mark>To confirm</mark> Guests' own words, with their permission.</p>
+        </section>
 
-      <!-- 04 The house -->
-      <section class="house" id="house" aria-labelledby="h-house">
-        <header class="shead" data-rise>
-          <span class="no">04</span>
-          <h2 id="h-house">The house</h2>
-        </header>
-        <div class="cols">
-          <p class="intro" data-rise>Four bedrooms in a quiet part of Kimironko, about a kilometre from Amahoro Stadium. <mark>Room names and rates to confirm</mark></p>
-          <ul class="have">
-            <li data-rise><b>Rooms</b><span>Air conditioning, private bathroom, free Wi-Fi</span></li>
-            <li data-rise><b>Table</b><span>Breakfast each morning, a restaurant and a bar</span></li>
-            <li data-rise><b>Outside</b><span>A terrace, and parking for your car</span></li>
-            <li data-rise><b>Help</b><span>24-hour front desk, laundry, room service</span></li>
-            <li data-rise><b>Getting about</b><span>Airport shuttle and bicycles to rent</span></li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- 05 Ask -->
-      <section class="ask" id="ask" aria-labelledby="h-ask">
-        <div class="card" data-rise>
-          <header class="shead">
-            <span class="no">05</span>
-            <h2 id="h-ask">Ask for a room</h2>
-          </header>
-          <p>Fill this in and it opens WhatsApp with your message written. Nothing is sent until you press send there.</p>
-          <form id="askform" novalidate>
-            <label>Arrival date<input type="date" name="date" required /></label>
-            <label>Nights<input type="number" name="nights" min="1" max="60" value="2" inputmode="numeric" required /></label>
-            <label>Guests<input type="number" name="guests" min="1" max="8" value="1" inputmode="numeric" required /></label>
-            <label><span>Flight number <i>(optional)</i></span><input type="text" name="flight" autocomplete="off" placeholder="WB 301" maxlength="10" /></label>
+        <section class="view" data-view="book" id="v-book" hidden>
+          <h2>Ask for a room</h2>
+          <div id="passhome">
+          <form class="pass" id="askform" novalidate>
+            <div class="route-line"><b>KGL</b><span><i></i></span><b>Tea House</b></div>
+            <p class="pass-sub">Kigali International · 1.5 km · Kimironko</p>
+            <div class="fields">
+              <label>Arriving<input type="date" name="date" required /></label>
+              <label>Nights<input type="number" name="nights" min="1" max="60" value="1" inputmode="numeric" required /></label>
+              <label>Guests<input type="number" name="guests" min="1" max="8" value="1" inputmode="numeric" required /></label>
+              <label>Your name<input type="text" name="name" autocomplete="name" maxlength="40" /></label>
+              <label>Flight no.<input type="text" name="flight" autocomplete="off" placeholder="WB 301" maxlength="10" /></label>
+              <label>Landing at<input type="time" name="landing" /></label>
+            </div>
             <p class="err" id="askerr" role="alert" hidden>Please choose your arrival date.</p>
-            <button class="btn" type="submit">Open WhatsApp</button>
+            <p class="rate">Rooms are listed at about US$33 a night. Ask us for the house rate. <mark>Rate to confirm</mark></p>
+            <div class="stub">
+              <a class="btn" id="viaWa" href="https://wa.me/250782181209" rel="noopener">Send on WhatsApp</a>
+              <a class="btn second" id="viaCall" href="tel:+250782181209">Or call +250 782 181 209</a>
+              <p><mark>To confirm</mark> that this number is on WhatsApp. It opens with your message written; you press send.</p>
+            </div>
           </form>
-        </div>
-      </section>
+          </div>
+          <p class="or">Kigali time <b id="clock">--:--</b>. The desk is staffed 24 hours.</p>
+          <p class="fine made">Preview made for Tea House B&amp;B by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the official site. Map © OpenStreetMap contributors.</p>
+        </section>
+      </aside>
+
+      <nav class="dock" aria-label="Sections">
+        <a href="#arriving" aria-current="true">Arriving</a>
+        <a href="#house"><span class="long">The house</span><span class="short">House</span></a>
+        <a href="#breakfast">Breakfast</a>
+        <a href="#guests">Guests</a>
+        <a href="tel:+250782181209" class="call" aria-label="Call Tea House B&amp;B on +250 782 181 209">Call<span> +250 782 181 209</span></a>
+        <a href="#book" class="go"><span class="long">Ask for a room</span><span class="short">Book</span></a>
+      </nav>
     </main>
-
-    <footer class="foot">
-      <div>
-        <p class="fmark">Tea House <em>B&amp;B</em></p>
-        <p>KG 121 St, Kimironko, Kigali <mark>street to confirm</mark></p>
-      </div>
-      <div>
-        <p><a href="tel:+250782181209">+250 782 181 209</a></p>
-        <p><a href="https://wa.me/250782181209" rel="noopener">WhatsApp</a></p>
-      </div>
-      <div>
-        <p>Kigali time <b id="clock">--:--</b></p>
-        <p>Check-in from 07:00, check-out by 11:00</p>
-      </div>
-      <p class="made">Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>, Kigali. Map data © OpenStreetMap contributors.</p>
-    </footer>
-
   </body>
 </html>
