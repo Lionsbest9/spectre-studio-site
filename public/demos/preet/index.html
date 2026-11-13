@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-architecture="day-scrubber">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Preet Fast Food, Kigali: pure vegetarian, Gujarati kitchen</title>
+    <meta name="description" content="Preet Fast Food, KN 82 St, Kigali. Kigali's first purely vegetarian restaurant: Gujarati thali, pani puri, dabeli, poha and Indian tea. Open Mon-Sat 08:00-20:30, Sun 08:00-14:00. Order on WhatsApp. Preview site." />
+    <meta name="robots" content="noindex" />
+    <meta property="og:title" content="Preet Fast Food, Kigali" />
+    <meta property="og:description" content="Pure vegetarian, Gujarati kitchen. Turn the thali to see what is cooking at any hour, then order on WhatsApp." />
+    <meta property="og:image" content="../preet-og.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f6e7c8" />
+    <link rel="icon" href="../preet-favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&family=Rozha+One&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@600&display=swap&text=%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%80%E0%AA%A4" rel="stylesheet" />
+    <script type="module" crossorigin src="../trio-assets/preet-y2x6iG_c.js"></script>
+    <link rel="modulepreload" crossorigin href="../trio-assets/util-BxQgI5KT.js">
+    <link rel="modulepreload" crossorigin href="../trio-assets/content-BMGq8JGd.js">
+    <link rel="modulepreload" crossorigin href="../trio-assets/preload-helper-DclECHGd.js">
+    <link rel="stylesheet" crossorigin href="../trio-assets/preet-SpTpw7Cl.css">
+  </head>
+  <body>
+    <a class="skip" href="#hour">Skip to the time picker</a>
+
+    <header class="top">
+      <a class="mark" href="./" aria-label="Preet Fast Food, home">
+        <span class="gu" lang="gu" aria-hidden="true">પ્રીત</span>
+        <span class="name">Preet<small>Fast Food · pure vegetarian</small></span>
+      </a>
+      <nav class="sheets" aria-label="More about Preet">
+        <a href="#menu" data-sheet="menu"><b>01</b> Menu</a>
+        <a href="#find" data-sheet="find"><b>02</b> Find us</a>
+        <a href="#story" data-sheet="story"><b>03</b> Our story</a>
+      </nav>
+      <a class="wa" id="topWa" href="https://wa.me/250783115997" rel="noopener">WhatsApp Vipul</a>
+    </header>
+
+    <main class="day" id="main">
+      <section class="say" aria-live="polite">
+        <p class="status" id="status"><i></i><span>Checking the hours</span></p>
+        <p class="next" id="nextNote">Sundays 08:00 to 14:00</p>
+        <p class="clockline"><span class="showing">Pick-up time</span> <span id="hourLabel">16:30</span> <span class="today" id="dayLabel">today</span></p>
+        <h1 id="title">Good afternoon from Preet.</h1>
+        <p class="line" id="line">Snack ideas: the street food of Gujarat, from pani puri to dabeli.</p>
+        <ul class="facts">
+          <li>Called <b>Kigali's first</b> purely vegetarian restaurant <span>(Gorilla Highlands)</span></li>
+          <li><b>About 6,000 RWF</b> fills you up <span>(HappyCow review, 2024; prices to confirm)</span></li>
+          <li><b>Vegan</b> on request <span>(no butter, ghee or yoghurt)</span></li>
+          <li><b>4.6</b> on Google from 346 reviews</li>
+        </ul>
+      </section>
+
+      <section class="dial" aria-label="Turn the thali to choose a time">
+        <div class="plate-wrap">
+          <canvas id="thali" aria-hidden="true"></canvas>
+          <img class="fallback" id="fallback" src="../preet-photos/thali-sq.webp" alt="A vegetarian thali on a steel plate (example photo)" width="1200" height="1200" fetchpriority="high" />
+          </div>
+        <p class="hint" id="hint">Drag the plate to turn the day <span aria-hidden="true">⟷</span></p>
+        <div class="scrub">
+          <label for="hour" class="vh">Time of day</label>
+          <input type="range" id="hour" min="480" max="1230" step="15" value="990" aria-valuetext="16:30" />
+          <div class="marks" aria-hidden="true"><span style="--t:0">08</span><span style="--t:0.24">11</span><span style="--t:0.56">15</span><span style="--t:0.8">18</span><span style="--t:1">20:30</span></div>
+          <div class="days" role="group" aria-label="Day">
+            <button type="button" data-day="today" aria-pressed="true">Today</button>
+            <button type="button" data-day="tomorrow" aria-pressed="false">Tomorrow</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="serve" aria-labelledby="serveTitle">
+        <h2 id="serveTitle">Ideas for <span id="serveAt">16:30</span></h2>
+        <p class="guide">Our guide to the hour, <mark>to confirm with Vipul</mark>. Any dish can be ordered while open.</p>
+        <form id="order" class="order" novalidate>
+          <ul class="dishes" id="dishes"></ul>
+          <div class="rest"><p>Also on the menu</p><div class="chips" id="rest"></div></div>
+          <p class="photo-note">Example photos; Preet's own to come.</p>
+          <p class="summary" id="summary" aria-live="polite"><b>Your order:</b> nothing yet.</p>
+          <p class="pickup" id="pickup">Pick-up <b>17:15 today</b>. Turn the plate or the slider to change it.</p>
+          <div class="who">
+            <label for="name">Your name <span>(optional)</span></label>
+            <input id="name" name="name" autocomplete="given-name" maxlength="40" />
+          </div>
+          <a class="send" id="send" href="https://wa.me/250783115997" rel="noopener">
+            <span id="sendLabel">Ask what is ready at 16:30</span>
+            <small>Opens WhatsApp with it written; you press send.</small>
+          </a>
+          <div class="or"><a class="call" href="tel:+250783115997">or call +250 783 115 997</a></div>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bar" aria-label="Order"><a class="bar-wa" id="barWa" href="https://wa.me/250783115997" rel="noopener">WhatsApp Vipul<span id="barSub">Order or ask</span></a><a class="bar-call" href="tel:+250783115997" aria-label="Call +250 783 115 997">Call</a></nav>
+    <footer class="foot">
+      <ul class="quotes" aria-label="What diners say">
+        <li>“Must try their Thali.” <span>Mahinda, HappyCow</span></li>
+        <li>“Friendly, very cheap, and excellent quality of food.” <span>vegan_ryan, HappyCow</span></li>
+      </ul>
+      <p class="credits-line">Example dish photos: Wikimedia Commons, CC BY-SA 4.0, <a href="#menu">credits in the menu</a>.</p>
+      <p class="credit">KN 82 St, Kigali · Kigali time <span id="clock">--:--</span> · Preview made by <a href="https://lionsbest9.github.io/spectre-studio-site/">Spectre Studio</a></p>
+    </footer>
+
+        <dialog class="sheet" id="sheet-menu" aria-labelledby="menuH">
+      <div class="sheet-in">
+        <button type="button" class="close" aria-label="Close">×</button>
+        <p class="num">01</p>
+        <h2 id="menuH">The menu</h2>
+        <p class="sub">Gujarati and Saurashtra vegetarian cooking. Example photos. Prices and the full list: <mark>to confirm with Vipul</mark>.</p>
+        <div id="menuList" class="menu"></div>
+        <p class="credits" id="credits"></p>
+      </div>
+    </dialog>
+    <dialog class="sheet" id="sheet-find" aria-labelledby="findH">
+      <div class="sheet-in">
+        <button type="button" class="close" aria-label="Close">×</button>
+        <p class="num">02</p>
+        <h2 id="findH">Find us</h2>
+        <p class="big">KN 82 St, central Kigali.</p>
+        <p>Preet moved in July 2026 to a new spot on the same street. <mark>Exact door and landmark to confirm.</mark></p>
+        <p class="old"><b>Not here any more:</b> Musa compound behind Bank of Kigali, and 16 KN 84 St. Older listings still show these.</p>
+        <dl class="hours">
+          <dt>Monday to Saturday</dt><dd>08:00 to 20:30</dd>
+          <dt>Sunday</dt><dd>08:00 to 14:00</dd>
+        </dl>
+        <p>Eat in, outdoor seats, or take away. Cards and mobile money. Delivery: <mark>to confirm</mark>.</p>
+        <a class="send small maps" href="https://www.google.com/maps/search/?api=1&query=Preet%20Fast%20Food%20KN%2082%20St%20Kigali" rel="noopener"><span>Open Preet in Google Maps</span></a>
+        <p class="old"><mark>the listing may still show the old address; the new pin is to come</mark></p>
+        <blockquote class="hard">“a bit hard to find” <span>SJ82, HappyCow</span></blockquote>
+        <a class="send small" id="findWa" href="https://wa.me/250783115997" rel="noopener"><span>Ask Vipul for directions on WhatsApp</span></a>
+        <div class="or"><a class="call" href="tel:+250783115997">or call +250 783 115 997</a></div>
+        <p class="old">Email: <a href="mailto:vipulvyas.prit1978@gmail.com">vipulvyas.prit1978@gmail.com</a> <mark>to confirm it is still read</mark>. Ratings: 4.6 on Google (346 reviews), 4.5 on HappyCow (7 reviews).</p>
+      </div>
+    </dialog>
+    <dialog class="sheet" id="sheet-story" aria-labelledby="storyH">
+      <div class="sheet-in">
+        <button type="button" class="close" aria-label="Close">×</button>
+        <p class="num">03</p>
+        <h2 id="storyH">Vipul and Preeti</h2>
+        <div id="storyText" class="story"></div>
+        <ul class="quotes in-sheet" id="storyQuotes"></ul>
+        <p class="credits" id="sources"></p>
+      </div>
+    </dialog>
+
+  </body>
+</html>
