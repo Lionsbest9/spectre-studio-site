@@ -1,182 +1,255 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f3ebe3">
-    <title>Okapi Hotel · Kiyovu, Kigali</title>
-    <meta name="description" content="Okapi Hotel in Kiyovu, Kigali: a three-star hotel with an art gallery, a restaurant, meeting rooms and five kinds of room, 400 metres from Kigali City Tower.">
+    <title>Okapi Hotel · Kiyovu, Kigali · rooms, breakfast and an art gallery</title>
+    <meta name="description" content="Okapi Hotel in Kiyovu, Kigali: a three-star hotel with its own art gallery, five kinds of room, breakfast included, 370 m from Kigali City Tower. Ask for a room on WhatsApp or call +250 781 471 041.">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Okapi Hotel, Kiyovu, Kigali">
-    <meta property="og:description" content="A hotel with its own art gallery, 400 m from Kigali City Tower. Five kinds of room, breakfast included. Ask on WhatsApp.">
+    <meta property="og:description" content="A hotel with its own art gallery, 370 m from Kigali City Tower. Five kinds of room, breakfast included. Ask on WhatsApp.">
     <meta property="og:image" content="https://lionsbest9.github.io/spectre-studio-site/demos/okapi-og.jpg">
+    <meta property="og:url" content="https://lionsbest9.github.io/spectre-studio-site/demos/okapi/">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../okapi-favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="../hotel-assets/okapi-CBPC4fEP.js"></script>
-    <link rel="modulepreload" crossorigin href="../hotel-assets/preload-helper-KUf-B2w_.js">
-    <link rel="stylesheet" crossorigin href="../hotel-assets/preload-helper-BvgFNMHq.css">
-    <link rel="stylesheet" crossorigin href="../hotel-assets/okapi-Dw4he0At.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="./photos/panorama-s.webp" media="(max-width: 760px)">
+    <link rel="preload" as="image" href="./photos/panorama.webp" media="(min-width: 761px)">
+    <script type="module" crossorigin src="./okapi-assets/index-DnG_9hjK.js"></script>
+    <link rel="stylesheet" crossorigin href="./okapi-assets/index-vkgwayRs.css">
   </head>
   <body>
-    <a class="skip" href="#rooms">Skip to the rooms</a>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-    <div class="preview-note" role="note"><span>Preview by Spectre Studio for Okapi Hotel. Details marked <span class="tbc">to confirm</span> wait for the hotel’s approval.</span><button type="button" aria-label="Hide this note">×</button></div>
+    <a class="skip" href="#book">Skip to booking</a>
+    <p class="note-strip" role="note">Preview by Spectre Studio for Okapi Hotel. Details marked <mark>to confirm</mark> wait for the hotel’s word.</p>
 
-    <header class="top">
-      <div class="wrap bar">
-        <nav class="nav-l" aria-label="Sections">
-          <a class="nav-link" href="#rooms">Rooms</a>
-          <a class="nav-link" href="#kitchen">Kitchen</a>
-          <a class="nav-link" href="#kiyovu">Kiyovu</a>
+    <header class="top" id="top">
+      <div class="bar">
+        <a class="brand" href="#welcome" aria-label="Okapi Hotel, back to the top"><span class="wordmark">Okapi</span><span class="sub">Hotel · Kiyovu</span></a>
+        <nav class="chapters" aria-label="Sections">
+          <a href="#rooms"><b>02</b> Rooms</a>
+          <a href="#kitchen"><b>03</b> Breakfast</a>
+          <a href="#gallery"><b>04</b> Gallery</a>
+          <a href="#meet"><b>05</b> Meetings</a>
+          <a href="#kiyovu"><b>06</b> Kiyovu</a>
+          <a href="#know"><b>07</b> Good to know</a>
+          <a href="#book"><b>08</b> Book</a>
         </nav>
-        <a class="brand" href="#welcome" aria-label="Okapi Hotel, home"><span class="wordmark">Okapi</span><span class="sub">Hotel · Kiyovu</span></a>
-        <div class="nav-r">
-          <span class="chapter" id="chapter" aria-hidden="true">01 / 07 · Welcome</span>
-          <a class="btn btn-primary" href="#visit">Ask for a room</a>
-        </div>
+        <p class="count" aria-hidden="true"><span id="chapNum">01</span><small>/08</small></p>
+        <a class="btn btn-wa btn-sm" id="topWa" aria-label="WhatsApp Okapi Hotel" href="https://wa.me/250781471041" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg><span>WhatsApp</span></a>
       </div>
+      <nav class="chips" aria-label="Jump to a section">
+        <a href="#rooms">Rooms</a><a href="#kitchen">Breakfast</a><a href="#gallery">Gallery</a><a href="#meet">Meetings</a><a href="#kiyovu">Kiyovu</a><a href="#know">Good to know</a><a href="#book">Book</a>
+      </nav>
+      <i class="progress" aria-hidden="true"></i>
     </header>
 
     <main>
-      <section class="hero" id="welcome" data-chapter="Welcome" aria-label="Welcome">
+      <!-- 01 welcome -->
+      <section class="hero chapter" id="welcome" data-num="01" aria-labelledby="h1">
         <div class="wrap hero-grid">
           <div class="hero-copy">
-            <p class="kicker">Kiyovu, Kigali · 400 m from Kigali City Tower</p>
-            <h1 class="display"><span class="w">Stay</span> <span class="w">in</span> <span class="w">a</span> <em class="w">gallery</em><br><span class="w">in</span> <span class="w">Kiyovu.</span></h1>
-            <p class="lead">A three-star hotel with its own art gallery, five kinds of room, a restaurant and a bar, a few minutes’ walk from the city centre.</p>
-            <div class="actions">
-              <a class="btn btn-primary btn-lg" href="#visit">Ask for a room</a>
-              <a class="btn btn-ghost btn-lg" href="#rooms">See the rooms</a>
-            </div>
+            <p class="kicker" data-rise>Three-star hotel · Kiyovu, Kigali · 370 m from Kigali City Tower</p>
+            <h1 id="h1" class="display"><span class="ln"><span>Stay in a <em>gallery</em></span></span> <span class="ln"><span>in Kiyovu.</span></span></h1>
           </div>
-          <figure class="wall" aria-label="Gallery wall: each frame opens a part of the hotel">
-            <canvas id="wall" aria-hidden="true"></canvas>
-            <div class="wall-fallback" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-            <nav class="wall-links" aria-label="Parts of the hotel">
-              <a href="#rooms">Rooms</a><a href="#kitchen">Kitchen</a><a href="#gallery">The gallery</a><a href="#kiyovu">Kiyovu</a><a href="#meet">Meetings</a>
-            </nav>
-            <figcaption>Move the light across the wall. Each frame opens a part of the hotel.</figcaption>
-          </figure>
+          <div class="hero-side" data-rise style="--d:220ms">
+            <p class="lead">A hotel with its own art gallery, five kinds of room, a restaurant and a bar, a short walk from the city centre. Breakfast is in the price.</p>
+            <div class="actions">
+              <a class="btn btn-primary btn-lg" href="#book">Ask for a room</a>
+              <a class="btn btn-ghost btn-lg" href="#rooms">See the five room types</a>
+            </div>
+            <p class="proof"><b>8.2</b>/10 from 50 reviews on Trip.com · <b>8.0</b>/10 from 60 on Expedia</p>
+          </div>
         </div>
-        <ul class="facts-strip wrap" aria-label="At a glance">
-          <li><b>36–40</b><span>rooms <span class="tbc">to confirm</span></span></li>
-          <li><b>5</b><span>kinds of room</span></li>
-          <li><b>Included</b><span>breakfast, every morning</span></li>
-          <li><b>Free</b><span>parking and WiFi</span></li>
+
+        <figure class="wrap hang-pano" data-rise style="--d:320ms">
+          <div class="pano-frame" id="panoFrame">
+            <button type="button" class="pano-open" data-photo="panorama" aria-label="Open the view from Okapi Hotel full size">
+              <span class="pano-track" id="panoTrack"><img src="./photos/panorama.webp" srcset="./photos/panorama-s.webp 1200w, ./photos/panorama.webp 2400w" sizes="(max-width: 760px) 300vw, 100vw" width="2400" height="528" alt="A wide view from a rooftop in Kiyovu over red-roofed buildings, a curving street with parked cars and the hills of Kigali beyond" fetchpriority="high"></span>
+              <span class="pano-light" aria-hidden="true"></span>
+            </button>
+          </div>
+          <figcaption class="label">
+            <span class="label-no">No. 1</span>
+            <span class="label-t">The view from Okapi Hotel</span>
+            <span class="label-m">Over central Kigali, 12 June 2013 · Photograph Adam Jones, CC BY-SA 2.0</span>
+          </figcaption>
+        </figure>
+
+        <ul class="wrap glance" aria-label="At a glance">
+          <li data-rise><b>About 36</b><span>rooms <mark>number to confirm</mark>, in five kinds</span></li>
+          <li data-rise style="--d:70ms"><b>Included</b><span>breakfast, every morning</span></li>
+          <li data-rise style="--d:140ms"><b>Book direct</b><span>with the front desk, by phone or on WhatsApp <mark>to confirm</mark></span></li>
+          <li data-rise style="--d:210ms"><b class="live"><i class="dot" aria-hidden="true"></i><span id="deskNow">Open now</span></b><span>front desk, 24 hours</span></li>
         </ul>
       </section>
 
-      <section class="section catalogue" id="rooms" data-chapter="Rooms" aria-labelledby="rooms-title">
-        <div class="wrap">
-          <header class="cat-head" data-reveal>
-            <p class="eyebrow">Catalogue of rooms</p>
-            <h2 class="display" id="rooms-title">Five rooms, one for every kind of stay.</h2>
-            <p class="body">Every room has a private bathroom, a TV, a desk, a fridge, WiFi and a mosquito net.</p>
+      <!-- 02 rooms -->
+      <section class="section rooms chapter" id="rooms" data-num="02" aria-labelledby="roomsH">
+        <div class="wrap rooms-grid">
+          <header class="rooms-intro">
+            <p class="eyebrow" data-rise><span class="num">02</span> The rooms</p>
+            <h2 class="display" id="roomsH" data-rise>Five kinds of room, one for every kind of stay.</h2>
+            <p class="body" data-rise>Open a room to see what it has. Every room comes with:</p>
+            <ul class="every" id="every" data-rise></ul>
+            <div class="price-note" data-rise>
+              <p><b>Book direct with the front desk.</b> Ask on WhatsApp or call for the rate for your dates. Breakfast is included.</p>
+              <p>Direct rates for each room: <mark>to confirm</mark>. As a guide, booking sites listed a night at about US$35 to US$41 in 2026; ask the front desk for the direct rate.</p>
+            </div>
           </header>
-          <div class="cat">
-            <ol class="plates" id="plates"></ol>
-            <aside class="plate-view" aria-live="polite">
-              <div class="plate-frame">
-                <div class="plate-art" id="plate-art" aria-hidden="true"></div>
-                <div class="plate-label">
-                  <p class="plate-no" id="plate-no">No. 1</p>
-                  <h3 id="plate-name">Deluxe Apartment</h3>
-                  <ul id="plate-feat"></ul>
-                  <a class="btn btn-primary" id="plate-ask" href="#visit">Ask for this room</a>
-                </div>
-              </div>
-              <p class="quiet">Rates on request. Room photos go here once the hotel sends them.</p>
-            </aside>
+          <ol class="room-list" id="roomList"></ol>
+        </div>
+      </section>
+
+      <!-- 03 breakfast and kitchen -->
+      <section class="section kitchen chapter" id="kitchen" data-num="03" aria-labelledby="kitchenH">
+        <div class="wrap kitchen-grid">
+          <div>
+            <p class="eyebrow" data-rise><span class="num">03</span> Breakfast and the kitchen</p>
+            <h2 class="display" id="kitchenH" data-rise>Breakfast comes with every room.</h2>
+            <p class="body" data-rise>Served every morning, for every guest. The hotel restaurant cooks local, European and Indian dishes <mark>to confirm</mark>, with a bar, a terrace and room service at set hours.</p>
+          </div>
+          <div class="hours-card" data-rise style="--d:120ms">
+            <p class="status" id="bfStatus" aria-live="polite"><i class="dot" aria-hidden="true"></i><span>Breakfast hours</span></p>
+            <dl class="hours" id="hours">
+              <div data-k="weekday"><dt>Breakfast, Monday to Friday</dt><dd>06:30 – 09:30</dd></div>
+              <div data-k="weekend"><dt>Breakfast, Saturday and Sunday</dt><dd>06:30 – 10:30</dd></div>
+              <div><dt>For guests</dt><dd>included</dd></div>
+              <div><dt>Lunch and dinner</dt><dd><mark>to confirm</mark></dd></div>
+            </dl>
+            <p class="quiet">Kigali time now <b id="clock">--:--</b></p>
           </div>
         </div>
       </section>
 
-      <section class="section kitchen" id="kitchen" data-chapter="Kitchen" aria-labelledby="kitchen-title">
-        <div class="wrap kitchen-grid">
-          <div data-reveal>
-            <p class="eyebrow">The kitchen</p>
-            <h2 class="display" id="kitchen-title">Rwandan, European and Indian, from one kitchen.</h2>
-            <p class="body">The restaurant cooks local, European and Indian dishes <span class="tbc">to confirm</span>, with room service at set hours, a bar and a terrace.</p>
+      <!-- 04 gallery -->
+      <section class="section gallery chapter" id="gallery" data-num="04" aria-labelledby="galleryH">
+        <div class="wrap">
+          <header class="gal-head">
+            <div>
+              <p class="eyebrow" data-rise><span class="num">04</span> The gallery</p>
+              <h2 class="display" id="galleryH" data-rise>Art on the walls, and a room for it.</h2>
+            </div>
+            <div data-rise style="--d:100ms">
+              <p class="body">Okapi Hotel has its own art gallery. Who is showing now, and when the gallery opens: <mark>to confirm</mark>.</p>
+              <p class="body small">Below, the view from the hotel and the places around it. The hotel’s own photographs of rooms, restaurant and gallery go here once it sends them. Press any picture to see it large.</p>
+            </div>
+          </header>
+          <div class="salon" id="salon"></div>
+          <div class="credits" id="credits"></div>
+        </div>
+      </section>
+
+      <!-- 05 meetings -->
+      <section class="section meet chapter" id="meet" data-num="05" aria-labelledby="meetH">
+        <div class="wrap meet-row" data-rise>
+          <div>
+            <p class="eyebrow"><span class="num">05</span> Meetings</p>
+            <h2 class="display" id="meetH">A conference room in the middle of town.</h2>
           </div>
-          <dl class="hours" data-reveal style="--d:100ms">
-            <div><dt>Breakfast, weekdays</dt><dd>06:30 – 09:30</dd></div>
-            <div><dt>Breakfast, weekends</dt><dd>06:30 – 10:30</dd></div>
-            <div><dt>For guests</dt><dd>breakfast included</dd></div>
-            <div><dt>Lunch and dinner</dt><dd><span class="tbc">to confirm</span></dd></div>
+          <div>
+            <p class="body">A conference room and smaller meeting rooms in Kiyovu, 370 m from Kigali City Tower in a straight line.</p>
+            <p class="quiet">Capacity and day rates <mark>to confirm</mark>.</p>
+            <a class="link-arrow" id="meetWa" href="https://wa.me/250781471041" target="_blank" rel="noopener">Ask about a meeting room <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 05 Kiyovu -->
+      <section class="section kiyovu chapter" id="kiyovu" data-num="06" aria-labelledby="kiyovuH">
+        <div class="wrap kiyovu-grid">
+          <div class="kiyovu-copy">
+            <p class="eyebrow" data-rise><span class="num">06</span> Kiyovu</p>
+            <h2 class="display" id="kiyovuH" data-rise>The city centre is a short walk.</h2>
+            <p class="body" data-rise>Near the Kiyovu roundabout, listed as KN 12 87 St <mark>exact address to confirm</mark>. Straight-line distances on OpenStreetMap. Tap a place to find its number on the map.</p>
+            <ol class="near" id="near" data-rise></ol>
+            <div class="acts" data-rise>
+              <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Okapi%20Hotel%20Kiyovu%20Kigali" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a class="btn btn-ghost" id="findWa" href="https://wa.me/250781471041" target="_blank" rel="noopener">Ask for directions</a>
+            </div>
+          </div>
+          <figure class="map" id="map" data-rise style="--d:120ms">
+            <div class="map-svg" id="mapSvg"></div>
+            <figcaption>Map of Kiyovu drawn from OpenStreetMap data · © OpenStreetMap contributors</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- 06 good to know -->
+      <section class="section know chapter" id="know" data-num="07" aria-labelledby="knowH">
+        <div class="wrap">
+          <p class="eyebrow" data-rise><span class="num">07</span> Good to know</p>
+          <h2 class="display" id="knowH" data-rise>Before you arrive.</h2>
+          <dl class="know-grid">
+            <div data-rise><dt>Check-in</dt><dd>13:00 – 23:00</dd><p class="live-line" id="ciNow"></p></div>
+            <div data-rise style="--d:60ms"><dt>Check-out</dt><dd>by 12:00</dd></div>
+            <div data-rise style="--d:120ms"><dt>Front desk</dt><dd>24 hours</dd></div>
+            <div data-rise style="--d:180ms"><dt>Parking and WiFi</dt><dd>free</dd></div>
+            <div data-rise class="wide"><dt>Languages</dt><dd>English, French, Kiswahili</dd></div>
+            <div data-rise class="wide" style="--d:60ms"><dt>Guests say</dt><dd>8.2 on Trip.com, 8.0 on Expedia</dd><p class="live-line">from 110 reviews in all</p></div>
+            <div data-rise class="wide" style="--d:120ms"><dt>Guests from</dt><dd>the UK, Belgium, Australia, Italy, the Philippines</dd><p class="live-line">among Trip.com reviewers</p></div>
+            <div data-rise style="--d:180ms"><dt>Stars</dt><dd>three</dd></div>
+            <div data-rise><dt>Payment and cancellation</dt><dd><mark>to confirm</mark></dd></div>
+            <div data-rise style="--d:60ms"><dt>From the airport</dt><dd><mark>to confirm</mark></dd></div>
           </dl>
         </div>
       </section>
 
-      <section class="section gallery" id="gallery" data-chapter="Gallery" aria-labelledby="gallery-title">
-        <div class="wrap gallery-grid">
-          <div class="hang" aria-hidden="true"><i></i><i></i><i></i></div>
-          <div data-reveal>
-            <p class="eyebrow">The gallery</p>
-            <h2 class="display" id="gallery-title">Art on the walls, and a room for it.</h2>
-            <p class="body">Okapi has its own art gallery, so guests sleep, eat and work among the pictures. This page can list who is showing now.</p>
-            <p class="quiet">Artists and opening hours <span class="tbc">to confirm</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section meet" id="meet" data-chapter="Meetings" aria-labelledby="meet-title">
-        <div class="wrap meet-row" data-reveal>
-          <div>
-            <p class="eyebrow">Meetings</p>
-            <h2 class="display" id="meet-title">A conference room in the middle of town.</h2>
-          </div>
-          <div>
-            <p class="body">A conference room and smaller meeting rooms, within walking distance of the banks and offices around Kigali City Tower, with the kitchen next door.</p>
-            <p class="quiet">Capacity and day rates <span class="tbc">to confirm</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section kiyovu" id="kiyovu" data-chapter="Kiyovu" aria-labelledby="kiyovu-title">
-        <div class="wrap kiyovu-grid">
-          <div class="kiyovu-copy" data-reveal>
-            <p class="eyebrow">Kiyovu</p>
-            <h2 class="display" id="kiyovu-title">The city centre is a short walk.</h2>
-            <p class="body">Straight-line distances from the hotel on OpenStreetMap. Point at a place to find it on the map.</p>
-            <ol class="near" id="near"></ol>
-          </div>
-          <figure class="map" id="map" data-reveal style="--d:120ms">
-            <div class="map-svg" id="map-svg"></div>
-            <figcaption>Map data © OpenStreetMap contributors</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="section visit" id="visit" data-chapter="Visit" aria-labelledby="visit-title">
-        <div class="wrap visit-grid">
-          <div class="card-visitor" data-reveal>
-            <p class="eyebrow">Visitor card</p>
-            <h2 class="display" id="visit-title">Okapi Hotel</h2>
-            <dl class="vc">
-              <div><dt>WhatsApp</dt><dd><a href="https://wa.me/250781471041" target="_blank" rel="noopener">+250 781 471 041</a></dd></div>
-              <div><dt>Reservations</dt><dd><a href="mailto:reservations@okapihotel.com">reservations@okapihotel.com</a></dd></div>
-              <div><dt>Address</dt><dd>KN 87 St, Kiyovu, Kigali <span class="tbc">to confirm</span></dd></div>
-              <div><dt>Check-in</dt><dd>13:00 – 23:00</dd></div>
-              <div><dt>Check-out</dt><dd>by 12:00</dd></div>
-              <div><dt>Front desk</dt><dd>24 hours · <b id="clock">--:--</b> now in Kigali</dd></div>
+      <!-- 07 book -->
+      <section class="section book chapter" id="book" data-num="08" aria-labelledby="bookH">
+        <div class="wrap book-grid">
+          <div class="book-copy">
+            <p class="eyebrow" data-rise><span class="num">08</span> Book direct</p>
+            <h2 class="display" id="bookH" data-rise>Write to the front desk.</h2>
+            <p class="body" data-rise>Choose a room and your dates. The message writes itself; you press send in WhatsApp and ask the front desk for the rate.</p>
+            <dl class="vc" data-rise>
+              <div><dt>WhatsApp or call</dt><dd><a href="tel:+250781471041">+250 781 471 041</a> <span class="fine">WhatsApp on this number <mark>to confirm</mark></span></dd></div>
+              <div><dt>Email</dt><dd>reservations@okapihotel.com <mark>to confirm</mark> <span class="fine">The old website is down, so this inbox may not work yet. Use WhatsApp or call.</span></dd></div>
+              <div><dt>Address</dt><dd>Listed as KN 12 87 St, Kiyovu, Kigali, near the Kiyovu roundabout <mark>to confirm</mark></dd></div>
+              <div><dt>Front desk</dt><dd>24 hours · <span id="clock2">--:--</span> now in Kigali</dd></div>
             </dl>
           </div>
-          <form class="card" id="book" data-wa="250781471041" data-hotel="Okapi Hotel" novalidate data-reveal style="--d:120ms">
-            <p class="card-title">Ask for a room</p>
-            <div class="field"><label for="room">Room</label>
+
+          <form class="composer" id="composer" novalidate data-rise style="--d:120ms">
+            <p class="composer-t">Ask for a room</p>
+            <div class="field">
+              <label for="room">Room</label>
               <select id="room" name="room"></select>
             </div>
+            <div class="row dates">
+              <div class="field"><label for="arrive">Arrival</label><input type="date" id="arrive" name="arrive"></div>
+              <div class="field"><label for="leave">Departure</label><input type="date" id="leave" name="leave"></div>
+            </div>
             <div class="row">
-              <div class="field"><label for="arrive">Arrival</label><input type="date" id="arrive" name="arrive" required></div>
-              <div class="field"><label for="leave">Departure</label><input type="date" id="leave" name="leave" required></div>
+              <div class="field">
+                <span class="flabel" id="adultsL">Adults</span>
+                <div class="stepper" role="group" aria-labelledby="adultsL">
+                  <button type="button" data-step="adults" data-d="-1" aria-label="One adult fewer">−</button>
+                  <output id="adults" aria-live="polite">2</output>
+                  <button type="button" data-step="adults" data-d="1" aria-label="One adult more">+</button>
+                </div>
+              </div>
+              <div class="field">
+                <span class="flabel" id="kidsL">Children</span>
+                <div class="stepper" role="group" aria-labelledby="kidsL">
+                  <button type="button" data-step="children" data-d="-1" aria-label="One child fewer">−</button>
+                  <output id="children" aria-live="polite">0</output>
+                  <button type="button" data-step="children" data-d="1" aria-label="One child more">+</button>
+                </div>
+              </div>
             </div>
-            <div class="field"><label for="guests">Guests</label>
-              <select id="guests" name="guests"><option>1 adult</option><option selected>2 adults</option><option>2 adults and 1 child</option></select>
+            <div class="field"><label for="name">Your name <span class="opt">(optional)</span></label><input id="name" name="name" autocomplete="name" maxlength="50"></div>
+            <div class="field"><label for="note">Anything else <span class="opt">(optional)</span></label><input id="note" name="note" maxlength="140" placeholder="An early arrival, a meeting room…"></div>
+            <p class="form-error" id="formError" role="alert"></p>
+            <div class="bubble" aria-live="polite">
+              <p class="bubble-k">Your message</p>
+              <p class="bubble-t" id="preview"></p>
+              <p class="bubble-n" id="nightsLine"></p>
             </div>
-            <p class="form-error" role="alert"></p>
-            <button class="btn btn-primary btn-lg" type="submit">Send on WhatsApp</button>
-            <p class="quiet small">Opens WhatsApp with your dates written out. The front desk replies with the rate.</p>
+            <a class="btn btn-wa btn-lg send" id="send" href="https://wa.me/250781471041" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg><span>Send on WhatsApp</span></a>
+            <p class="quiet center">or call <a href="tel:+250781471041">+250 781 471 041</a></p>
           </form>
         </div>
       </section>
@@ -184,10 +257,43 @@
 
     <footer class="footer">
       <div class="wrap foot">
-        <p><span class="wordmark small">Okapi</span> Hotel · Kiyovu, Kigali · <a href="https://wa.me/250781471041" target="_blank" rel="noopener">+250 781 471 041</a></p>
-        <p>Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" target="_blank" rel="noopener">Spectre Studio</a>, Kigali · <span data-year>2026</span></p>
+        <div>
+          <p class="wordmark">Okapi</p>
+          <p>Okapi Hotel · Kiyovu, Kigali</p>
+          <p><a href="tel:+250781471041">+250 781 471 041</a></p>
+          <p>reservations@okapihotel.com <mark>to confirm</mark></p>
+          <p>Kigali time <span id="clock3">--:--</span> · Front desk 24 hours</p>
+        </div>
+        <div class="foot-r">
+          <p>Photographs from Wikimedia Commons, <a href="#credits">credits in the gallery</a>. Map © OpenStreetMap contributors.</p>
+          <p>Preview made by <a href="https://lionsbest9.github.io/spectre-studio-site/" target="_blank" rel="noopener">Spectre Studio</a>, Kigali · <span data-year>2026</span></p>
+        </div>
       </div>
     </footer>
+
+    <nav class="dock" id="dock" aria-label="Contact Okapi Hotel">
+      <a class="dock-wa" id="dockWa" href="https://wa.me/250781471041" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 18.8z"/></svg><span>Ask for a room</span></a>
+      <a class="dock-call" href="tel:+250781471041" aria-label="Call +250 781 471 041"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.5l2.6.4 1.2 3.6-1.8 1.4a12 12 0 0 0 6.5 6.5l1.4-1.8 3.6 1.2.4 2.6a2 2 0 0 1-2 2.1A17 17 0 0 1 4.5 5.5a2 2 0 0 1 2.1-2z"/></svg><span>Call</span></a>
+    </nav>
+
+    <dialog class="lightbox" id="lightbox" aria-labelledby="lbTitle">
+      <div class="lb-stage" id="lbStage">
+        <img id="lbImg" alt="">
+      </div>
+      <div class="lb-bar">
+        <div class="lb-cap">
+          <p class="lb-no" id="lbNo"></p>
+          <p class="lb-t" id="lbTitle"></p>
+          <p class="lb-c" id="lbCap"></p>
+          <p class="lb-cr" id="lbCredit"></p>
+        </div>
+        <div class="lb-nav">
+          <button type="button" id="lbPrev" aria-label="Previous picture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+          <button type="button" id="lbNext" aria-label="Next picture"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+          <button type="button" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        </div>
+      </div>
+    </dialog>
 
   </body>
 </html>

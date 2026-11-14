@@ -1,150 +1,241 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f6f1e8">
-    <meta name="view-transition" content="same-origin">
-    <title>Polyclinique du Carrefour · Private polyclinic in Rebero, Kigali</title>
-    <meta name="description" content="Private polyclinic in Rebero, Gikondo, Kigali since 1998. Women's health, children's health, general medicine, mammography and radiography. Most services open 24 hours.">
-    <meta property="og:title" content="Polyclinique du Carrefour, Kigali">
-    <meta property="og:description" content="Private polyclinic in Rebero, Gikondo since 1998. Most services open 24 hours. Call +250 784 840 500.">
-    <meta property="og:image" content="./og.jpg">
+    <title>Polyclinique du Carrefour · Private polyclinic in Rebero, Gikondo, Kigali</title>
+    <meta name="description" content="Polyclinique du Carrefour (Clinique du Carrefour, Carrefour Polyclinic), KK 724 St, Rebero, Gikondo, Kigali, since 1998: general medicine, women's and children's health, mammography and radiography. Most services open 24 hours. Call +250 784 840 500 or write on WhatsApp. Preview site.">
+    <meta name="robots" content="noindex">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Polyclinique du Carrefour, Rebero, Kigali">
+    <meta property="og:description" content="Private polyclinic in Rebero, Gikondo since 1998. Most services open 24 hours. Call +250 784 840 500 or write on WhatsApp.">
+    <meta property="og:image" content="https://lionsbest9.github.io/spectre-studio-site/demos/clinique-carrefour/og.jpg">
+    <meta property="og:url" content="https://lionsbest9.github.io/spectre-studio-site/demos/clinique-carrefour/">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/spectre-studio-site/demos/clinique-carrefour/assets/index-nj8uFQtP.js"></script>
-    <link rel="stylesheet" crossorigin href="/spectre-studio-site/demos/clinique-carrefour/assets/index-C-CkBVgQ.css">
+    <link rel="preload" href="./fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <script type="module" crossorigin src="./assets/index-Bjtnzl04.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D57k026S.css">
   </head>
   <body>
     <a class="skip" href="#services">Skip to services</a>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-    <div class="preview-note" role="note">Website preview prepared by Spectre Studio for Polyclinique du Carrefour. Items marked “to confirm” await the clinic’s approval.</div>
+    <p class="preview-note" role="note">Website preview prepared by Spectre Studio for Polyclinique du Carrefour. Lines marked <mark>to confirm</mark> wait for the clinic.</p>
 
     <header class="top" id="top">
-      <div class="wrap">
-        <a class="brand" href="#top" aria-label="Polyclinique du Carrefour, home">
-          <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M13 4h6v9h9v6h-9v9h-6v-9H4v-6h9z"/></svg></span>
-          <span class="brand-text"><strong>Polyclinique du Carrefour</strong><small>Rebero, Kigali · since 1998</small></span>
+      <div class="wrap top-row">
+        <a class="brand" href="#hero" aria-label="Polyclinique du Carrefour, back to the top">
+          <span class="mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path class="roads" d="M16 3v8.5M16 20.5V29M3 16h8.5M20.5 16H29"/><circle class="ring" cx="16" cy="16" r="4.6"/></svg></span>
+          <span class="brand-text"><strong>Polyclinique du Carrefour</strong><small>Rebero, Gikondo · since 1998</small></span>
         </a>
-        <nav aria-label="Main">
-          <a class="nav-link" href="#services">Services</a>
-          <a class="nav-link" href="#visit-steps">Your visit</a>
-          <a class="nav-link" href="#visit">Find us</a>
-          <a class="btn btn-primary" href="tel:+250784840500"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Call</span></a>
+        <nav class="chapters" aria-label="Sections">
+          <a href="#services"><b>01</b> Services</a>
+          <a href="#visit"><b>02</b> Your visit</a>
+          <a href="#hours"><b>03</b> Hours &amp; map</a>
+          <a href="#message"><b>04</b> Contact</a>
         </nav>
+        <p class="count" aria-hidden="true"><span id="chap-num">00</span><small>/04</small></p>
+        <a class="btn btn-primary btn-call" href="tel:+250784840500"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Call</span></a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span class="burger" aria-hidden="true"><i></i><i></i></span></button>
+      </div>
+      <i class="progress" aria-hidden="true"></i>
+      <div class="menu" id="menu" hidden>
+        <nav aria-label="Menu">
+          <a href="#services"><b>01</b> Services</a>
+          <a href="#visit"><b>02</b> Your visit</a>
+          <a href="#hours"><b>03</b> Hours &amp; map</a>
+          <a href="#message"><b>04</b> Contact</a>
+        </nav>
+        <div class="menu-acts">
+          <a class="btn btn-primary" href="tel:+250784840500">Call</a>
+          <a class="btn btn-wa" href="https://wa.me/250784840500" data-wa="menu" rel="noopener">WhatsApp</a>
+        </div>
       </div>
     </header>
 
-    <main>
-      <section class="hero" id="hero" aria-label="Introduction">
+    <main id="main">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
         <div class="light" aria-hidden="true"><i class="l1"></i><i class="l2"></i><i class="l3"></i></div>
-        <div class="wrap hero-inner">
-          <p class="kicker"><span class="status" id="status"><i></i>Most services open 24 h</span> Private polyclinic · Rebero, Gikondo</p>
-          <h1 class="display hero-title">Care for <span class="word-swap" id="word-swap"><span>women,</span><span>children,</span><span>families,</span><span>you,</span></span><br>around the clock.</h1>
-          <p class="lead">A private polyclinic in Kigali since 1998: general medicine, women’s and children’s health, and the first private mammography and radiography service in Rwanda.</p>
-          <div class="actions">
-            <a class="btn btn-primary btn-lg" href="tel:+250784840500"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call +250 784 840 500</a>
-            <a class="btn btn-ghost btn-lg" href="https://wa.me/250784840500" target="_blank" rel="noopener">Message on WhatsApp</a>
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="status" id="status" data-rise><i></i><span id="status-text">Listed open 24 h for most services</span> <mark>to confirm</mark></p>
+            <p class="kicker" data-rise>Polyclinique privée · Rebero, Gikondo, Kigali <span class="aka">Also known as Clinique du Carrefour and Carrefour Polyclinic</span></p>
+            <h1 class="display hero-title" id="hero-title" data-rise aria-label="Care for women, children and families, since 1998.">Care for <span class="word-swap" id="word-swap" aria-hidden="true">families,</span><br>since 1998.</h1>
+            <p class="lead" data-rise>A private polyclinic in Kigali since 1998: general medicine, women’s and children’s health, mammography and radiography. By its own listing, the first private mammography service in Rwanda.</p>
+            <div class="actions" data-rise>
+              <a class="btn btn-primary btn-lg" href="tel:+250784840500"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call +250 784 840 500</a>
+              <a class="btn btn-wa btn-lg" href="#message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>Write on WhatsApp</a>
+            </div>
+            <p class="emergency" data-rise>Urgent? Call. For appointments and questions, WhatsApp writes the message for you. <span class="muted">Emergency care: <mark>to confirm</mark></span></p>
           </div>
-          <ul class="facts">
-            <li><b>24 h</b><span>most services, 7 days <sup class="tbc" title="To confirm with the clinic">*</sup></span></li>
-            <li><b>1998</b><span>serving Kigali since</span></li>
-            <li><b>Rebero</b><span>KK 724 St, Gikondo</span></li>
-          </ul>
+          <aside class="today tile" aria-label="Today at the clinic" data-rise>
+            <p class="today-k">Kigali, <time id="today-time">--:--</time> <span id="today-day"></span></p>
+            <svg class="dial" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="dial-track" cx="60" cy="60" r="50"/>
+              <circle class="dial-ring" cx="60" cy="60" r="50"/>
+              <g class="dial-ticks" id="dial-ticks"></g>
+              <g class="dial-hand" id="dial-hand"><line x1="60" y1="60" x2="60" y2="16"/><circle cx="60" cy="12" r="4.5"/></g>
+              <circle class="dial-hub" cx="60" cy="60" r="3"/>
+            </svg>
+            <p class="today-line" id="today-line">Listed: most services 24 hours, 7 days.</p>
+            <p class="today-note"><mark>All hours to confirm</mark></p>
+          </aside>
         </div>
-        <a class="scroll-cue" href="#services" aria-label="Scroll to services"><span></span></a>
+        <ul class="wrap facts" data-rise>
+          <li><b>24 h</b><span>most services, 7 days <mark class="tbc">to confirm</mark></span></li>
+          <li><b>1998</b><span>in Kigali since May 1998</span></li>
+          <li><b>1st</b><span>private mammography in Rwanda</span></li>
+          <li><b>KK 724 St</b><span>Rebero, Gikondo, Kicukiro</span></li>
+        </ul>
       </section>
 
-      <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
-
-      <section class="section" id="services" aria-labelledby="services-title">
-        <div class="wrap">
-          <div class="section-head" data-reveal>
-            <p class="kicker">01 · Services</p>
+      <section class="chapter section services-sec" id="services" data-num="01" aria-labelledby="services-title">
+        <div class="wrap services-grid">
+          <header class="chead" data-rise>
+            <p class="num">01 · Services</p>
             <h2 class="display" id="services-title">What we treat and test.</h2>
-            <p class="section-sub">Walk in, or call ahead so a doctor is ready for you.</p>
-          </div>
-          <div class="services" id="services-grid" data-reveal></div>
+            <p class="sub">Five services under one roof. Open one to see what to ask, then send the question on WhatsApp or call.</p>
+            <p class="sub small">Doctors and department names: <mark>to come from the clinic</mark></p>
+          </header>
+          <ul class="svc-list" id="svc-list"></ul>
         </div>
       </section>
 
-      <section class="steps" id="visit-steps" aria-labelledby="steps-title">
-        <div class="steps-pin">
-          <div class="wrap steps-grid">
-            <div class="steps-copy">
-              <p class="kicker">02 · Your visit, step by step</p>
-              <h2 class="display" id="steps-title">Three steps from the door to your results.</h2>
-              <ol class="step-list" id="step-list"></ol>
-            </div>
-            <div class="step-stage" aria-hidden="true">
-              <span class="step-num" id="step-num">1</span>
-              <p class="step-text" id="step-text"></p>
-              <div class="step-dots" id="step-dots"></div>
-            </div>
+      <section class="chapter section visit-sec" id="visit" data-num="02" aria-labelledby="visit-title">
+        <div class="wrap">
+          <header class="chead" data-rise>
+            <p class="num">02 · Your visit</p>
+            <h2 class="display" id="visit-title">From the door to your results.</h2>
+          </header>
+          <ol class="route" id="route"></ol>
+          <div class="photo-slots" data-rise>
+            <p class="photo-k">Photos of the clinic: <mark>to come from the clinic</mark></p>
+            <ul>
+              <li><span>The building on Rebero</span></li>
+              <li><span>Reception</span></li>
+              <li><span>Mammography and X-ray rooms</span></li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="band" aria-labelledby="why-title">
+        <figure class="hill" data-rise aria-hidden="true"><svg class="contours" viewBox="0 0 700 700" aria-hidden="true" focusable="false"><path d="M351.2 330.0 L351.0 333.0 L350.6 335.9 L350.0 338.9 L349.1 341.9 L347.7 344.8 L345.6 347.6 L343.0 350.1 L339.8 352.2 L336.1 354.1 L332.2 355.5 L328.1 356.8 L324.1 357.9 L320.2 358.9 L316.4 360.1 L312.7 361.5 L308.7 363.1 L304.6 364.7 L300.0 366.4 L295.0 367.8 L289.7 368.8 L284.2 369.2 L278.7 368.9 L273.5 368.0 L268.6 366.3 L264.2 364.1 L260.5 361.4 L257.3 358.4 L254.7 355.3 L252.6 352.1 L250.8 348.9 L249.3 345.7 L248.3 342.5 L247.7 339.3 L247.5 336.2 L248.0 333.0 L249.1 330.0 L250.7 327.1 L252.7 324.4 L255.0 322.0 L257.3 319.6 L259.5 317.4 L261.5 315.2 L263.2 312.8 L264.7 310.2 L266.1 307.4 L267.8 304.4 L269.9 301.4 L272.6 298.4 L275.9 295.6 L280.0 293.3 L284.6 291.6 L289.6 290.6 L294.8 290.2 L300.0 290.5 L305.1 291.2 L310.0 292.2 L314.7 293.5 L319.2 294.8 L323.6 296.2 L328.0 297.7 L332.2 299.3 L336.3 301.2 L340.1 303.2 L343.5 305.6 L346.4 308.3 L348.6 311.3 L350.1 314.4 L351.1 317.6 L351.5 320.8 L351.6 323.9 L351.4 327.0 Z" style="--k:0"/><path d="M393.6 334.0 L393.0 339.1 L392.1 344.1 L391.0 349.2 L389.2 354.2 L386.6 359.1 L383.1 363.7 L378.5 367.8 L373.0 371.5 L366.8 374.5 L360.2 377.0 L353.4 379.1 L346.7 381.0 L340.2 383.0 L333.9 385.1 L327.5 387.6 L320.9 390.4 L313.8 393.3 L306.0 396.2 L297.5 398.7 L288.4 400.5 L279.0 401.2 L269.6 400.7 L260.6 398.9 L252.3 396.0 L245.0 392.1 L238.7 387.4 L233.5 382.3 L229.2 376.9 L225.7 371.5 L222.9 366.0 L220.6 360.6 L218.8 355.1 L217.8 349.8 L217.6 344.4 L218.3 339.1 L219.9 334.0 L222.5 329.1 L225.7 324.6 L229.4 320.3 L233.1 316.3 L236.7 312.5 L239.9 308.6 L242.7 304.5 L245.3 300.0 L247.9 295.2 L250.8 290.1 L254.5 284.9 L259.1 279.9 L265.0 275.3 L271.9 271.5 L279.8 268.8 L288.3 267.2 L297.2 266.7 L306.0 267.2 L314.6 268.5 L322.8 270.3 L330.7 272.4 L338.4 274.7 L345.9 277.0 L353.3 279.4 L360.6 282.1 L367.6 285.0 L374.3 288.5 L380.2 292.5 L385.2 297.0 L389.2 302.0 L391.9 307.3 L393.6 312.8 L394.3 318.2 L394.4 323.6 L394.1 328.9 Z" style="--k:1"/><path d="M436.3 338.0 L435.1 345.2 L433.7 352.3 L431.7 359.4 L428.9 366.4 L425.1 373.2 L419.9 379.5 L413.4 385.3 L405.7 390.4 L397.0 394.7 L387.8 398.2 L378.4 401.3 L369.2 404.0 L360.2 406.9 L351.4 410.1 L342.5 413.8 L333.1 417.9 L323.1 422.3 L312.0 426.5 L299.9 430.1 L287.0 432.6 L273.6 433.6 L260.3 432.8 L247.5 430.2 L235.9 425.9 L225.7 420.2 L217.0 413.5 L209.9 406.1 L204.1 398.4 L199.3 390.6 L195.5 382.8 L192.4 375.2 L190.1 367.6 L188.6 360.0 L188.2 352.6 L189.0 345.2 L191.1 338.0 L194.4 331.1 L198.7 324.7 L203.6 318.6 L208.6 312.9 L213.5 307.4 L217.9 301.8 L221.8 295.9 L225.4 289.6 L229.1 282.8 L233.4 275.6 L238.8 268.3 L245.5 261.2 L253.9 255.0 L263.8 249.8 L275.1 246.1 L287.1 244.0 L299.6 243.5 L312.0 244.4 L324.0 246.3 L335.6 248.9 L346.6 251.8 L357.4 254.9 L367.9 258.0 L378.4 261.3 L388.8 264.8 L399.0 268.9 L408.6 273.6 L417.2 279.1 L424.5 285.5 L430.2 292.5 L434.3 300.0 L436.7 307.7 L437.8 315.5 L437.8 323.2 L437.2 330.7 Z" style="--k:2"/><path d="M479.2 342.0 L477.3 351.3 L475.0 360.5 L472.1 369.5 L468.2 378.4 L463.0 387.1 L456.2 395.2 L447.8 402.6 L437.8 409.0 L426.8 414.5 L415.1 419.2 L403.3 423.2 L391.6 427.0 L380.2 430.9 L368.9 435.3 L357.5 440.3 L345.5 445.9 L332.4 451.7 L318.0 457.2 L302.3 461.9 L285.4 465.1 L268.0 466.3 L250.8 465.2 L234.3 461.6 L219.4 455.9 L206.4 448.3 L195.4 439.4 L186.5 429.7 L179.3 419.6 L173.5 409.5 L168.7 399.5 L164.9 389.6 L161.9 379.9 L160.0 370.2 L159.3 360.7 L160.1 351.2 L162.5 342.0 L166.4 333.2 L171.5 324.8 L177.4 316.9 L183.6 309.4 L189.7 302.1 L195.2 294.7 L200.3 287.0 L205.0 278.8 L210.0 270.0 L215.7 260.7 L222.9 251.4 L231.8 242.5 L242.9 234.6 L255.9 228.2 L270.4 223.7 L286.0 221.2 L302.1 220.7 L318.0 222.0 L333.4 224.5 L348.2 227.8 L362.4 231.6 L376.2 235.4 L389.9 239.3 L403.5 243.3 L417.1 247.6 L430.5 252.6 L443.1 258.6 L454.6 265.6 L464.3 273.7 L471.9 282.8 L477.3 292.5 L480.5 302.6 L481.8 312.7 L481.7 322.8 L480.7 332.5 Z" style="--k:3"/><path d="M522.0 346.0 L519.2 357.4 L515.9 368.6 L512.0 379.6 L506.9 390.4 L500.3 400.8 L491.9 410.6 L481.6 419.5 L469.5 427.4 L456.2 434.2 L442.2 439.9 L428.0 445.0 L414.0 449.9 L400.2 455.0 L386.6 460.6 L372.7 467.1 L357.9 474.2 L341.8 481.5 L324.0 488.5 L304.5 494.3 L283.8 498.1 L262.3 499.4 L241.1 497.8 L221.0 493.2 L202.9 485.9 L187.2 476.3 L174.0 465.1 L163.4 453.0 L155.0 440.6 L148.1 428.1 L142.5 415.8 L138.0 403.8 L134.3 392.0 L131.8 380.3 L130.7 368.7 L131.3 357.2 L133.8 346.0 L138.1 335.2 L143.9 324.8 L150.8 315.1 L158.1 305.7 L165.2 296.6 L171.9 287.5 L178.2 277.9 L184.1 267.8 L190.5 257.0 L197.8 245.7 L206.9 234.5 L218.2 223.8 L231.9 214.4 L248.0 206.8 L265.9 201.5 L285.1 198.8 L304.6 198.4 L324.0 200.1 L342.7 203.2 L360.7 207.2 L378.0 211.7 L394.9 216.1 L411.7 220.6 L428.6 225.2 L445.5 230.3 L462.2 236.2 L478.0 243.3 L492.4 251.8 L504.7 261.7 L514.2 272.8 L520.9 284.8 L524.8 297.3 L526.3 309.9 L526.0 322.3 L524.4 334.3 Z" style="--k:4"/><path d="M564.7 350.0 L560.8 363.5 L556.4 376.6 L551.3 389.5 L544.9 402.1 L536.9 414.3 L526.9 425.8 L514.8 436.3 L500.8 445.6 L485.4 453.6 L469.2 460.6 L452.7 466.8 L436.4 472.9 L420.4 479.2 L404.4 486.3 L388.0 494.3 L370.5 502.9 L351.2 511.8 L330.0 520.2 L306.8 527.0 L282.0 531.5 L256.5 532.8 L231.4 530.6 L207.7 524.8 L186.5 515.8 L168.1 504.1 L153.0 490.6 L140.8 476.1 L131.2 461.2 L123.4 446.4 L117.0 432.0 L111.6 417.9 L107.3 404.0 L104.0 390.4 L102.4 376.8 L102.6 363.3 L105.0 350.0 L109.5 337.1 L115.9 324.8 L123.6 313.1 L131.8 301.9 L140.1 291.0 L148.1 280.0 L155.5 268.6 L162.8 256.5 L170.7 243.8 L179.7 230.6 L190.8 217.5 L204.5 205.1 L221.1 194.3 L240.3 185.7 L261.6 179.8 L284.2 176.8 L307.2 176.6 L330.0 178.6 L352.0 182.3 L373.1 187.0 L393.5 192.0 L413.5 197.0 L433.5 202.0 L453.7 207.1 L474.1 212.8 L494.2 219.5 L513.4 227.7 L530.8 237.7 L545.6 249.4 L557.2 262.6 L565.2 276.9 L569.7 291.8 L571.2 306.9 L570.4 321.7 L568.0 336.1 Z" style="--k:5"/><path d="M607.1 354.0 L602.0 369.5 L596.3 384.6 L589.9 399.4 L582.2 413.8 L572.9 427.6 L561.4 440.7 L547.6 452.8 L531.8 463.5 L514.4 472.9 L496.1 481.2 L477.5 488.7 L459.0 496.1 L440.8 503.8 L422.5 512.4 L403.5 521.9 L383.1 532.2 L360.8 542.6 L336.0 552.3 L308.9 560.1 L280.2 565.1 L250.7 566.3 L221.7 563.4 L194.5 556.3 L170.2 545.5 L149.4 531.7 L132.3 515.8 L118.7 498.9 L108.0 481.6 L99.3 464.5 L92.1 447.9 L85.9 431.8 L80.6 416.0 L76.5 400.3 L74.1 384.8 L73.8 369.3 L75.9 354.0 L80.5 339.1 L87.3 324.8 L95.7 311.1 L104.9 297.9 L114.4 285.1 L123.6 272.2 L132.4 259.0 L141.2 245.0 L150.7 230.4 L161.6 215.4 L174.9 200.6 L191.1 186.7 L210.5 174.5 L232.8 165.0 L257.4 158.5 L283.5 155.3 L309.9 155.2 L336.0 157.6 L361.2 161.8 L385.5 167.0 L408.9 172.5 L432.1 178.0 L455.4 183.3 L479.0 188.8 L502.9 195.1 L526.6 202.6 L549.2 211.8 L569.7 223.2 L587.2 236.8 L600.7 252.1 L609.9 268.8 L615.0 286.3 L616.4 303.9 L615.0 321.2 L611.6 337.9 Z" style="--k:6"/><path d="M649.1 358.0 L642.5 375.5 L635.5 392.5 L627.8 409.0 L618.8 425.2 L608.2 440.7 L595.3 455.5 L580.0 469.1 L562.5 481.3 L543.3 492.2 L523.0 501.8 L502.4 510.7 L481.9 519.5 L461.4 528.7 L440.7 538.9 L419.2 550.0 L395.9 562.0 L370.3 573.9 L342.0 584.9 L311.1 593.6 L278.3 598.9 L244.8 599.9 L212.0 596.2 L181.4 587.7 L154.1 574.9 L131.0 558.9 L112.1 540.6 L97.2 521.2 L85.3 501.6 L75.8 482.3 L67.7 463.6 L60.5 445.5 L54.3 427.8 L49.2 410.3 L45.8 392.8 L44.7 375.3 L46.3 358.0 L50.8 341.0 L57.9 324.6 L67.0 308.9 L77.3 293.8 L88.0 279.0 L98.5 264.3 L108.9 249.2 L119.3 233.4 L130.6 217.1 L143.5 200.3 L159.1 183.8 L177.9 168.5 L200.1 155.2 L225.6 144.7 L253.5 137.7 L282.9 134.4 L312.7 134.4 L342.0 137.1 L370.4 141.7 L397.7 147.3 L424.3 153.1 L450.7 158.9 L477.4 164.5 L504.6 170.3 L532.1 177.0 L559.5 185.2 L585.6 195.6 L609.3 208.5 L629.3 223.9 L644.7 241.5 L655.1 260.7 L660.6 280.7 L661.7 300.9 L659.4 320.7 L654.9 339.7 Z" style="--k:7"/><path d="M690.4 362.0 L682.4 381.5 L673.9 400.3 L664.9 418.6 L654.7 436.4 L642.8 453.7 L628.7 470.0 L612.0 485.2 L593.0 499.1 L572.2 511.4 L550.1 522.6 L527.6 533.0 L505.0 543.3 L482.4 554.1 L459.3 565.9 L435.1 578.7 L408.9 592.2 L380.0 605.7 L348.0 617.8 L313.2 627.3 L276.4 632.9 L238.9 633.5 L202.4 628.8 L168.4 618.7 L138.4 604.0 L113.0 585.7 L92.4 565.1 L76.2 543.2 L63.3 521.3 L52.8 499.8 L43.7 479.1 L35.5 459.1 L28.1 439.6 L21.7 420.3 L17.2 400.9 L15.2 381.4 L16.2 362.0 L20.5 342.9 L27.8 324.4 L37.6 306.5 L48.9 289.4 L60.9 272.8 L73.0 256.2 L85.1 239.3 L97.3 221.8 L110.5 203.7 L125.6 185.3 L143.5 167.3 L164.9 150.6 L190.1 136.2 L218.6 125.0 L249.7 117.5 L282.4 113.9 L315.4 114.0 L348.0 116.9 L379.5 121.8 L410.0 127.6 L439.8 133.7 L469.4 139.6 L499.5 145.3 L530.4 151.4 L561.7 158.5 L592.9 167.5 L622.6 179.0 L649.4 193.4 L672.0 210.7 L689.3 230.6 L700.7 252.4 L706.3 275.1 L706.9 297.9 L703.7 320.2 L697.8 341.6 Z" style="--k:8"/><path d="M731.1 366.0 L721.4 387.4 L711.5 408.0 L701.2 428.0 L689.9 447.5 L677.0 466.4 L661.8 484.5 L643.9 501.3 L623.6 516.8 L601.2 530.8 L577.5 543.6 L553.1 555.6 L528.5 567.5 L503.6 579.9 L478.1 593.4 L451.2 607.9 L422.0 623.0 L389.7 637.8 L354.0 651.0 L315.3 661.1 L274.4 666.8 L233.0 667.0 L192.9 661.1 L155.7 649.5 L123.0 632.8 L95.5 612.1 L73.3 589.1 L55.7 564.9 L41.8 540.6 L30.3 517.1 L20.1 494.5 L10.7 472.7 L1.9 451.4 L-5.9 430.3 L-11.8 409.0 L-15.0 387.5 L-14.7 366.0 L-10.7 344.7 L-3.1 324.0 L7.4 304.1 L19.8 284.9 L33.3 266.3 L47.2 247.9 L61.1 229.3 L75.3 210.1 L90.6 190.4 L107.9 170.5 L128.3 151.1 L152.3 133.1 L180.3 117.7 L211.9 105.7 L246.2 97.7 L282.0 93.9 L318.3 93.9 L354.0 97.0 L388.6 102.0 L422.2 108.0 L455.2 114.1 L488.3 120.1 L522.0 125.9 L556.6 132.1 L591.8 139.6 L626.8 149.3 L660.1 161.9 L690.1 178.0 L715.2 197.4 L734.2 219.7 L746.4 244.0 L752.1 269.4 L752.0 294.9 L747.5 319.7 L740.1 343.5 Z" style="--k:9"/><g class="contour-pin" transform="translate(294 326)"><circle r="16" class="halo"/><circle r="6"/></g></svg><figcaption>Rebero hill, Gikondo</figcaption></figure>
         <div class="wrap">
-          <div class="section-head on-dark" data-reveal>
-            <p class="kicker">03 · Why families choose us</p>
-            <h2 class="display" id="why-title">Experienced, equipped, and <em>open when you need us.</em></h2>
-          </div>
-          <ul class="why" id="why" data-reveal></ul>
+          <h2 class="display band-title" id="why-title" data-rise>In Kigali since 1998, and <em>first in Rwanda</em> for private mammography, by its own listing.</h2>
+          <ul class="why" id="why" data-rise></ul>
+          <p class="band-note" data-rise>Also listed by the Rwanda Biomedical Centre among private facilities approved for COVID-19 antigen tests (2021).</p>
         </div>
       </section>
 
-      <section class="section" id="visit" aria-labelledby="visit-title">
-        <div class="wrap visit-grid">
-          <div data-reveal>
-            <p class="kicker">04 · Find us</p>
-            <h2 class="display" id="visit-title">On Rebero hill, Gikondo.</h2>
-            <dl class="details">
+      <section class="chapter section hours-sec" id="hours" data-num="03" aria-labelledby="hours-title">
+        <div class="wrap hours-grid">
+          <div class="hours-copy">
+            <header class="chead" data-rise>
+              <p class="num">03 · Hours &amp; map</p>
+              <h2 class="display" id="hours-title">On Rebero hill, Gikondo.</h2>
+            </header>
+            <dl class="details" data-rise>
               <div><dt>Address</dt><dd>KK 724 Street, Rebero, Gikondo<br>Kicukiro, Kigali</dd></div>
-              <div><dt>Opening hours</dt><dd>Most services open 24 hours, 7 days.<br><span class="muted">Consultation hours by department: to confirm with the clinic.</span></dd></div>
-              <div><dt>Getting here</dt><dd><a class="link" href="https://www.google.com/maps/search/?api=1&query=Clinique%20Du%20Carrefour%20Gikondo%20-1.98689%2C30.07260" target="_blank" rel="noopener">Open directions in Google Maps</a></dd></div>
+              <div><dt>Hours</dt><dd>Listed: most services open 24 hours, 7 days. <mark>To confirm</mark><br><span class="muted">Consultation hours by department: <mark>to confirm with the clinic</mark>. Call before you come to check a doctor is free.</span></dd></div>
+              <div><dt>Fees &amp; insurance</dt><dd><mark>To confirm</mark>: consultation fees and the insurers the clinic accepts. <a class="link" href="#message" data-topic="fees">Ask about fees and insurance</a> before you come.</dd></div>
+              <div><dt>Parking</dt><dd><mark>To confirm</mark></dd></div>
+              <div><dt>Post</dt><dd>B.P. 1659, Kigali</dd></div>
             </dl>
+            <div class="acts" data-rise>
+              <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Clinique%20Du%20Carrefour%20Gikondo%20-1.98689%2C30.07260" target="_blank" rel="noopener">Directions in Google Maps</a>
+              <a class="btn btn-wa" href="https://wa.me/250784840500" data-wa="directions" rel="noopener">Ask the way on WhatsApp</a>
+            </div>
           </div>
-          <div class="map tile" data-reveal>
-            <figure>
-              <iframe title="Map showing Polyclinique du Carrefour in Rebero, Kigali" src="https://www.openstreetmap.org/export/embed.html?bbox=30.0666%2C-1.9919%2C30.0786%2C-1.9819&amp;layer=mapnik&amp;marker=-1.98689%2C30.07260" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </figure>
-          </div>
+          <figure class="map tile" data-rise>
+            <button class="map-frame" id="map-open" type="button" aria-haspopup="dialog" aria-label="Open the interactive map">
+              <img src="./map-rebero.webp" alt="Street map of Rebero and Gikondo with the clinic's listed position marked beside KK 31 Avenue" width="1200" height="960" loading="lazy">
+              <span class="map-chip">Open the interactive map</span>
+            </button>
+            <figcaption><span>Listed position · <mark>exact pin to confirm</mark>: two listings disagree.</span><span class="osm">© OpenStreetMap contributors</span></figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="section contact" id="contact" aria-labelledby="contact-title">
-        <div class="wrap contact-grid">
-          <div data-reveal>
-            <p class="kicker">05 · Contact</p>
-            <h2 class="display" id="contact-title">Talk to us.</h2>
-            <p class="section-sub">For emergencies, call. For questions and appointments, WhatsApp or email.</p>
+      <section class="chapter section message-sec" id="message" data-num="04" aria-labelledby="message-title">
+        <div class="wrap message-grid">
+          <div class="message-copy">
+            <header class="chead" data-rise>
+              <p class="num">04 · Contact</p>
+              <h2 class="display" id="message-title">Write to us. <em>Or call.</em></h2>
+              <p class="sub">Choose what you need and the message writes itself, in English or French. WhatsApp opens with it written; you press send.</p>
+            </header>
+            <ul class="contact-list" data-rise>
+              <li><span>Mobile</span><span class="nowrap"><a href="tel:+250784840500">+250 784 840 500</a> <mark>to confirm it is current</mark></span></li>
+              <li><span>Landline</span><span class="nowrap"><a href="tel:+250252578320">+250 252 578 320</a> <mark>to confirm</mark></span></li>
+              <li><span>Email</span><a href="mailto:polycliniqueducarrefour@gmail.com">polycliniqueducarrefour@gmail.com</a></li>
+              <li><span>Post</span><span>B.P. 1659, Kigali</span></li>
+            </ul>
           </div>
-          <ul class="contact-list" data-reveal>
-            <li><span>Mobile</span><a href="tel:+250784840500">+250 784 840 500</a></li>
-            <li><span>Landline</span><a href="tel:+250252578320">+250 252 578 320</a></li>
-            <li><span>WhatsApp</span><a href="https://wa.me/250784840500" target="_blank" rel="noopener">Message the clinic</a></li>
-            <li><span>Email</span><a href="mailto:polycliniqueducarrefour@gmail.com">polycliniqueducarrefour@gmail.com</a></li>
-            <li><span>Post</span><a>B.P. 1659, Kigali</a></li>
-          </ul>
+          <form class="composer tile" id="composer" novalidate data-rise aria-labelledby="composer-title">
+            <div class="composer-top">
+              <p class="composer-k" id="composer-title">WhatsApp message</p>
+              <fieldset class="lang">
+                <legend class="vh">Language of the message</legend>
+                <div class="seg" id="lang-seg"></div>
+              </fieldset>
+            </div>
+            <fieldset>
+              <legend><b>1</b> <span id="lg1">What do you need?</span></legend>
+              <div class="chips" id="topic-chips"></div>
+            </fieldset>
+            <fieldset>
+              <legend><b>2</b> <span id="lg2">Which service?</span></legend>
+              <div class="chips" id="service-chips"></div>
+            </fieldset>
+            <fieldset>
+              <legend><b>3</b> <span id="lg3">When?</span></legend>
+              <div class="chips" id="when-chips"></div>
+            </fieldset>
+            <div class="row">
+              <label class="name">
+                <span><span id="name-l">Your name</span> <i id="name-o">(optional)</i></span>
+                <input id="name" name="name" autocomplete="given-name" maxlength="40">
+              </label>
+              <label class="name insurer">
+                <span><span id="ins-l">Your insurer</span> <i id="ins-o">(optional)</i></span>
+                <input id="insurer" name="insurer" maxlength="40" placeholder="e.g. RSSB, MMI">
+              </label>
+            </div>
+            <div class="bubble" aria-live="polite"><p id="preview"></p></div>
+            <a class="btn btn-wa btn-lg send" id="send" href="https://wa.me/250784840500" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg><span id="send-l">Send on WhatsApp</span></a>
+            <p class="or">or call <a href="tel:+250784840500">+250 784 840 500</a></p>
+          </form>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div class="wrap foot">
+    <footer class="foot">
+      <div class="wrap foot-grid">
         <div>
-          <strong>Polyclinique du Carrefour</strong>
-          <p>Private polyclinic, Rebero, Gikondo, Kigali. Established May 1998.</p>
+          <p class="foot-name">Polyclinique du Carrefour</p>
+          <p>Private polyclinic · KK 724 St, Rebero, Gikondo, Kicukiro, Kigali · Established May 1998.</p>
+          <p class="foot-acts"><a href="tel:+250784840500">+250 784 840 500</a> · <a href="https://wa.me/250784840500" data-wa="footer" rel="noopener">WhatsApp</a> · <a href="mailto:polycliniqueducarrefour@gmail.com">Email</a></p>
         </div>
         <div class="foot-meta">
-          <span>Kigali, <time id="local-time">--:--</time></span>
-          <span>Website preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" target="_blank" rel="noopener">Spectre Studio</a></span>
+          <span>Kigali time <time id="local-time">--:--</time></span>
+          <span>Logo and photos: <mark>to come from the clinic</mark></span>
+          <span class="muted-foot"><i lang="fr">Carrefour</i>: French for crossroads</span>
+          <span>Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" target="_blank" rel="noopener">Spectre Studio</a></span>
         </div>
       </div>
     </footer>
+
+    <a class="pill" id="pill" href="#message" aria-label="Write to the clinic on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg><span>WhatsApp</span></a>
+    <nav class="bar" aria-label="Contact the clinic"><a class="bar-wa" href="#message">Write on WhatsApp</a><a class="bar-call" href="tel:+250784840500" aria-label="Call +250 784 840 500"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call</a></nav>
+
+    <dialog class="map-dialog" id="map-dialog" aria-label="Map of the clinic's area">
+      <div class="map-dialog-in">
+        <div class="map-dialog-head"><p>Rebero, Gikondo · <mark>pin to confirm</mark></p><button type="button" class="close" id="map-close" aria-label="Close the map">Close</button></div>
+        <div class="map-dialog-frame" id="map-dialog-frame"></div>
+      </div>
+    </dialog>
+
   </body>
 </html>

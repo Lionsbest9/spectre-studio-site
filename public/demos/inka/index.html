@@ -1,167 +1,331 @@
 <!doctype html>
-<html lang="en" data-architecture="paged-book">
+<html lang="en" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inka Steakhouse, Kimihurura, Kigali: the menu book</title>
-    <meta name="description" content="Inka Steakhouse in Kimihurura, Kigali. Rwandan beef only, cut by hand: sirloin, ribeye, T-bone, tomahawk, porterhouse. Open the menu and book a table. Preview site." />
+    <title>Inka Steakhouse, Kimihurura, Kigali: the menu, prices and a table</title>
+    <meta name="description" content="Inka Steakhouse in Kimihurura, Kigali. Rwandan beef only, cut by hand: the cuts and prices, Sunday brunch, the rooms, today's hours, and a table booked on WhatsApp. Preview site." />
     <meta name="robots" content="noindex" />
     <meta property="og:title" content="Inka Steakhouse, Kigali" />
-    <meta property="og:description" content="Rwandan beef only. Open the menu, choose your cut, book a table." />
+    <meta property="og:description" content="Rwandan beef only. See the cuts and prices, check if it is open now, and book a table on WhatsApp." />
     <meta property="og:image" content="../inka-og.jpg" />
     <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#131314" />
     <link rel="icon" href="../inka-favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Archivo+Black&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="../trio-assets/inka-DuiUfK8R.js"></script>
-    <link rel="modulepreload" crossorigin href="../trio-assets/util-CygybDpK.js">
-    <link rel="stylesheet" crossorigin href="../trio-assets/inka-BUG9vBer.css">
+    <script type="module" crossorigin src="./inka-assets/index-DW9uT9y_.js"></script>
+    <link rel="stylesheet" crossorigin href="./inka-assets/index-DYVnwTmt.css">
   </head>
   <body>
-    <a class="skip" href="#cuts">Skip to the menu</a>
+    <a class="skip" href="#menu">Skip to the menu</a>
 
-    <header class="strip">
-      <a class="logo" href="#cover">INKA<small>Steakhouse</small></a>
-      <p class="status" id="status" aria-live="polite"><i></i><span>Checking the hours</span></p>
-      <a class="btn" href="#table">Book a table</a>
+    <header class="top" id="top">
+      <a class="logo" href="#hero" aria-label="Inka Steakhouse, back to the top">INKA<small>Steakhouse</small></a>
+      <nav class="chapters" aria-label="Sections">
+        <a href="#menu"><b>01</b> Menu</a>
+        <a href="#brunch"><b>02</b> Brunch</a>
+        <a href="#house"><b>03</b> The house</a>
+        <a href="#rooms"><b>04</b> Rooms</a>
+        <a href="#photos"><b>05</b> Photos</a>
+        <a href="#book"><b>06</b> Book</a>
+        <a href="#find"><b>07</b> Hours</a>
+      </nav>
+      <a class="status" id="status" href="#find" aria-live="polite" aria-label="Opening hours and the way"><i></i><span>Checking the hours</span></a>
+      <p class="count" aria-hidden="true"><span id="chapNum">00</span><small>/07</small></p>
+      <a class="btn" id="topWa" href="https://wa.me/250780302666" rel="noopener">Book on WhatsApp</a>
+      <nav class="chips-nav" aria-label="Sections on this page">
+        <a href="#menu">Menu</a><a href="#brunch">Brunch</a><a href="#house">The chef</a><a href="#rooms">Rooms and groups</a><a href="#photos">Photos</a><a href="#book">Book</a><a href="#find">Hours and map</a>
+      </nav>
+      <i class="progress" aria-hidden="true"></i>
     </header>
 
-    <main class="book" id="menu" aria-label="Inka menu book">
-      <section class="spread" data-view="cover" id="cover" aria-label="Cover">
-        <article class="page cover">
-          <p class="kicker">Kimihurura · Kigali · since 2016</p>
-          <h1>Inka<span>Steakhouse</span></h1>
-          <p class="rule">Rwandan beef only.<br />Cut by hand.</p>
-          <p class="turn-hint">Turn the page <kbd>→</kbd></p>
-        </article>
-        <article class="page">
-          <p class="folio">The house</p>
-          <h2>Inka means cow.</h2>
-          <p class="body">Every steak on this menu is Rwandan beef, from farmers in this country, cut by hand in this kitchen. When Inka opened on 16 November 2016, The New Times called it the first steakhouse in Kigali.</p>
-          <div class="chef">
+    <main>
+      <!-- 00: what it is, the prices and the hours in the first screen -->
+      <section class="hero" id="hero" data-num="00" aria-labelledby="h1">
+        <div class="hero-text">
+          <p class="kicker" data-rise>Kimihurura · Kigali · since 2016</p>
+          <h1 id="h1" data-rise>Inka<span>Steakhouse</span></h1>
+          <p class="lede" data-rise>Rwandan beef only. Cut by hand. <em>Inka</em> means cow.</p>
+          <p class="proof" data-rise>
+            <a href="https://www.google.com/maps/search/?api=1&query=Inka%20Steakhouse%20Kigali" rel="noopener"><b>4.4</b> on Google · 807 reviews</a>
+            <a href="https://www.tripadvisor.com/Search?q=Inka%20Steakhouse%20Kigali" rel="noopener"><b>4.5</b> on TripAdvisor · 88 reviews</a>
+          </p>
+          <div class="hero-acts" data-rise>
+            <a class="btn big" href="#book">Book a table</a>
+            <a class="btn big ghost" href="#menu"><span class="nophone">See the cuts and prices</span><span class="onphone">Menu and prices</span></a>
+          </div>
+          <p class="hero-today" id="todayLine" data-rise>Open every day from 12:00. Kigali time <b id="clock">--:--</b></p>
+          <p class="hero-where" data-rise>2a KG 605 St, Kimihurura <a href="https://www.google.com/maps/search/?api=1&query=Inka%20Steakhouse%20Kigali" rel="noopener">Directions <span aria-hidden="true">↗</span></a> <a href="#find">Hours <span aria-hidden="true">↓</span></a></p>
+        </div>
+
+        <div class="hero-visual" data-rise>
+          <figure class="plate">
+            <div class="frame"><img src="./inka-assets/grill-960-DF6b2l0i.webp" srcset="./inka-assets/grill-640-DiCgWmaA.webp 640w, ./inka-assets/grill-960-DF6b2l0i.webp 960w" sizes="(max-width: 860px) 100vw, 46vw" width="960" height="720" alt="Tomahawk steaks over the flames of a grill (illustrative photo)" fetchpriority="high" /></div>
+            <figcaption>Illustrative photo, not Inka's own. <mark>To confirm</mark> Inka's photographs go here.</figcaption>
+          </figure>
+          <aside class="ticket" aria-label="From the grill">
+            <p class="ticket-k">From the grill <span>Rwf · 2018 prices · <mark>To confirm</mark></span></p>
+            <ul>
+              <li><span>Sirloin <small>200 g</small></span><b>6,500</b></li>
+              <li><span>Filet mignon <small>250 g</small></span><b>8,500</b></li>
+              <li><span>Tomahawk <small>900 g</small></span><b>17,000</b></li>
+              <li><span>Porterhouse <small>750 g</small></span><b>21,000</b></li>
+            </ul>
+            <a class="ticket-go" href="#menu">The whole menu <span aria-hidden="true">↓</span></a>
+          </aside>
+        </div>
+        <a class="next" href="#menu">Scroll for the menu <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <!-- 01: the menu -->
+      <section class="chapter menu" id="menu" data-num="01" aria-labelledby="menuH">
+        <header class="chead">
+          <p class="num" data-rise>01 · The menu</p>
+          <h2 id="menuH" data-rise>Eight ways to order beef.</h2>
+          <p data-rise>Every steak is Rwandan beef, from farmers in this country, cut by hand. Open a cut to see where it comes from on the animal.</p>
+          <p class="pricenote" data-rise><b>Prices in Rwandan francs, as last published</b> (Living in Kigali, May 2018). <mark>To confirm</mark> Today's prices come from the kitchen.</p>
+        </header>
+
+        <div class="cuts-wrap">
+          <ol class="cuts" id="cuts"></ol>
+          <aside class="chart" aria-live="polite">
+            <div class="tilt">
+              <svg viewBox="0 0 400 240" role="img" aria-label="Where each cut comes from on the animal" id="cow">
+                <defs><clipPath id="body"><path d="M84 96C96 74 132 66 172 67L302 64C334 64 352 74 358 94C362 116 360 140 352 160L349 214H333L330 174C322 178 312 178 306 174L304 214H289L287 170C248 178 200 180 160 174L156 214H141L137 172C130 170 125 167 121 163L118 214H103L101 152C95 142 91 132 88 122L72 128C62 136 48 138 40 131C31 123 31 108 37 100C45 88 58 83 68 84Z" /></clipPath></defs>
+                <g clip-path="url(#body)">
+                  <rect class="r" x="20" y="40" width="140" height="190" />
+                  <rect class="r" data-r="rib" x="160" y="40" width="52" height="82" />
+                  <rect class="r" data-r="loin" x="212" y="40" width="50" height="72" />
+                  <rect class="r" data-r="sirloin" x="262" y="40" width="44" height="82" />
+                  <rect class="r" x="306" y="40" width="70" height="190" />
+                  <rect class="r" x="160" y="122" width="146" height="108" />
+                  <rect class="r" data-r="tender" x="212" y="112" width="94" height="10" />
+                </g>
+                <path class="outline" d="M84 96C96 74 132 66 172 67L302 64C334 64 352 74 358 94C362 116 360 140 352 160L349 214H333L330 174C322 178 312 178 306 174L304 214H289L287 170C248 178 200 180 160 174L156 214H141L137 172C130 170 125 167 121 163L118 214H103L101 152C95 142 91 132 88 122L72 128C62 136 48 138 40 131C31 123 31 108 37 100C45 88 58 83 68 84Z" />
+                <path class="outline thin" d="M66 86C62 76 52 70 42 72M74 84C80 74 92 72 100 76M356 88C368 104 370 132 364 154M364 154l-4 10 8-2Z" />
+                <g class="names" text-anchor="middle"><text x="124" y="112">CHUCK</text><text x="186" y="96">RIB</text><text x="237" y="88">LOIN</text><text x="284" y="96">SIRLOIN</text><text x="332" y="118">ROUND</text><text x="233" y="150">PLATE · FLANK</text></g>
+              </svg>
+            </div>
+            <p class="from" id="from">From the rib</p>
+            <p class="about" id="about">Open a cut to see where it comes from.</p>
+            <p class="pair" id="pair"></p>
+            <p class="fine">Where a cut comes from is general butchery. The pairing is a common one, not the chef's. <mark>To confirm</mark> Her own pairings.</p>
+          </aside>
+        </div>
+
+        <div class="kitchen">
+        <div class="more" id="more">
+          <h3 class="more-h" data-rise>Also from the kitchen</h3>
+          <details class="acc" data-rise open>
+            <summary><span>To start</span><i aria-hidden="true"></i></summary>
+            <div class="acc-in"><ul class="lines">
+              <li><span>Tomato, watermelon and basil gazpacho</span><b>5,500</b></li>
+              <li><span>Soup of the day</span><b>5,500</b></li>
+              <li><span>Salmon carpaccio</span><b class="ask">ask</b></li>
+            </ul></div>
+          </details>
+          <details class="acc" data-rise>
+            <summary><span>Salads</span><i aria-hidden="true"></i></summary>
+            <div class="acc-in"><ul class="lines">
+              <li><span>Chicken Caesar, big enough to share</span><b>8,000</b></li>
+              <li><span>Caprese</span><b>8,000</b></li>
+              <li><span>Prawn</span><b class="ask">ask</b></li>
+            </ul></div>
+          </details>
+          <details class="acc" data-rise>
+            <summary><span>Other mains</span><i aria-hidden="true"></i></summary>
+            <div class="acc-in"><ul class="lines">
+              <li><span>Surf and turf: tenderloin with king prawn</span><b>12,000</b></li>
+              <li><span>Burger</span><b>8,000</b></li>
+              <li><span>Tagliatelle</span><b>8,500</b></li>
+              <li><span>Sesame chicken with ratatouille</span><b class="ask">ask</b></li>
+            </ul></div>
+          </details>
+          <details class="acc" data-rise>
+            <summary><span>To finish</span><i aria-hidden="true"></i></summary>
+            <div class="acc-in"><ul class="lines">
+              <li><span>Pear poached in coconut rum, dark chocolate</span><b>8,500</b></li>
+              <li><span>Warm bread pudding</span><b>7,500</b></li>
+              <li><span>Coffee trio: milkshake, cake and jelly</span><b>8,000</b></li>
+            </ul></div>
+          </details>
+          <details class="acc acc-bar" data-rise>
+            <summary><span>The bar</span><i aria-hidden="true"></i></summary>
+            <div class="acc-in">
+              <ul class="lines drinks">
+                <li><span><b class="dn">Spicy Inka</b> spiced rum, apple, lemon, cinnamon syrup</span></li>
+                <li><span><b class="dn">Tangawizi Lemonade</b> ginger, passion fruit, dark rum, cinnamon syrup</span></li>
+                <li><span><b class="dn">Ikimasa</b> the house answer to a Long Island iced tea</span></li>
+                <li><span><b class="dn">Wine</b> a cabinet stocked mostly by Thelema, a South African winery</span></li>
+                <li><span><b class="dn">Whiskey</b> by the shot, or a bottle for the table: Jameson, Johnnie Walker Black</span></li>
+                <li><span><b class="dn">Beer</b> Mützig, Heineken</span></li>
+              </ul>
+            </div>
+          </details>
+          <p class="fine" data-rise>Dishes and drinks as reviewed by Living in Kigali (2018) and The New Times (2016). "ask" means no price was published. <mark>To confirm</mark> The kitchen's current card replaces this list.</p>
+        </div>
+        <div class="withit">
+          <div class="sauce" data-rise>
+            <h3>Six sauces</h3>
+            <ul class="chips"><li>Red wine</li><li>Green peppercorn</li><li>Mushroom</li><li>Whole grain</li><li>Chimichurri</li><li>Salsa verde</li></ul>
+          </div>
+          <div class="sauce" data-rise>
+            <h3>Six sides <small>2,500 each in 2019</small></h3>
+            <ul class="chips"><li>Mashed potato</li><li>Garlic and herb roast potatoes</li><li>Creamed spinach</li><li>Ratatouille</li><li>Sautéed vegetables</li><li>Mizuzu, fried plantain</li></ul>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- 02: Sunday brunch -->
+      <section class="chapter brunch" id="brunch" data-num="02" aria-labelledby="brH">
+        <div class="brunch-in">
+          <p class="num" data-rise>02 · Sundays</p>
+          <h2 id="brH" data-rise>Sunday brunch.</h2>
+          <p class="price-big"><span>Rwf</span> <b>27,000</b></p>
+          <p data-rise>As listed by Living in Kigali in July 2024. <mark>To confirm</mark> Today's price, the hours and what it includes.</p>
+          <div class="acts" data-rise>
+            <button type="button" class="btn" data-book="brunch">Book Sunday brunch</button>
+            
+          </div>
+        </div>
+        <div class="sun-card" data-rise aria-label="The coming Sunday">
+          <p class="sun-k" id="sunK">This Sunday</p>
+          <p class="sun-d"><b id="sunNum">16</b><span id="sunMonth">November</span></p>
+          <p class="sun-h">Inka is open <b>12:00 to 22:00</b> on Sundays.</p>
+          <p class="sun-n"><mark>To confirm</mark> Brunch hours.</p>
+        </div>
+      </section>
+
+      <!-- 03: the house and the chef -->
+      <section class="chapter house" id="house" data-num="03" aria-labelledby="hoH">
+        <div class="house-text">
+          <p class="num" data-rise>03 · The house</p>
+          <h2 id="hoH" data-rise>Inka means cow.</h2>
+          <p class="big" data-rise>When Inka opened on 16 November 2016, The New Times called it the first steakhouse in Kigali.</p>
+          <p data-rise>Every steak is Rwandan beef, from farmers in this country, cut by hand. Living in Kigali noted in 2019 that Inka also serves aged beef.</p>
+          <div class="chef" data-rise>
             <figure class="portrait"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 30v16h24V30M18 30a9 9 0 0 1 4-17 11 11 0 0 1 20 0 9 9 0 0 1 4 17zM24 52h16" /></svg><figcaption>Her photograph, to come</figcaption></figure>
             <div>
               <p class="who">Nicole Ansoni</p>
               <p class="role">Chef and owner</p>
-              <p class="body small">Nineteen years of cooking. She brings her Rwandan and Ethiopian heritage to the kitchen, and champions local farmers and African cuisine.</p>
+              <p>Nineteen years of cooking. She brings her Rwandan and Ethiopian heritage to the kitchen, and champions local farmers and African cuisine.</p>
+              <blockquote class="quote-slot"><mark>To confirm</mark> Nicole's own words about the beef and the farmers go here.</blockquote>
+              <p class="links"><a class="chiplink" href="https://www.facebook.com/inkasteakhouse" rel="noopener">Facebook</a><a class="chiplink" href="https://www.instagram.com/inkasteakhouse" rel="noopener">Instagram</a></p>
             </div>
           </div>
-          <p class="slotline"><mark>To confirm</mark> A photograph of Nicole and her own words go here. Until then:<br /><a class="chiplink" href="https://www.facebook.com/inkasteakhouse" rel="noopener">Facebook</a><a class="chiplink" href="https://www.instagram.com/inkasteakhouse" rel="noopener">Instagram</a></p>
-          <ul class="inside">
-            <li><a href="#cuts"><b>The cuts</b><span>eight ways to order beef</span><i>03</i></a></li>
-            <li><a href="#kitchen"><b>The kitchen</b><span>sauces, sides, the rest</span><i>05</i></a></li>
-            <li><a href="#bar"><b>The bar</b><span>cocktails, whiskey room, fire</span><i>07</i></a></li>
-            <li><a href="#table"><b>Your table</b><span>hours, the way here, booking</span><i>09</i></a></li>
-          </ul>
-        </article>
+        </div>
+        <figure class="house-photo par" data-rise>
+          <span class="ph"><img src="./inka-assets/imigongo-1280-h6MjQIeG.webp" srcset="./inka-assets/imigongo-640-CbpiEaeh.webp 640w, ./inka-assets/imigongo-1280-h6MjQIeG.webp 1280w" sizes="(max-width: 860px) 100vw, 40vw" width="1280" height="774" alt="Imigongo, Rwandan relief art in black, white and red zigzags" loading="lazy" /></span>
+          <figcaption>Imigongo, the relief art of Rwanda. Illustrative. Photo: Ji-Elle, CC BY-SA 3.0</figcaption>
+        </figure>
       </section>
 
-      <section class="spread" data-view="cuts" id="cuts" aria-label="The cuts">
-        <article class="page">
-          <p class="folio">The cuts</p>
-          <ol class="index" id="index">
-            <li><button type="button" data-cut="sirloin"><span class="t">Sirloin</span><span class="w">200 g</span></button></li>
-            <li><button type="button" data-cut="ribeye"><span class="t">Ribeye</span><span class="w">boneless</span></button></li>
-            <li><button type="button" data-cut="filet"><span class="t">Filet mignon</span><span class="w">250 g</span></button></li>
-            <li><button type="button" data-cut="tbone"><span class="t">T-bone</span><span class="w">on the bone</span></button></li>
-            <li><button type="button" data-cut="ribbone"><span class="t">Bone-in ribeye</span><span class="w">full rib</span></button></li>
-            <li><button type="button" data-cut="tomahawk"><span class="t">Tomahawk</span><span class="w">900 g</span></button></li>
-            <li><button type="button" data-cut="porterhouse"><span class="t">Porterhouse</span><span class="w">750 g</span></button></li>
-            <li><button type="button" data-cut="trio"><span class="t">Tasting trio</span><span class="w">three cuts</span></button></li>
-          </ol>
-          <p class="fine"><span class="taphint">Tap a cut to see where it comes from. </span><mark>To confirm</mark> Cuts and weights as last published. Prices to confirm.</p>
-        </article>
-        <article class="page chartpage" aria-live="polite">
-          <p class="folio">The cut: <span id="cutname">Ribeye</span></p>
-          <div class="tilt">
-            <svg viewBox="0 0 400 250" role="img" aria-label="Diagram of where each cut comes from">
-              <defs><clipPath id="body"><path d="M90 82Q90 62 120 62L320 60Q352 62 352 96L350 150Q348 168 320 168L120 170Q92 168 90 150Z" /></clipPath></defs>
-              <g class="legs"><rect x="112" y="160" width="15" height="62" rx="5" /><rect x="142" y="160" width="15" height="56" rx="5" /><rect x="288" y="160" width="15" height="56" rx="5" /><rect x="318" y="160" width="15" height="62" rx="5" /></g>
-              <path class="head" d="M94 76L60 60Q42 56 35 74L30 100Q32 113 48 111L78 105Q90 101 94 92Z" />
-              <path class="head" d="M62 60L56 44L72 56Z" />
-              <path class="tail" d="M352 84q16 22 8 62" />
-              <g clip-path="url(#body)">
-                <rect class="r" x="80" y="50" width="75" height="130" />
-                <rect class="r" data-r="rib" x="155" y="50" width="54" height="72" />
-                <rect class="r" data-r="loin" x="209" y="50" width="50" height="62" />
-                <rect class="r" data-r="sirloin" x="259" y="50" width="40" height="72" />
-                <rect class="r" x="299" y="50" width="60" height="130" />
-                <rect class="r" x="155" y="122" width="144" height="60" />
-                <rect class="r" data-r="tender" x="209" y="112" width="90" height="10" />
-              </g>
-              <path class="outline" d="M90 82Q90 62 120 62L320 60Q352 62 352 96L350 150Q348 168 320 168L120 170Q92 168 90 150Z" />
-              <g class="names" fill="#d6d3cd" stroke="none" font-size="8.5" font-weight="700" text-anchor="middle"><text x="118" y="112">CHUCK</text><text x="182" y="90">RIB</text><text x="234" y="84">LOIN</text><text x="279" y="90">SIRLOIN</text><text x="326" y="112">ROUND</text><text x="227" y="152">PLATE AND FLANK</text></g>
-            </svg>
+      <!-- 04: where to sit, and groups -->
+      <section class="chapter rooms" id="rooms" data-num="04" aria-labelledby="roH">
+        <header class="chead">
+          <p class="num" data-rise>04 · Where to sit</p>
+          <h2 id="roH" data-rise>Booths, the bar, a whiskey room and a fire.</h2>
+          <p data-rise>As described when Inka opened. Ask for the one you want when you book. Reviewers advise booking: the room is small.</p>
+        </header>
+        <ul class="room-list">
+          <li class="room" data-rise style="--d: 0ms">
+            <span class="room-ph"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34V14q0-8 8-8h36q8 0 8 8v20M6 24h52M14 34v-4M50 34v-4"/></svg><em>Photo to come from Inka</em></span>
+            <b>The booths</b><span>Leather, in the dining room.</span>
+            <button type="button" class="chiplink" data-seat="A booth">Ask for a booth</button>
+          </li>
+          <li class="room" data-rise style="--d: 80ms">
+            <span class="room-ph"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M4 14h56M12 14v22M52 14v22M24 14V6h6v8M36 14V4h4v10M22 36h-6M48 36h6"/></svg><em>Photo to come from Inka</em></span>
+            <b>The bar and lounge</b><span>With well-placed screens. Guests report fast Wi-Fi (2018).</span>
+            <button type="button" class="chiplink" data-seat="The bar">Ask for the bar</button>
+          </li>
+          <li class="room whiskey" data-rise style="--d: 160ms">
+            <span class="room-ph"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M20 8h24l-3 26H23zM22 22h20M30 27h4"/></svg><em>Photo to come from Inka</em></span>
+            <b>The whiskey room</b><span>A room of its own.</span>
+            <button type="button" class="chiplink" data-seat="The whiskey room, if it can be booked">Ask about it</button>
+          </li>
+          <li class="room fire" data-rise style="--d: 240ms">
+            <span class="room-ph"><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M32 4q10 10 6 18 6-2 6-9 8 10 2 19-5 6-14 6t-14-6q-5-8 2-17 1 6 5 7-2-9 7-18zM14 38h36"/></svg><em>Photo to come from Inka</em></span>
+            <b>The fire</b><span>A campfire area outside, for cold nights.</span>
+            <button type="button" class="chiplink" data-seat="By the fire">Ask for the fire</button>
+          </li>
+        </ul>
+        <div class="groups" data-rise>
+          <div>
+            <h3>Birthdays, business dinners, a whole table of friends.</h3>
+            <p>Ask about a group by message, and say if you would like the whiskey room. <mark>To confirm</mark> How many make a group, whether the whiskey room can be booked, and any group menu.</p>
           </div>
-          <p class="from" id="from">From the rib</p>
-          <p class="body" id="about">Pick a cut to see where it comes from.</p>
-          <p class="pair" id="pair"></p>
-          <figure class="slot photo"><img src="../trio-photos/grill.webp" width="960" height="420" alt="Tomahawk steaks over the flames of a grill" loading="lazy" /><figcaption>Illustrative. <mark>To confirm</mark> Inka's own photographs go here. Photo: <a href="https://commons.wikimedia.org/wiki/File:Tomahawk_steaks_on_the_grill.jpg" rel="noopener">StoppedTime, CC0</a></figcaption></figure>
-          <p class="fine"><mark>To confirm</mark> Today's list and prices come from the kitchen. The pairing is our suggestion, not the chef's.</p>
-        </article>
+          <button type="button" class="btn" data-book="group">Ask about a group</button>
+        </div>
       </section>
 
-      <section class="spread" data-view="kitchen" id="kitchen" aria-label="The kitchen">
-        <article class="page">
-          <p class="folio">With your steak</p>
-          <h2>Six sauces.</h2>
-          <ul class="chips" id="sauces">
-            <li>Red wine</li><li>Green peppercorn</li><li>Mushroom</li><li>Whole grain</li><li>Chimichurri</li><li>Salsa verde</li>
-          </ul>
-          <h2 class="second">Six sides.</h2>
-          <ul class="chips alt">
-            <li>Mashed potato</li><li>Garlic and herb roast potatoes</li><li>Creamed spinach</li><li>Ratatouille</li><li>Sautéed vegetables</li><li>Mizuzu <small>fried plantain</small></li>
-          </ul>
-          <p class="fine"><mark>To confirm</mark> As last published.</p>
-        </article>
-        <article class="page">
-          <p class="folio">Also from the kitchen</p>
-          <dl class="lines">
-            <div><dt>To start</dt><dd>Tomato, watermelon and basil gazpacho · Soup of the day · Salmon carpaccio</dd></div>
-            <div><dt>Salads</dt><dd>Chicken Caesar, big enough to share · Caprese · Prawn</dd></div>
-            <div><dt>Not steak</dt><dd>Surf and turf: tenderloin with king prawn · Burger · Tagliatelle · Sesame chicken with ratatouille</dd></div>
-            <div><dt>To finish</dt><dd>Pear poached in coconut rum with dark chocolate · Warm bread pudding · Coffee trio: milkshake, cake and jelly</dd></div>
-          </dl>
-          <figure class="slot photo"><img src="../trio-photos/rib.webp" width="960" height="420" alt="A rib of beef on the bone, on a wooden board" loading="lazy" /><figcaption>Illustrative. <mark>To confirm</mark> Inka's own photographs go here. Photo: <a href="https://commons.wikimedia.org/wiki/File:-2022-07-24_Tomahawk_Rib_eye_steak,_Trimingham,_Norfolk.JPG" rel="noopener">Kolforn, CC BY-SA 4.0</a></figcaption></figure>
-          <p class="fine"><mark>To confirm</mark> Dishes as reviewed by Living in Kigali and The New Times. The kitchen's current card replaces this page.</p>
-        </article>
+      <!-- 05: photos -->
+      <section class="chapter photos" id="photos" data-num="05" aria-labelledby="phH">
+        <header class="chead">
+          <p class="num" data-rise>05 · Photos</p>
+          <h2 id="phH" data-rise>The beef, and the city.</h2>
+          <p data-rise>Illustrative photographs, not Inka's own. <mark>To confirm</mark> Inka's own photographs replace these. Press one to see it large<span class="onphone">; swipe for more</span>.</p>
+        </header>
+        <div class="gallery" id="gallery">
+          <figure class="g tall" data-rise><button type="button" class="shot" data-i="0" aria-label="See larger: sliced ribeye"><img src="./inka-assets/ribeye-640-DwZc5Lbk.webp" srcset="./inka-assets/ribeye-640-DwZc5Lbk.webp 640w, ./inka-assets/ribeye-1280-BmRSSubs.webp 1280w" sizes="(max-width: 860px) 84vw, 55vw" width="1280" height="1707" loading="lazy" alt="Sliced ribeye steak, pink in the middle, fresh off the grill" data-cap="Ribeye, hot off the grill. Photo: HungryHuy, CC BY 2.0" /></button><figcaption>Ribeye, sliced. Photo: HungryHuy, CC BY 2.0</figcaption></figure>
+          <figure class="g" data-rise style="--d: 80ms"><button type="button" class="shot" data-i="1" aria-label="See larger: tomahawk on a board"><img src="./inka-assets/rib-640-xb8NjNH5.webp" srcset="./inka-assets/rib-640-xb8NjNH5.webp 640w, ./inka-assets/rib-1280-zvxJAqbR.webp 1280w" sizes="(max-width: 860px) 84vw, 40vw" width="1280" height="707" loading="lazy" alt="A tomahawk rib eye on the bone, on a wooden board" data-cap="A tomahawk rib eye on a board. Photo: Kolforn, CC BY-SA 4.0" /></button><figcaption>A tomahawk on the board. Photo: Kolforn, CC BY-SA 4.0</figcaption></figure>
+          <figure class="g" data-rise style="--d: 160ms"><button type="button" class="shot" data-i="2" aria-label="See larger: Kigali"><img src="./inka-assets/kigali-640-BMil_WZg.webp" srcset="./inka-assets/kigali-640-BMil_WZg.webp 640w, ./inka-assets/kigali-1280-Bd55uk2M.webp 1280w" sizes="(max-width: 860px) 84vw, 40vw" width="1280" height="607" loading="lazy" alt="Kigali's hills and skyline" data-cap="Kigali's hills and skyline. Photo: Honeybarger, CC BY-SA 4.0" /></button><figcaption>Kigali's hills. Photo: Honeybarger, CC BY-SA 4.0</figcaption></figure>
+        </div>
       </section>
 
-      <section class="spread" data-view="bar" id="bar" aria-label="The bar">
-        <article class="page">
-          <p class="folio">The bar</p>
-          <h2>House cocktails.</h2>
-          <dl class="drinks">
-            <div><dt>Spicy Inka</dt><dd>Spiced rum, apple, lemon, cinnamon syrup</dd></div>
-            <div><dt>Tangawizi Lemonade</dt><dd>Ginger, passion fruit, dark rum, cinnamon syrup</dd></div>
-            <div><dt>Ikimasa</dt><dd>The house answer to a Long Island iced tea</dd></div>
-          </dl>
-          <dl class="lines shelf">
-            <div><dt>Wine</dt><dd>A cabinet stocked mostly by Thelema, a South African winery</dd></div>
-            <div><dt>Whiskey</dt><dd>By the shot, or a bottle for the table: Jameson, Johnnie Walker Black</dd></div>
-            <div><dt>Beer</dt><dd>Mützig, Heineken</dd></div>
-          </dl>
-          <p class="fine"><mark>To confirm</mark> As last published.</p>
-        </article>
-        <article class="page">
-          <p class="folio">Where to sit</p>
-          <ul class="rooms">
-            <li><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M6 34V14q0-8 8-8h36q8 0 8 8v20M6 24h52M14 34v-4M50 34v-4"/></svg><b>The booths</b><span>Leather, in the dining room.</span><a class="chiplink" href="#book" data-pick="A booth">Book a booth</a></li>
-            <li><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M4 14h56M12 14v22M52 14v22M24 14V6h6v8M36 14V4h4v10M22 36h-6M48 36h6"/></svg><b>The bar and lounge</b><span>With well-placed screens.</span><a class="chiplink" href="#book" data-pick="The bar">Book at the bar</a></li>
-            <li><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M20 8h24l-3 26H23zM22 22h20M30 27h4"/></svg><b>The whiskey room</b><span>A room of its own.</span><a class="chiplink" href="#book" data-pick="The whiskey room, if it can be booked">Ask about it</a></li>
-            <li><svg viewBox="0 0 64 40" aria-hidden="true"><path d="M32 4q10 10 6 18 6-2 6-9 8 10 2 19-5 6-14 6t-14-6q-5-8 2-17 1 6 5 7-2-9 7-18zM14 38h36"/></svg><b>The fire</b><span>Outside, for a drink on a cold Kigali evening.</span><a class="chiplink" href="#book" data-pick="By the fire">Book by the fire</a></li>
+      <!-- 06: book -->
+      <section class="chapter book" id="book" data-num="06" aria-labelledby="bkH">
+        <div class="book-intro">
+          <p class="num" data-rise>06 · Your table</p>
+          <h2 id="bkH" data-rise>A small room. Book ahead.</h2>
+          <p data-rise>Fill this in and WhatsApp opens with your message written. You press send; Inka replies on the same chat.</p>
+          <ul class="ways" data-rise>
+            <li><b>WhatsApp</b> <a id="waNum" href="https://wa.me/250780302666" rel="noopener">+250 780 302 666</a></li>
+            <li><b>Call</b> <a href="tel:+250780302666">0780 302 666</a></li>
+            <li><b>Email</b> <a href="mailto:reservations@inka-steakhouse.com">reservations@inka-steakhouse.com</a></li>
           </ul>
-          <p class="fine"><mark>To confirm</mark> Rooms as described when Inka opened. Guests report fast Wi-Fi.</p>
-        </article>
+        </div>
+        <form id="bookform" class="composer" novalidate>
+          <div class="seg" role="group" aria-label="What are you booking?">
+            <button type="button" data-for="table" aria-pressed="true">A table</button>
+            <button type="button" data-for="brunch" aria-pressed="false">Sunday brunch</button>
+            <button type="button" data-for="group" aria-pressed="false">A group</button>
+          </div>
+          <div class="grid">
+            <label>Day<input type="date" name="date" required /></label>
+            <label>Time<input type="time" name="time" value="19:30" step="900" required /></label>
+            <label>People
+              <span class="stepper"><button type="button" data-n="-1" aria-label="One person fewer">−</button><input type="number" name="people" min="1" max="80" value="2" inputmode="numeric" required /><button type="button" data-n="1" aria-label="One person more">+</button></span>
+            </label>
+            <label>Where<select name="seat"><option>A table</option><option>A booth</option><option>The bar</option><option>By the fire</option><option value="The whiskey room, if it can be booked">The whiskey room</option><option>Any, for a group</option></select></label>
+            <label>Your name <span class="opt">optional</span><input type="text" name="name" autocomplete="name" maxlength="40" /></label>
+            <label>Occasion or note <span class="opt">optional</span><input type="text" name="note" maxlength="80" placeholder="Birthday, business dinner…" /></label>
+          </div>
+          <p class="hint" id="timeHint" aria-live="polite"></p>
+          <div class="preview"><p class="preview-k">Your message</p><p id="msg" aria-live="polite"></p></div>
+          <a class="btn big wa" id="viaWa" href="https://wa.me/250780302666" rel="noopener"><span>Send on WhatsApp</span><small>Opens WhatsApp with this written; you press send</small></a>
+          <div class="alts">
+            <a class="chiplink" id="viaMail" href="mailto:reservations@inka-steakhouse.com">Send by email</a>
+            <a class="chiplink" href="tel:+250780302666">Call 0780 302 666</a>
+            <button type="button" class="chiplink" id="copy">Copy the message</button>
+          </div>
+        </form>
       </section>
 
-      <section class="spread" data-view="table" id="table" aria-label="Your table">
-        <article class="page hourspage">
-          <p class="folio">Hours</p>
-          <div class="dial">
-            <svg viewBox="-110 -110 220 220" role="img" aria-label="Opening hours on a 24 hour dial">
+      <!-- 07: hours and the way -->
+      <section class="chapter find" id="find" data-num="07" aria-labelledby="fiH">
+        <div class="find-a">
+          <p class="num" data-rise>07 · Hours and the way</p>
+          <h2 id="fiH" data-rise><span id="openBig">Open every day from 12:00.</span></h2>
+          <dl class="week" id="week" data-rise></dl>
+          <p class="fine" data-rise>From Inka's WhatsApp Business profile, 12 November 2026.</p>
+        </div>
+        <div class="find-b">
+          <div class="dial" data-rise>
+            <svg viewBox="-110 -110 220 220" role="img" aria-label="Today's opening hours on a 24 hour dial, with the time now">
               <circle class="ring" r="86" />
               <g id="ticks"></g>
               <g id="arcs"></g>
@@ -169,52 +333,43 @@
               <circle class="hub" r="5" />
               <text x="0" y="-97" class="lab">00</text><text x="101" y="4" class="lab">06</text><text x="0" y="106" class="lab">12</text><text x="-101" y="4" class="lab">18</text>
             </svg>
+            <p class="dial-now">Kigali time <b id="clock2">--:--</b></p>
           </div>
-          <p class="now">Kigali time <b id="clock">--:--</b></p>
-          <p class="body">Open every day from <b>12:00</b>. Until <b>22:00</b> Sunday to Thursday, <b>23:00</b> on Friday and Saturday.</p>
-          <p class="body small">Kimihurura, in the Rugando valley, KG 605 St. <a href="https://www.google.com/maps/search/?api=1&query=Inka%20Steakhouse%20Kigali" rel="noopener">Open the map</a></p>
-        </article>
-        <article class="page">
-          <p class="folio">Your table</p>
-          <h2>Tables go quickly.</h2>
-          <form id="bookform" novalidate>
-            <div class="seg" role="group" aria-label="What are you booking?">
-              <button type="button" data-for="A table" aria-pressed="true">A table</button>
-              <button type="button" data-for="A group">A group or the whiskey room</button>
+          <div class="way" data-rise>
+            <p class="big">2a KG 605 St, Kimihurura, in the Rugando valley, Kigali.</p>
+            <p><mark>To confirm</mark> A landmark, the entrance from the road, and parking.</p>
+            <div class="acts">
+              <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Inka%20Steakhouse%20Kigali" rel="noopener">Open the map</a>
+              <a class="chiplink" id="wayWa" href="https://wa.me/250780302666" rel="noopener">Ask the way on WhatsApp</a>
             </div>
-            <label>Day<input type="date" name="date" required /></label>
-            <label>Time<input type="time" name="time" value="19:30" step="900" required /></label>
-            <label>People<input type="number" name="people" min="1" max="80" value="2" inputmode="numeric" required /></label>
-            <label>For<select name="seat"><option>A table</option><option>A booth</option><option>The bar</option><option>By the fire</option><option>A group</option><option>The whiskey room, if it can be booked</option></select></label>
-            <label>Your name<input type="text" name="name" autocomplete="name" maxlength="40" /></label>
-            <label>Your phone<input type="tel" name="phone" autocomplete="tel" maxlength="20" /></label>
-            <label class="wide">Occasion or note<input type="text" name="note" maxlength="80" placeholder="Birthday, business dinner, the whiskey room…" /></label>
-            <p class="err" id="bookerr" role="alert" hidden>Please choose a day.</p>
-            <p class="preview-msg" id="msg" aria-live="polite"></p>
-            <a class="btn big" id="viaWa" href="https://wa.me/250780302666" rel="noopener">Send on WhatsApp</a>
-            <a class="btn big alt" id="viaMail" href="mailto:reservations@inka-steakhouse.com">Send by email</a>
-            <a class="btn big alt" id="viaCall" href="tel:+250780302666">Call <span>0780 302 666</span></a>
-          </form>
-          <p class="body small or">Your email goes to <span class="mail">reservations@inka-steakhouse.com</span><br /><button type="button" class="chiplink" id="copy">Copy the message</button><a class="chiplink" href="https://www.google.com/maps/search/?api=1&query=Inka%20Steakhouse%20Kigali" rel="noopener">Open the map</a></p>
-          <p class="body small or"><mark>To confirm</mark> How many make a group, and whether the whiskey room can be booked. Kimihurura, KG 605 St.</p>
-          <p class="fine made">Preview made for Inka by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>, Kigali. Not yet the official site.</p>
-        </article>
+          </div>
+        </div>
       </section>
     </main>
 
-    <nav class="tabs" aria-label="Pages">
-      <button type="button" class="arrow" id="prev" aria-label="Previous page">←</button>
-      <ol id="ribbons">
-        <li><a href="#cover">Cover</a></li>
-        <li><a href="#cuts">Cuts</a></li>
-        <li><a href="#kitchen">Kitchen</a></li>
-        <li><a href="#bar">Bar</a></li>
-        <li><a href="#table">Table</a></li>
-      </ol>
-      <p class="count" id="count" aria-live="polite">1 of 5</p>
-      <button type="button" class="arrow" id="next" aria-label="Next page">→</button>
-      <a class="call" href="tel:+250780302666" aria-label="Call Inka on 0780 302 666">Call</a>
-    </nav>
+    <footer class="foot">
+      <div class="foot-a">
+        <p class="logo foot-logo">INKA<small>Steakhouse</small></p>
+        <p>2a KG 605 St, Kimihurura, Kigali · Kigali time <span id="clock3">--:--</span></p>
+      </div>
+      <ul class="foot-b">
+        <li><a href="https://wa.me/250780302666" id="footWa" rel="noopener">WhatsApp +250 780 302 666</a></li>
+        <li><a href="tel:+250780302666">Call 0780 302 666</a></li>
+        <li><a href="mailto:reservations@inka-steakhouse.com">reservations@inka-steakhouse.com</a></li>
+        <li><a href="https://www.facebook.com/inkasteakhouse" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/inkasteakhouse" rel="noopener">Instagram</a></li>
+      </ul>
+      <p class="made">Preview made for Inka by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>, Kigali. Not yet the official site. Illustrative photos from Wikimedia Commons, credited under each.</p>
+    </footer>
+
+    <nav class="bar" aria-label="Contact Inka"><a class="bar-wa" id="barWa" href="https://wa.me/250780302666" rel="noopener">Book on WhatsApp</a><a class="bar-call" href="tel:+250780302666" aria-label="Call Inka on 0780 302 666">Call</a></nav>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Photo">
+      <figure><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+      <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">←</button>
+      <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo">→</button>
+      <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
+      <p class="lb-count" id="lbCount"></p>
+    </dialog>
 
   </body>
 </html>
