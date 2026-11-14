@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en" data-architecture="long-scroll-stack">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elikapeka Hotel, Bar &amp; Restaurant, Kiyovu, Kigali</title>
+<meta name="description" content="Elikapeka in Kiyovu, Kigali: the full menu with prices, weekly lunch buffet, a bar and hotel rooms. Write your table or room message on WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1b1410">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Elikapeka Hotel, Bar &amp; Restaurant, Kiyovu">
+<meta property="og:description" content="The menu, the lunch buffet, the bar and the rooms. Preview by Spectre Studio.">
+<meta property="og:image" content="https://lionsbest9.github.io/spectre-studio-site/demos/elikapeka/og.jpg">
+<meta property="og:url" content="https://lionsbest9.github.io/spectre-studio-site/demos/elikapeka/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="./photos/kigali-night-800.webp">
+  <script type="module" crossorigin src="./assets/index-9xnzAOHF.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DiJCaSV4.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="preview-note" role="note">Preview by Spectre Studio, not yet the official site.</div>
+
+<header class="bar" id="bar">
+  <a class="brand" href="#top" aria-label="Elikapeka, top of page">Elikapeka</a>
+  <div class="chapter" aria-live="polite"><span class="roman" id="chNum">I</span><span id="chName">Today</span></div>
+  <button class="menubtn" id="menubtn" aria-expanded="false" aria-controls="nav">Sections</button>
+  <nav class="nav" id="nav" aria-label="Sections"><a href="#menu">Menu</a><a href="#table">Table</a><a href="#evenings">Evenings</a><a href="#rooms">Rooms</a><a href="#find">Find us</a></nav>
+  <a class="btn btn-wa" href="https://wa.me/250784837983">WhatsApp</a>
+  <i class="progress" id="progress" aria-hidden="true"></i>
+</header>
+
+<main id="main">
+<section class="hero" id="top" data-ch="I" data-name="Today">
+  <div class="hero-bg" aria-hidden="true"><img src="./photos/kigali-night-800.webp" srcset="./photos/kigali-night-800.webp 800w, ./photos/kigali-night-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="1067" fetchpriority="high"></div>
+    <div class="wrap hero-in">
+    <p class="kicker reveal">Hotel · Bar · Restaurant · Kiyovu, Kigali</p>
+    <h1 class="reveal d1">Elikapeka</h1>
+    <p class="lede reveal d2">A long menu, a weekly lunch buffet, a bar, and rooms. Find the dish, write your message, send it on WhatsApp.</p>
+    <div class="cta reveal d3">
+      <a class="btn btn-main" href="#menu">See the menu</a>
+      <a class="btn btn-wa-o" href="https://wa.me/250784837983">Book a table on WhatsApp</a>
+    </div>
+  </div>
+  <div class="wrap today reveal d3" aria-label="Open now">
+    <div class="open-card">
+      <p class="oc-h"><span class="dot" id="odot"></span><b id="openState">Checking hours</b></p>
+      <p class="oc-s" id="openSub">Kigali time</p>
+      <div class="day" aria-hidden="true">
+        <i class="day-lunch"></i><i class="day-eve"></i><i class="day-now" id="dayNow"></i>
+        <span class="t t0">00</span><span class="t t6">06</span><span class="t t12">12</span><span class="t t18">18</span><span class="t t24">24</span>
+      </div>
+      <p class="fine">Lunch 11:30 to 15:30 (Instagram bio). Open until 12 am today (Google Maps), which lists dine-in, takeaway and delivery. <b class="tc">Other hours to confirm</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec menu" id="menu" data-ch="II" data-name="Menu">
+  <div class="wrap">
+    <div class="sec-head"><span class="roman-lg">II</span><h2>The menu, with prices</h2></div>
+    <p class="body">Dishes and prices as on Elikapeka's own menu (read 14 Nov 2026), in Rwandan francs. Tap + to add a dish to your table message.</p>
+    <div class="lead-grill"><p>From the grill: whole local chicken, goat choma, beef choma and a combo platter for the table. The kitchen is described as a Dutch cook's, with a passion for barbecue.</p><button class="btn btn-ghost-d" id="showGrill" type="button">Show the grill</button></div>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Menu sections"></div>
+    <ul class="dishes" id="dishes" role="tabpanel"></ul>
+  </div>
+</section>
+
+<section class="sec table" id="table" data-ch="III" data-name="Table">
+  <div class="wrap">
+    <div class="sec-head"><span class="roman-lg">III</span><h2>Write your table message</h2></div>
+    <p class="body">Fill in what you know, the message writes itself. It opens in WhatsApp for you to send; nothing is sent from this page.</p>
+    <div class="composer">
+      <form id="tform" autocomplete="off">
+        <label>Your name<input name="name" maxlength="60" placeholder="e.g. Jane Smith"></label>
+        <div class="two">
+          <label>Date<input type="date" name="date"></label>
+          <label>Time<input type="time" name="time"></label>
+        </div>
+        <div class="two">
+          <label>Guests<input type="number" name="guests" min="1" max="60" value="2" inputmode="numeric"></label>
+          <label>For<select name="meal"><option>Lunch</option><option>Lunch buffet</option><option selected>Dinner</option><option>Drinks</option></select></label>
+        </div>
+        <div class="tray" id="tray"><p class="tray-h">Dishes in your message</p><ul id="trayList"></ul><p class="tray-empty" id="trayEmpty">None yet. Add some from the menu above, or leave it for the table.</p><p class="tray-total" id="trayTotal" hidden></p></div>
+      </form>
+      <div class="preview" aria-live="polite">
+        <p class="pv-h">Message preview</p>
+        <p class="pv-b" id="pv"></p>
+        <div class="pv-act">
+          <a class="btn btn-main" id="wa" href="https://wa.me/250784837983" target="_blank" rel="noopener">Open in WhatsApp</a>
+          <button class="btn btn-ghost-d" id="copy" type="button">Copy message</button>
+          <a class="btn btn-ghost-d" href="tel:+250783603567">Call 0783 603 567</a>
+        </div>
+        <p class="fine">Goes to Elikapeka's WhatsApp, 0784 837 983.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec evenings" id="evenings" data-ch="IV" data-name="Evenings">
+  <div class="wrap">
+    <div class="sec-head"><span class="roman-lg">IV</span><h2>Lunch, evenings and the bar</h2></div>
+    <div class="cards">
+      <article class="card"><h3>Weekly lunch buffet</h3><p>Lunch is served 11:30 to 15:30.</p><p class="tcl"><b class="tc">day and price to confirm</b></p></article>
+      <article class="card"><h3>Elegant dinner</h3><p>The full menu above, in the evening. Listed open daily until midnight.</p></article>
+      <article class="card"><h3>Bar</h3><p>A full bar serving wine and beer.</p></article>
+      <article class="card"><h3>Live music</h3><p>Regular live music is listed, with Fridays named on one directory.</p></article>
+      <article class="card"><h3>Karaoke</h3><p>Ask Elikapeka if and when.</p></article>
+      <article class="card"><h3>Children</h3><p>A kids area and a kids menu, with highchairs.</p></article>
+    </div>
+    <div class="confirm-panel"><b class="tc">to confirm with Elikapeka</b><p>Buffet day and price, dinner start time, drinks list, live-music nights, whether there is karaoke, and the kids menu items.</p></div>
+    <p class="fine light">The kitchen is described as run by a Dutch cook (TripAdvisor reviewer). TripAdvisor lists Italian, French, Dutch, international, European and Asian cuisines.</p>
+  </div>
+</section>
+
+<section class="sec rooms" id="rooms" data-ch="V" data-name="Rooms">
+  <div class="wrap">
+    <div class="sec-head"><span class="roman-lg">V</span><h2>Seven rooms to ask about</h2></div>
+    <div class="rooms-grid">
+      <div class="seven"><b>7</b><span>hotel rooms, per Elikapeka Ltd's company profile. Ask below for a room and a rate.</span><p class="tcl"><b class="tc">to confirm</b> still let, room types and rates</p></div>
+      <div class="slots"><div class="ph">Room photos coming</div></div>
+      <form id="rform" class="rform" autocomplete="off">
+        <p class="pv-h">Ask about a room</p>
+        <div class="two"><label>Check-in<input type="date" name="rin"></label><label>Nights<input type="number" name="nights" min="1" max="30" value="1" inputmode="numeric"></label></div>
+        <label>Guests<input type="number" name="rguests" min="1" max="10" value="1" inputmode="numeric"></label>
+        <p class="pv-b" id="rpv"></p>
+        <a class="btn btn-main" id="rwa" href="https://wa.me/250784837983" target="_blank" rel="noopener">Ask on WhatsApp</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="sec find" id="find" data-ch="VI" data-name="Find us">
+  <div class="wrap">
+    <div class="sec-head"><span class="roman-lg">VI</span><h2>Kiyovu, KN 33 St</h2></div>
+    <div class="split">
+      <div>
+        <address class="addr">Elikapeka Hotel, Bar &amp; Restaurant<br>KN 33 St #7, Kiyovu<br>Nyarugenge, Kigali</address>
+        <p class="fine">Plus code 3328+RP (Google Maps). Lunch 11:30 to 15:30; open until 12 am today. Another number on their Facebook: 0788 335 618.</p>
+        <a class="btn btn-main dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Elikapeka+Hotel+KN+33+St+Kiyovu+Kigali">Open in Google Maps</a>
+        <div class="scores"><p><b>4.2</b><span>Google, from 99 reviews</span></p><p><b>5.0</b><span>TripAdvisor, from 3 reviews</span></p></div>
+      </div>
+      <div class="phones">
+        <a class="phone wa" href="https://wa.me/250784837983"><span>WhatsApp or call</span><b>0784 837 983</b><small>"Call or WhatsApp" on their Facebook</small></a>
+        <a class="phone" href="tel:+250783603567"><span>Call</span><b>0783 603 567</b><small>on Google Maps</small></a>
+        
+        <a class="phone" href="mailto:elikapeka.rw@gmail.com"><span>Email</span><b class="em">elikapeka.rw@gmail.com</b><small>Instagram: @elikapeka_rw</small></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap foot-in">
+  <div><b>Elikapeka Hotel, Bar &amp; Restaurant</b><br>KN 33 St #7, Kiyovu, Kigali<br><a href="tel:+250783603567">0783 603 567</a> · <a href="https://wa.me/250784837983">WhatsApp 0784 837 983</a></div>
+  <div>Kigali now: <b id="clock">--:--</b><br><span id="clockDay"></span></div>
+  <div class="credit">Preview by Spectre Studio, not yet the official site. Menu and prices from Elikapeka's own menu (read 14 Nov 2026); other facts from public listings. Photo of the area: Kigali at night, Adoscam, CC BY-SA 4.0, Wikimedia Commons.</div>
+</div></footer>
+
+<div class="mbar" aria-label="Quick contact"><a href="https://wa.me/250784837983">WhatsApp</a><a href="tel:+250783603567">Call</a></div>
+</body>
+</html>
