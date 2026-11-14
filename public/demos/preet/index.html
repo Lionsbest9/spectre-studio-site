@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-architecture="day-scrubber">
+<html lang="en" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -16,29 +16,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;700&family=Rozha+One&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara:wght@600&display=swap&text=%E0%AA%AA%E0%AB%8D%E0%AA%B0%E0%AB%80%E0%AA%A4" rel="stylesheet" />
-    <script type="module" crossorigin src="../trio-assets/preet-y2x6iG_c.js"></script>
+    <script type="module" crossorigin src="../trio-assets/preet-BTz84Tgw.js"></script>
     <link rel="modulepreload" crossorigin href="../trio-assets/util-BxQgI5KT.js">
-    <link rel="modulepreload" crossorigin href="../trio-assets/content-BMGq8JGd.js">
+    <link rel="modulepreload" crossorigin href="../trio-assets/content-DF7rfhh5.js">
     <link rel="modulepreload" crossorigin href="../trio-assets/preload-helper-DclECHGd.js">
-    <link rel="stylesheet" crossorigin href="../trio-assets/preet-SpTpw7Cl.css">
+    <link rel="stylesheet" crossorigin href="../trio-assets/preet-zoxOu4Re.css">
   </head>
   <body>
     <a class="skip" href="#hour">Skip to the time picker</a>
 
-    <header class="top">
+    <div class="sentinel" aria-hidden="true"></div>
+    <header class="top" id="top">
       <a class="mark" href="./" aria-label="Preet Fast Food, home">
         <span class="gu" lang="gu" aria-hidden="true">પ્રીત</span>
         <span class="name">Preet<small>Fast Food · pure vegetarian</small></span>
       </a>
-      <nav class="sheets" aria-label="More about Preet">
-        <a href="#menu" data-sheet="menu"><b>01</b> Menu</a>
-        <a href="#find" data-sheet="find"><b>02</b> Find us</a>
-        <a href="#story" data-sheet="story"><b>03</b> Our story</a>
+      <nav class="sheets" aria-label="Chapters">
+        <a href="#menu" data-ch="menu"><b>02</b> Menu</a>
+        <a href="#day" data-ch="day"><b>03</b> The day</a>
+        <a href="#story" data-ch="story"><b>04</b> Our story</a>
+        <a href="#find" data-ch="find"><b>05</b> Find us</a>
       </nav>
+      <p class="counter" aria-hidden="true"><span id="chNum">01</span><i>/ 05</i></p>
       <a class="wa" id="topWa" href="https://wa.me/250783115997" rel="noopener">WhatsApp Vipul</a>
+      <span class="progress" aria-hidden="true"></span>
     </header>
 
-    <main class="day" id="main">
+    <main id="main">
+    <section class="day chapter" id="order-now" data-ch="order-now" aria-label="Order for a time of day">
       <section class="say" aria-live="polite">
         <p class="status" id="status"><i></i><span>Checking the hours</span></p>
         <p class="next" id="nextNote">Sundays 08:00 to 14:00</p>
@@ -90,59 +95,74 @@
           <div class="or"><a class="call" href="tel:+250783115997">or call +250 783 115 997</a></div>
         </form>
       </section>
+    </section>
+
+    <section class="chapter menu-ch" id="menu" data-ch="menu" aria-labelledby="menuH">
+      <header class="ch-head">
+        <p class="num rv">02</p>
+        <h2 id="menuH" class="rv">The menu</h2>
+        <p class="sub rv">Gujarati and Saurashtra vegetarian cooking, made fresh. Example photos; prices and the full list: <mark>to confirm with Vipul</mark>. Press + to add a dish to your order.</p>
+      </header>
+      <div id="menuList" class="menu"></div>
+      <p class="credits rv" id="credits"></p>
+    </section>
+
+    <section class="chapter day-ch" id="day" data-ch="day" aria-labelledby="dayH">
+      <header class="ch-head">
+        <p class="num rv">03</p>
+        <h2 id="dayH" class="rv">A day at Preet</h2>
+        <p class="sub rv">From the first tea at eight to the last thali before 20:30. A guide to the day, <mark>to confirm with Vipul</mark>: any dish can be ordered while open.</p>
+      </header>
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section class="chapter story-ch" id="story" data-ch="story" aria-labelledby="storyH">
+      <figure class="story-photo par"><img src="../preet-photos/thali.webp" alt="A vegetarian thali with small bowls, rotis and rice (example photo, not Preet's own)" width="1400" height="933" loading="lazy" /><figcaption>Example photo of a Gujarati thali. Preet's own to come.</figcaption></figure>
+      <div class="story-text">
+        <p class="num rv">04</p>
+        <h2 id="storyH" class="rv">Vipul and Preeti</h2>
+        <div id="storyText" class="story"></div>
+        <ul class="quotes in-sheet" id="storyQuotes"></ul>
+        <p class="credits rv" id="sources"></p>
+      </div>
+    </section>
+
+    <section class="chapter find-ch" id="find" data-ch="find" aria-labelledby="findH">
+      <div class="find-a">
+        <p class="num rv">05</p>
+        <h2 id="findH" class="rv">Find us</h2>
+        <p class="big rv">KN 82 St, central Kigali.</p>
+        <p class="rv">Preet moved in July 2026 to a new spot on the same street. <mark>Exact door and landmark to confirm.</mark></p>
+        <p class="old rv"><b>Not here any more:</b> Musa compound behind Bank of Kigali, and 16 KN 84 St. Older listings still show these.</p>
+        <blockquote class="hard rv">“a bit hard to find” <span>SJ82, HappyCow</span></blockquote>
+      </div>
+      <div class="find-b">
+        <dl class="hours rv">
+          <dt>Monday to Saturday</dt><dd>08:00 to 20:30</dd>
+          <dt>Sunday</dt><dd>08:00 to 14:00</dd>
+        </dl>
+        <p class="rv">Eat in, outdoor seats, or take away. Cards and mobile money. Delivery: <mark>to confirm</mark>.</p>
+        <div class="find-actions rv">
+          <a class="send small" id="findWa" href="https://wa.me/250783115997" rel="noopener"><span>Ask Vipul for directions on WhatsApp</span></a>
+          <a class="send small maps" href="https://www.google.com/maps/search/?api=1&query=Preet%20Fast%20Food%20KN%2082%20St%20Kigali" rel="noopener"><span>Open Preet in Google Maps</span></a>
+          <a class="call" href="tel:+250783115997">or call +250 783 115 997</a>
+        </div>
+        <p class="old rv"><mark>The map listing may still show the old address; the new pin is to come.</mark></p>
+        <p class="old rv">Email: <a href="mailto:vipulvyas.prit1978@gmail.com">vipulvyas.prit1978@gmail.com</a> <mark>to confirm it is still read</mark>. Ratings: 4.6 on Google (346 reviews), 4.5 on HappyCow (7 reviews).</p>
+      </div>
+    </section>
     </main>
 
+    <a class="orderpill" id="orderPill" href="https://wa.me/250783115997" rel="noopener" hidden><b id="pillCount">0</b> <span id="pillText">Send your order to Vipul</span></a>
     <nav class="bar" aria-label="Order"><a class="bar-wa" id="barWa" href="https://wa.me/250783115997" rel="noopener">WhatsApp Vipul<span id="barSub">Order or ask</span></a><a class="bar-call" href="tel:+250783115997" aria-label="Call +250 783 115 997">Call</a></nav>
     <footer class="foot">
       <ul class="quotes" aria-label="What diners say">
         <li>“Must try their Thali.” <span>Mahinda, HappyCow</span></li>
         <li>“Friendly, very cheap, and excellent quality of food.” <span>vegan_ryan, HappyCow</span></li>
       </ul>
-      <p class="credits-line">Example dish photos: Wikimedia Commons, CC BY-SA 4.0, <a href="#menu">credits in the menu</a>.</p>
+      <p class="credits-line">Example dish photos: Wikimedia Commons, CC BY-SA 4.0, <a href="#credits">credits under the menu</a>.</p>
       <p class="credit">KN 82 St, Kigali · Kigali time <span id="clock">--:--</span> · Preview made by <a href="https://lionsbest9.github.io/spectre-studio-site/">Spectre Studio</a></p>
     </footer>
-
-        <dialog class="sheet" id="sheet-menu" aria-labelledby="menuH">
-      <div class="sheet-in">
-        <button type="button" class="close" aria-label="Close">×</button>
-        <p class="num">01</p>
-        <h2 id="menuH">The menu</h2>
-        <p class="sub">Gujarati and Saurashtra vegetarian cooking. Example photos. Prices and the full list: <mark>to confirm with Vipul</mark>.</p>
-        <div id="menuList" class="menu"></div>
-        <p class="credits" id="credits"></p>
-      </div>
-    </dialog>
-    <dialog class="sheet" id="sheet-find" aria-labelledby="findH">
-      <div class="sheet-in">
-        <button type="button" class="close" aria-label="Close">×</button>
-        <p class="num">02</p>
-        <h2 id="findH">Find us</h2>
-        <p class="big">KN 82 St, central Kigali.</p>
-        <p>Preet moved in July 2026 to a new spot on the same street. <mark>Exact door and landmark to confirm.</mark></p>
-        <p class="old"><b>Not here any more:</b> Musa compound behind Bank of Kigali, and 16 KN 84 St. Older listings still show these.</p>
-        <dl class="hours">
-          <dt>Monday to Saturday</dt><dd>08:00 to 20:30</dd>
-          <dt>Sunday</dt><dd>08:00 to 14:00</dd>
-        </dl>
-        <p>Eat in, outdoor seats, or take away. Cards and mobile money. Delivery: <mark>to confirm</mark>.</p>
-        <a class="send small maps" href="https://www.google.com/maps/search/?api=1&query=Preet%20Fast%20Food%20KN%2082%20St%20Kigali" rel="noopener"><span>Open Preet in Google Maps</span></a>
-        <p class="old"><mark>the listing may still show the old address; the new pin is to come</mark></p>
-        <blockquote class="hard">“a bit hard to find” <span>SJ82, HappyCow</span></blockquote>
-        <a class="send small" id="findWa" href="https://wa.me/250783115997" rel="noopener"><span>Ask Vipul for directions on WhatsApp</span></a>
-        <div class="or"><a class="call" href="tel:+250783115997">or call +250 783 115 997</a></div>
-        <p class="old">Email: <a href="mailto:vipulvyas.prit1978@gmail.com">vipulvyas.prit1978@gmail.com</a> <mark>to confirm it is still read</mark>. Ratings: 4.6 on Google (346 reviews), 4.5 on HappyCow (7 reviews).</p>
-      </div>
-    </dialog>
-    <dialog class="sheet" id="sheet-story" aria-labelledby="storyH">
-      <div class="sheet-in">
-        <button type="button" class="close" aria-label="Close">×</button>
-        <p class="num">03</p>
-        <h2 id="storyH">Vipul and Preeti</h2>
-        <div id="storyText" class="story"></div>
-        <ul class="quotes in-sheet" id="storyQuotes"></ul>
-        <p class="credits" id="sources"></p>
-      </div>
-    </dialog>
 
   </body>
 </html>
