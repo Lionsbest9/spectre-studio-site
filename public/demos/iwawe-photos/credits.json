@@ -1,0 +1,47 @@
+{
+ "flags": {
+  "author": "UWIMPUHWE Va",
+  "license": "CC BY 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kigali_photo_in_the_rain.jpg",
+  "caption": "Flags in the rain, with the Convention Centre dome behind the trees",
+  "year": "2024",
+  "w": 1600,
+  "h": 1200
+ },
+ "aerial": {
+  "author": "Emmanuel Kwizera",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:An_aerial_of_Kigali_Convention_Center_on_June_19,_2019._Photo_by_Emmanuel_Kwizera.jpg",
+  "caption": "Kigali Convention Centre and its gardens from the air",
+  "year": "2019",
+  "w": 1600,
+  "h": 1067
+ },
+ "night": {
+  "author": "IGANZE",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kigali_Convention_Center.jpg",
+  "caption": "The Convention Centre fountains at night",
+  "year": "2026",
+  "w": 1600,
+  "h": 1068
+ },
+ "kacyiru": {
+  "author": "IGANZE",
+  "license": "CC0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kacyiru_in_Kigali.jpg",
+  "caption": "A street in Kacyiru, looking over the hills",
+  "year": "2026",
+  "w": 1600,
+  "h": 1067
+ },
+ "monument": {
+  "author": "TheJackNation",
+  "license": "CC BY-SA 4.0",
+  "source": "https://commons.wikimedia.org/wiki/File:Kacyiru_image.jpg",
+  "caption": "The Kacyiru roundabout monument",
+  "year": "2022",
+  "w": 1600,
+  "h": 1200
+ }
+}

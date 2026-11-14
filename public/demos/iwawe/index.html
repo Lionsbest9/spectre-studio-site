@@ -1,148 +1,324 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f1efe9">
     <title>Iwawe Hotel · KG 7 Avenue, Embassy Row, Kigali</title>
-    <meta name="description" content="Iwawe Hotel on KG 7 Avenue, Kigali: a small hotel on Embassy Row with a bar and restaurant, minutes from embassies, ministries and the Kigali Convention Centre.">
+    <meta name="description" content="Iwawe Hotel on KG 7 Avenue, Kigali: a small hotel on Embassy Row with a bar and restaurant, 116 m from the nearest embassy and 1.5 km from the Kigali Convention Centre. Ask for a room by phone or SMS.">
+    <meta name="robots" content="noindex">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Iwawe Hotel, Embassy Row, Kigali">
-    <meta property="og:description" content="A small hotel on KG 7 Avenue, among the embassies. Book on WhatsApp.">
+    <meta property="og:description" content="A small hotel on KG 7 Avenue, among the embassies. Send your dates and ask for a rate.">
     <meta property="og:image" content="https://lionsbest9.github.io/spectre-studio-site/demos/iwawe-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="../iwawe-favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="../hotel-assets/iwawe-DWGYnIpP.js"></script>
-    <link rel="modulepreload" crossorigin href="../hotel-assets/preload-helper-KUf-B2w_.js">
-    <link rel="stylesheet" crossorigin href="../hotel-assets/preload-helper-BvgFNMHq.css">
-    <link rel="stylesheet" crossorigin href="../hotel-assets/iwawe-C_i_yaC7.css">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap"></noscript>
+    <link rel="preload" as="image" href="../iwawe-photos/flags.webp" imagesrcset="../iwawe-photos/flags-s.webp 760w, ../iwawe-photos/flags.webp 1600w" imagesizes="(max-width: 899px) 100vw, 45vw" fetchpriority="high">
+    <script type="module" crossorigin src="../iwawe-assets/iwawe-DDyS3wgV.js"></script>
+    <link rel="stylesheet" crossorigin href="../iwawe-assets/iwawe-BYVKky2H.css">
   </head>
   <body>
-    <a class="skip" href="#rooms">Skip to the rooms</a>
-    <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
-    <div class="preview-note" role="note"><span>Preview by Spectre Studio for Iwawe Hotel. Details marked <span class="tbc">to confirm</span> wait for the hotel’s approval.</span><button type="button" aria-label="Hide this note">×</button></div>
+    <a class="skip" href="#ask">Skip to asking for a room</a>
 
-    <header class="top">
-      <div class="wrap">
-        <a class="brand" href="#welcome" aria-label="Iwawe Hotel, home">
+    <header class="top" id="top">
+      <div class="wrap top-in">
+        <a class="brand" href="#arrival" aria-label="Iwawe Hotel, back to the top">
           <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3c-5 0-9 3.8-9 8.7C7 18 16 29 16 29s9-11 9-17.3C25 6.8 21 3 16 3z"/><circle cx="16" cy="11.5" r="3.4"/></svg>
           <span><strong>Iwawe</strong><small>Hotel · Embassy Row</small></span>
         </a>
-        <span class="chapter" id="chapter" aria-hidden="true">01 / 05 · Welcome</span>
-        <nav aria-label="Main">
-          <a class="nav-link" href="#rooms">Rooms</a>
-          <a class="nav-link" href="#business">For business</a>
-          <a class="nav-link" href="#booking">Book</a>
-          <a class="btn btn-primary" href="https://wa.me/250733304142" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><span>WhatsApp</span>
-          </a>
+        <nav class="nav" aria-label="Sections">
+          <a href="#rooms"><b>02</b> Rooms</a>
+          <a href="#house"><b>03</b> The house</a>
+          <a href="#area"><b>04</b> The area</a>
+          <a href="#location"><b>05</b> Location</a>
         </nav>
+        <p class="count" aria-hidden="true"><span id="chapNum">01</span><small>/06</small><em id="chapName">Arrival</em></p>
+        <div class="top-acts" aria-label="Contact the front desk">
+          <a class="top-ic" href="tel:+250733304142" aria-label="Call +250 733 304 142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>Call</span></a>
+          <a class="top-ic" href="sms:+250733304142" aria-label="Send an SMS to +250 733 304 142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>SMS</span></a>
+          <a class="btn btn-solid btn-sm" href="#ask"><span>Ask</span><span class="wide-only">for a room</span></a>
+        </div>
       </div>
+      <i class="progress" aria-hidden="true"></i>
     </header>
 
+    <div class="preview-note" role="note"><p>Preview by Spectre Studio for Iwawe Hotel. Details marked <mark>to confirm</mark> wait for the hotel’s approval.</p><button type="button" aria-label="Hide this note">×</button></div>
+
     <main>
-      <section class="hero" id="welcome" data-chapter="Welcome" aria-label="Welcome">
-        <div class="map" aria-label="3D map of the streets around Iwawe Hotel on KG 7 Avenue">
-          <canvas id="map" aria-hidden="true"></canvas>
-          <div class="map-labels" id="map-labels" aria-hidden="true"></div>
-          <div class="map-fallback" aria-hidden="true"></div>
-        </div>
-        <div class="wrap hero-inner">
-          <div class="hero-card">
-            <p class="status"><i></i>Front desk · <b id="clock">--:--</b> in Kigali</p>
-            <h1 class="display">Fifteen rooms on <em>Embassy Row.</em></h1>
-            <p class="lead">Iwawe Hotel is on KG 7 Avenue, among embassies and ministries. A quiet room, a bar and restaurant in the house, and the Kigali Convention Centre about a kilometre and a half away.</p>
-            <div class="actions">
-              <a class="btn btn-primary btn-lg" href="#booking">Ask for a room</a>
-              <a class="btn btn-ghost btn-lg" href="tel:+250733304142">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+250 733 304 142
-              </a>
+      <!-- 01 Arrival -->
+      <section class="hero chapter" id="arrival" data-num="01" data-name="Arrival" aria-labelledby="h1">
+        <div class="wrap hero-in">
+          <div class="hero-copy">
+            <p class="kicker" data-rise><span class="pin-dot" aria-hidden="true"></span>KG 7 Avenue · Kacyiru · Kigali</p>
+            <p class="not-iwacu" data-rise>Iwawe Hotel on KG 7 Avenue. Not the Iwacu Hotel.</p>
+            <h1 id="h1" class="display" data-rise><span class="ln"><span>A small hotel</span></span> <span class="ln"><span>on <em>Embassy Row.</em></span></span></h1>
+            <p class="lead" data-rise>Iwawe Hotel sits among the embassies on KG 7 Avenue: about fifteen rooms and a <span class="nw">3-star</span> listing <mark>both to confirm</mark>, a bar and a restaurant in the hotel, and the Kigali Convention Centre 1.5 km away.</p>
+            <div class="actions" data-rise>
+              <a class="btn btn-solid btn-lg" href="#ask">Ask for a room <span class="arr" aria-hidden="true">→</span></a>
+              <a class="btn btn-line btn-lg" href="tel:+250733304142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>+250 733 304 142</a>
             </div>
-            <p class="map-hint">Real streets and buildings from OpenStreetMap. Move the pointer to tilt the map.</p>
+            <p class="num-note" data-rise>Call or SMS the front desk (no WhatsApp on this number). Number <mark>to confirm</mark> with the hotel. <a href="https://www.google.com/maps/search/?api=1&amp;query=Iwawe%20Hotel%20-1.94310%2C30.08681" rel="noopener" target="_blank">Directions on Google Maps</a></p>
+            <dl class="hero-facts" data-rise>
+              <div><dt>Check-in</dt><dd>14:00</dd></div>
+              <div><dt>Check-out</dt><dd>12:00</dd></div>
+              <div><dt>Listed as</dt><dd>3-star <mark>to confirm</mark></dd></div>
+              <div><dt>Nearest embassy</dt><dd>116 m</dd></div>
+              <div><dt>Convention Centre</dt><dd>1.5 km</dd></div>
+            </dl>
+            <nav class="jump" aria-label="Jump to a section"><a href="#rooms">Rooms</a><a href="#house">The house</a><a href="#area">The area</a><a href="#location">Location</a><a href="#ask">Ask for a room</a></nav>
+          </div>
+
+          <div class="hero-visual" data-rise>
+            <figure class="plate tilt">
+              <div class="plate-img"><img src="../iwawe-photos/flags.webp" srcset="../iwawe-photos/flags-s.webp 760w, ../iwawe-photos/flags.webp 1600w" sizes="(max-width: 899px) 100vw, 45vw" alt="Flags on poles in the rain beside a green verge, the Kigali Convention Centre dome behind the trees" width="1600" height="1200" fetchpriority="high" data-par></div>
+              <figcaption>The neighbourhood, not the hotel: flags in the rain, the Convention Centre dome behind the trees. Photo UWIMPUHWE Va, CC BY 4.0.</figcaption>
+            </figure>
+            <aside class="desk-card tilt" aria-label="Front desk">
+              <p class="desk-k">Front desk</p>
+              <p class="desk-time"><b id="clock">--:--</b> in Kigali</p>
+              <p class="desk-line" id="deskLine">Check-in from 14:00.</p>
+              <p class="desk-how">Call or SMS <a href="tel:+250733304142">+250 733 304 142</a> <mark>number to confirm</mark></p>
+            </aside>
           </div>
         </div>
       </section>
 
-      <div class="ticker" aria-label="Straight-line distances from the hotel">
+      <div class="ticker" aria-label="Straight-line distances from the hotel, measured on OpenStreetMap">
         <div class="ticker-track" id="ticker"></div>
       </div>
 
-      <section class="section" id="rooms" data-chapter="Rooms" aria-labelledby="rooms-title">
-        <div class="wrap split">
-          <div data-reveal>
-            <p class="eyebrow">01 · Rooms</p>
-            <h2 class="display" id="rooms-title">Small enough to know your name.</h2>
-            <p class="body">Fifteen rooms <span class="tbc">to confirm</span>, free WiFi and a front desk that answers on WhatsApp. Check in from two, check out by noon.</p>
-            <dl class="facts">
-              <div><dt>Rooms</dt><dd><b data-count="15">15</b></dd></div>
-              <div><dt>Check-in</dt><dd>14:00</dd></div>
-              <div><dt>Check-out</dt><dd>12:00</dd></div>
-              <div><dt>Rates</dt><dd><span class="tbc">to confirm</span></dd></div>
-            </dl>
-          </div>
-          <div class="slot tall" data-reveal style="--d:120ms"><span>Your photo · a room</span></div>
-        </div>
-      </section>
-
-      <section class="section alt" id="bar" data-chapter="Bar & restaurant" aria-labelledby="bar-title">
-        <div class="wrap split reverse">
-          <div class="slot wide" data-reveal><span>Your photo · the bar</span></div>
-          <div data-reveal style="--d:120ms">
-            <p class="eyebrow">02 · Bar &amp; restaurant</p>
-            <h2 class="display" id="bar-title">Dinner in the hotel, after the last meeting.</h2>
-            <p class="body">A bar and a restaurant in the hotel, so the evening does not need a taxi.</p>
-            <p class="quiet">Menu and opening hours <span class="tbc">to confirm</span></p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="business" data-chapter="For business" aria-labelledby="biz-title">
+      <!-- 02 Rooms -->
+      <section class="section chapter rooms" id="rooms" data-num="02" data-name="Rooms" aria-labelledby="roomsH">
         <div class="wrap">
-          <header class="head" data-reveal>
-            <p class="eyebrow">03 · For business visitors</p>
-            <h2 class="display" id="biz-title">Your meetings are around the corner.</h2>
-            <p class="body">Straight-line distances from the hotel, measured on OpenStreetMap.</p>
-          </header>
-          <ol class="near" id="near" data-reveal style="--d:100ms"></ol>
-        </div>
-      </section>
+          <div class="rooms-grid">
+            <div class="rooms-main">
+            <header class="chead" data-rise>
+              <p class="num">02 · Rooms</p>
+              <h2 class="display" id="roomsH">Rooms among the embassies.</h2>
+              <p class="body">About fifteen rooms <mark>to confirm</mark> in a small hotel on KG 7 Avenue. Open a line for the detail.</p>
+            </header>
+            <ol class="fold" id="fold">
+              <li class="fold-item" data-rise>
+                <h3><button type="button" aria-expanded="false" aria-controls="f1"><span class="fn">a</span><span class="ft">Room types</span><span class="fs">To come from the hotel</span><i class="chev" aria-hidden="true"></i></button></h3>
+                <div class="fold-body" id="f1" hidden>
+                  <p>Which rooms there are, their beds and what each one has: <mark>to come</mark> from the hotel. Each type gets its own card here, with a photograph and a rate.</p>
+                  <ul class="ticks"><li>Free WiFi in the hotel, as the listings give it</li><li>Slots for the hotel’s material are below</li></ul>
+                </div>
+              </li>
+              <li class="fold-item" data-rise style="--d:60ms">
+                <h3><button type="button" aria-expanded="false" aria-controls="f2"><span class="fn">b</span><span class="ft">Arriving and leaving</span><span class="fs">In from 14:00, out by 12:00</span><i class="chev" aria-hidden="true"></i></button></h3>
+                <div class="fold-body" id="f2" hidden>
+                  <p>Check-in from <b>14:00</b>, check-out by <b>12:00</b>. <span id="arriveHint"></span></p>
+                  <ul class="ticks"><li>Early arrival or a late check-out: ask the desk <mark>to confirm</mark></li><li>Airport transfer and parking: <mark>to confirm</mark></li></ul>
+                </div>
+              </li>
+              <li class="fold-item" data-rise style="--d:120ms">
+                <h3><button type="button" aria-expanded="false" aria-controls="f3"><span class="fn">c</span><span class="ft">Meetings nearby</span><span class="fs">Five embassies and a ministry within 610 m</span><i class="chev" aria-hidden="true"></i></button></h3>
+                <div class="fold-body" id="f3" hidden>
+                  <p>Straight-line distances from the hotel, measured on OpenStreetMap:</p>
+                  <ol class="near" id="near"></ol>
+                  <a class="link" href="#location">See them on the map <span aria-hidden="true">→</span></a>
+                </div>
+              </li>
+              <li class="fold-item" data-rise style="--d:180ms">
+                <h3><button type="button" aria-expanded="false" aria-controls="f4"><span class="fn">d</span><span class="ft">Rates</span><span class="fs">Send your dates and ask</span><i class="chev" aria-hidden="true"></i></button></h3>
+                <div class="fold-body" id="f4" hidden>
+                  <p>Rates from the hotel <mark>to come</mark>. Until then, fill in your dates below and send them by SMS, or call, and ask the front desk for a rate.</p>
+                  <a class="btn btn-solid" href="#ask">Ask for a rate <span class="arr" aria-hidden="true">→</span></a>
+                </div>
+              </li>
+            </ol>
+            </div>
 
-      <section class="section book" id="booking" data-chapter="Book" aria-labelledby="book-title">
-        <div class="wrap split">
-          <div data-reveal>
-            <p class="eyebrow">04 · Book</p>
-            <h2 class="display" id="book-title">Send your dates. The desk replies with a rate.</h2>
-            <ul class="direct">
-              <li><span>WhatsApp</span><a href="https://wa.me/250733304142" target="_blank" rel="noopener">+250 733 304 142</a></li>
-              <li><span>Phone</span><a href="tel:+250733304142">+250 733 304 142</a></li>
-              <li><span>Address</span><span>KG 7 Avenue, Kigali</span></li>
-              <li><span>Map</span><a href="https://www.google.com/maps/search/?api=1&query=Iwawe%20Hotel%20-1.94310%2C30.08681" target="_blank" rel="noopener">Open in Google Maps</a></li>
+            <figure class="dial-card tilt" data-rise style="--d:120ms" aria-labelledby="dialCap">
+              <svg class="dial" viewBox="0 0 200 200" role="img" aria-labelledby="dialT">
+                <title id="dialT">A clock showing the time in Kigali, with check-out at 12:00 and check-in at 14:00 marked</title>
+                <circle cx="100" cy="100" r="92" class="dial-face"/>
+                <path class="dial-gap" d="" id="dialGap"/>
+                <g id="dialTicks"></g>
+                <text x="100" y="42" class="dial-n">12</text>
+                <text x="152" y="73" class="dial-n">2</text>
+                <line x1="100" y1="100" x2="100" y2="54" class="hand-h" id="handH"/>
+                <line x1="100" y1="100" x2="100" y2="30" class="hand-m" id="handM"/>
+                <circle cx="100" cy="100" r="4" class="hand-c"/>
+              </svg>
+              <figcaption id="dialCap"><b>Out by 12:00, in from 14:00.</b> The shaded part of the dial runs from check-out to check-in. The hands show the time in Kigali now.</figcaption>
+            </figure>
+          </div>
+          <div class="slots" data-rise>
+            <p class="slots-k">From the hotel, to come</p>
+            <ul>
+              <li><b>Room types and beds</b><span>Single, double or twin, and what each room has</span></li>
+              <li><b>Room photographs</b><span>The rooms, the bar, the restaurant</span></li>
+              <li><b>Rates</b><span>Per night, and what is included. Until then: ask with your dates</span></li>
             </ul>
           </div>
-          <form class="card" id="book" data-wa="250733304142" data-hotel="Iwawe Hotel" novalidate data-reveal style="--d:120ms">
+        </div>
+      </section>
+
+      <!-- 03 The house -->
+      <section class="section chapter house" id="house" data-num="03" data-name="The house" aria-labelledby="houseH">
+        <div class="wrap house-in">
+          <header class="chead" data-rise>
+            <p class="num">03 · The house</p>
+            <h2 class="display" id="houseH">A bar and a restaurant under the same roof.</h2>
+            <p class="body">Both are in the hotel, so a drink or a meal after a day of meetings can stay close. Menu and hours <mark>to confirm</mark>.</p>
+          </header>
+          <ul class="amen">
+            <li data-rise><h3>The bar</h3><p>In the hotel, as the booking listings give it. Opening hours <mark>to confirm</mark>.</p></li>
+            <li data-rise style="--d:70ms"><h3>The restaurant</h3><p>In the hotel, as the booking listings give it. Menu, hours and breakfast <mark>to confirm</mark>.</p></li>
+            <li data-rise style="--d:140ms"><h3>A barbecue area</h3><p>Listed by a booking site. Details <mark>to confirm</mark>.</p></li>
+            <li data-rise style="--d:210ms"><h3>Free WiFi</h3><p>In the hotel, as the booking listings give it.</p></li>
+          </ul>
+          <p class="quiet" data-rise>Parking, airport transfer, a meeting room, payment methods: <mark>to confirm</mark>.</p>
+        </div>
+      </section>
+
+      <!-- 04 The area -->
+      <section class="section chapter area" id="area" data-num="04" data-name="The area" aria-labelledby="areaH">
+        <div class="wrap">
+          <header class="chead" data-rise>
+            <p class="num">04 · The area</p>
+            <h2 class="display" id="areaH">Kacyiru: flags, green verges, the dome down the road.</h2>
+            <p class="body">Photographs of the neighbourhood from Wikimedia Commons, not of the hotel. <mark>The hotel’s own photographs to come.</mark> Open one to see it large.</p>
+          </header>
+          <div class="gallery" id="gallery"></div>
+          <p class="credits" id="credits"></p>
+        </div>
+      </section>
+
+      <!-- 05 Location -->
+      <section class="section chapter location" id="location" data-num="05" data-name="Location" aria-labelledby="locH">
+        <div class="wrap">
+          <header class="chead" data-rise>
+            <p class="num">05 · Location</p>
+            <h2 class="display" id="locH">Five embassies within 610 m. The Convention Centre, 1.5 km.</h2>
+            <p class="body">The streets and buildings around the hotel, drawn from OpenStreetMap. Pick a place to see how far it is.</p>
+          </header>
+          <div class="loc-grid">
+            <div class="map-card tilt-soft" data-rise>
+              <div class="map" id="map" role="img" aria-label="Map of the streets around Iwawe Hotel on KG 7 Avenue, with the embassies, the ministry, Kigali Heights and the Convention Centre marked">
+                <div class="map-fallback" aria-hidden="true"><span>Loading the map…</span></div>
+              </div>
+              <p class="map-readout" id="mapReadout" aria-live="polite"><b>Kigali Convention Centre</b><span>1.5 km from the hotel in a straight line</span></p>
+              <p class="map-credit">Map data © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap contributors</a></p>
+            </div>
+            <div class="loc-side" data-rise style="--d:100ms">
+              <ol class="places" id="places" aria-label="Places near the hotel"></ol>
+              <div class="addr">
+                <p class="addr-k">Address</p>
+                <p class="addr-v">Iwawe Hotel<br>KG 7 Avenue, Kacyiru, Kigali</p>
+                <p class="addr-n">Iwawe on KG 7 Avenue, not the Iwacu Hotel.</p>
+                <p class="addr-k addr-k2">Getting here</p>
+                <p class="addr-n">On KG 7 Avenue in Kacyiru. The nearest landmark is the Embassy of Libya, 116 m in a straight line. The five embassies and the ministry listed above are within about 610 m in a straight line, the Convention Centre 1.5 km. Street number, directions from a landmark, airport distance and transfer: <mark>to confirm</mark>.</p>
+                <div class="addr-acts">
+                  <a class="btn btn-line btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Iwawe%20Hotel%20-1.94310%2C30.08681" rel="noopener" target="_blank">Google Maps</a>
+                  <a class="btn btn-line btn-sm" href="https://www.openstreetmap.org/node/3212735284" rel="noopener" target="_blank">OpenStreetMap</a>
+                  <button class="btn btn-line btn-sm" type="button" data-copy="Iwawe Hotel, KG 7 Avenue, Kacyiru, Kigali">Copy address</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 06 Ask for a room -->
+      <section class="section chapter ask" id="ask" data-num="06" data-name="Ask for a room" aria-labelledby="askH">
+        <div class="wrap ask-in">
+          <div class="ask-copy">
+            <header class="chead" data-rise>
+              <p class="num">06 · Ask for a room</p>
+              <h2 class="display" id="askH">Send your dates and ask for a rate.</h2>
+              <p class="body">Fill in the card. It writes the message for you, to send by SMS or read out on the phone. Nothing is sent until you press send on your own phone.</p>
+            </header>
+            <p class="who" data-rise>Your message goes to the hotel’s front desk on +250 733 304 142. The name of who answers, and the number itself, are <mark>to confirm</mark> with the hotel.</p>
+            <ul class="lines" data-rise>
+              <li><span>Phone <mark>to confirm</mark></span><a href="tel:+250733304142">+250 733 304 142</a></li>
+              <li><span>SMS <mark>to confirm</mark></span><a href="sms:+250733304142">+250 733 304 142</a></li>
+              <li><span>E-mail</span><span>reservations@iwawehotel.com <mark>to confirm</mark></span></li>
+              <li><span>Address</span><span>KG 7 Avenue, Kacyiru, Kigali</span></li>
+            </ul>
+          </div>
+
+          <form class="card" id="card" novalidate data-rise style="--d:100ms" aria-labelledby="cardH">
+            <div class="card-head">
+              <p id="cardH">Room enquiry <small>Iwawe Hotel · KG 7 Avenue</small></p>
+              <span class="stamp" id="stamp" aria-hidden="true">Ready<br>to send</span>
+            </div>
             <div class="row">
-              <div class="field"><label for="arrive">Arrival</label><input type="date" id="arrive" name="arrive" required></div>
-              <div class="field"><label for="leave">Departure</label><input type="date" id="leave" name="leave" required></div>
+              <div class="field"><label for="arrive">Arrival</label><div class="date"><input type="date" id="arrive" name="arrive" required><span class="date-v" id="arriveV" aria-hidden="true">Choose a date</span></div></div>
+              <div class="field"><label for="leave">Departure</label><div class="date"><input type="date" id="leave" name="leave" required><span class="date-v" id="leaveV" aria-hidden="true">Choose a date</span></div></div>
             </div>
-            <div class="field"><label for="guests">Guests</label>
-              <select id="guests" name="guests"><option selected>1 adult</option><option>2 adults</option><option>a small team (please call)</option></select>
+            <p class="nights" id="nights" aria-live="polite">Choose your dates.</p>
+            <div class="row">
+              <div class="field"><span class="lab" id="gLab">Guests</span>
+                <div class="step" role="group" aria-labelledby="gLab"><button type="button" data-step="guests" data-by="-1" aria-label="One guest fewer">−</button><output id="guests" aria-live="polite">1</output><button type="button" data-step="guests" data-by="1" aria-label="One guest more">+</button></div>
+              </div>
+              <div class="field"><span class="lab" id="rLab">Rooms</span>
+                <div class="step" role="group" aria-labelledby="rLab"><button type="button" data-step="rooms" data-by="-1" aria-label="One room fewer">−</button><output id="rooms-n" aria-live="polite">1</output><button type="button" data-step="rooms" data-by="1" aria-label="One room more">+</button></div>
+              </div>
             </div>
-            <p class="form-error" role="alert"></p>
-            <button class="btn btn-primary btn-lg" type="submit">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>Ask on WhatsApp
-            </button>
+            <p class="hint">Each room needs at least one guest.</p>
+            <fieldset class="field chips">
+              <legend class="lab">Here for <span class="opt">(optional)</span></legend>
+              <label><input type="radio" name="for" value="the Convention Centre"><span>Convention Centre</span></label>
+              <label><input type="radio" name="for" value="an embassy"><span>An embassy</span></label>
+              <label><input type="radio" name="for" value="a ministry"><span>A ministry</span></label>
+              <label><input type="radio" name="for" value="other business"><span>Other</span></label>
+            </fieldset>
+            <div class="field"><label for="name">Your name <span class="opt">(optional)</span></label><input id="name" name="name" autocomplete="name" maxlength="60" placeholder="So the desk knows who is asking"></div>
+            <div class="msg">
+              <p class="msg-k">Your message</p>
+              <p class="msg-v" id="msg" aria-live="polite"></p>
+            </div>
+            <p class="form-error" id="err" role="alert"></p>
+            <div class="send">
+              <a class="btn btn-solid btn-lg" id="sendSms" href="sms:+250733304142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Send as SMS</a>
+              <a class="btn btn-line btn-lg" id="sendCall" href="tel:+250733304142"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>Call with this note</a>
+            </div>
+            <div class="send-2">
+              <button type="button" class="link" id="copyMsg">Copy the message</button>
+              <span class="tiny">to paste into an e-mail once the hotel confirms a working address</span>
+            </div>
           </form>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrap foot">
-        <p><strong>Iwawe Hotel</strong> · KG 7 Avenue, Kigali · <a href="tel:+250733304142">+250 733 304 142</a></p>
-        <p>Map data © OpenStreetMap contributors · Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" target="_blank" rel="noopener">Spectre Studio</a>, Kigali · <span data-year>2026</span></p>
+    <footer class="foot">
+      <div class="wrap foot-in">
+        <div>
+          <p class="foot-name">Iwawe Hotel</p>
+          <p>KG 7 Avenue, Kacyiru, Kigali</p>
+          <p><a href="tel:+250733304142">Call +250 733 304 142</a> · <a href="sms:+250733304142">Send an SMS</a></p>
+        </div>
+        <div>
+          <p>Kigali time <b id="clock2">--:--</b></p>
+          <p class="credit">Map data © OpenStreetMap contributors. Neighbourhood photographs from Wikimedia Commons: <a href="#area">photo credits</a>. Facts from OpenStreetMap and hotel listings, read November 2026.</p>
+          <p class="credit">Preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>, Kigali · <span data-year>2026</span></p>
+        </div>
       </div>
     </footer>
+
+
+    <dialog class="lb" id="lb" aria-label="Photograph">
+      <figure class="lb-fig">
+        <img id="lbImg" alt="" width="1600" height="1067">
+        <figcaption id="lbCap"></figcaption>
+      </figure>
+      <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photograph">←</button>
+      <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photograph">→</button>
+      <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close">×</button>
+      <p class="lb-count" id="lbCount" aria-live="polite"></p>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   </body>
 </html>
