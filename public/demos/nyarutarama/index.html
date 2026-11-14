@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nyarutarama Medical Center | Urology on KG 529 St, Kigali</title>
+<meta name="description" content="Urology clinic in Kimihurura, Kigali: urological surgeons, laboratory, listed insurers and opening hours. Book by WhatsApp. Website preview prepared by Spectre Studio.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Nyarutarama Medical Center | Urology, Kigali">
+<meta property="og:description" content="Doctors, insurers, hours and a WhatsApp booking message that writes itself. Preview by Spectre Studio.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#dce9e0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Photos, doctor portraits, logos and insurer logos: from nyarutaramamedicalcenter.com (the clinic's own site), used for this private pitch preview only. -->
+<a class="skip" href="#book">Skip to booking</a>
+<div class="notice">Website preview prepared by Spectre Studio for Nyarutarama Medical Center. Lines marked <span class="tc">to confirm</span> wait for the clinic.</div>
+
+<header class="top" id="top">
+  <a class="brand" href="#top" aria-label="Nyarutarama Medical Center, top"><img src="img/p/logo1-s.webp" width="44" height="44" alt=""><span><b>Nyarutarama</b> Medical Center<small>International Center of Urology</small></span></a>
+  <nav aria-label="Sections">
+    <a href="#hours">Hours</a><a href="#book">Book</a><a href="#doctors">Doctors</a><a href="#care">Care</a><a href="#insurers">Insurers</a><a href="#visit">Find us</a>
+  </nav>
+  <a class="btn btn-wa small" href="#book" data-wa>Book</a>
+</header>
+<nav class="chipbar" aria-label="Sections"><a href="#hours">Hours</a><a href="#book">Book</a><a href="#doctors">Doctors</a><a href="#care">Care</a><a href="#insurers">Insurers</a><a href="#visit">Find us</a></nav>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="status" id="status"><i></i><span id="statusText">Checking hours</span></span></p>
+    <h1><span class="l1">Urology,</span><span class="l2">behind the</span><span class="l3">stone <em>gate</em>.</span></h1>
+    <p class="lede">A urology clinic in Kigali, at 19 KG 529 St, Kimihurura. Pick a time and tick what to say; we draft the message and you press send. Or simply call.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="#book">Write my booking message</a>
+      <a class="btn btn-call" href="tel:+250791504912">Call us</a>
+    </div>
+    <p class="fine tcnote">Booking opens a WhatsApp draft. <span class="tc">to confirm</span> that this number is on WhatsApp; call works today. Messages can be drafted in English or French.</p>
+    <p class="tagline">"Empowering urological care. Wellness starts here." <small>the clinic's own words</small></p>
+  </div>
+  <div class="arch-wrap" id="arch">
+    <figure class="arch"><img src="img/p/1.webp" width="1200" height="667" alt="The stone entrance gate and cobbled lane leading to the clinic" fetchpriority="high"></figure>
+    <img class="seal" src="img/p/logo2-s.webp" width="120" height="120" alt="" aria-hidden="true">
+    <span class="tag t1">Photo: the clinic's own site</span>
+  </div>
+</section>
+
+<section class="sec" id="hours" data-reveal>
+  <header class="sh"><span class="no">01</span><h2>Hours, this week</h2><p>From the clinic's website. The needle follows Kigali time.</p></header>
+  <div class="week" id="week" role="table" aria-label="Opening hours"></div>
+  <p class="where"><span>19 KG 529 St, Kimihurura</span> <a href="#visit">Show your driver</a> <a href="https://www.google.com/maps/dir/?api=1&destination=-1.950568,30.0993109" target="_blank" rel="noopener">Directions</a></p>
+  <p class="fine">Sunday: on appointment (clinic's wording). Public holidays: <span class="tc">to confirm</span>.</p>
+</section>
+
+<section class="sec book" id="book" data-reveal>
+  <header class="sh"><span class="no">02</span><h2>Book by WhatsApp</h2><p>Tick, and read the message before it leaves your phone. Nothing is sent from this page.</p></header>
+  <div class="composer">
+    <form id="f" autocomplete="off">
+      <fieldset><legend>Who is it for?</legend>
+        <div class="chips" data-name="who">
+          <label><input type="radio" name="who" value="me" checked><span>Me</span></label>
+          <label><input type="radio" name="who" value="someone"><span>Someone else</span></label>
+        </div></fieldset>
+      <fieldset><legend>What would you like to say about the reason?</legend>
+        <div class="chips" id="reasons" data-name="reason"></div>
+        <p class="hint">"Prefer not to say" sends no medical word at all.</p></fieldset>
+      <fieldset><legend>When suits you?</legend>
+        <div class="row">
+          <label class="sel"><span>Day</span><select id="day"></select></label>
+          <div class="chips" data-name="part">
+            <label><input type="radio" name="part" value="morning" checked><span>Morning</span></label>
+            <label><input type="radio" name="part" value="afternoon"><span>Afternoon</span></label>
+          </div>
+        </div>
+        <p class="hint" id="dayHint"></p></fieldset>
+      <fieldset><legend>Insurance</legend>
+        <label class="sel full"><select id="ins" aria-label="Insurance cover"></select></label></fieldset>
+      <details class="more"><summary>More options: name, language</summary><div class="row two">
+        <label class="sel"><span>Your name (optional)</span><input id="nm" type="text" maxlength="40" autocomplete="off" placeholder="First name"></label>
+        <fieldset class="lang"><legend>Message language</legend>
+          <div class="chips" data-name="lang">
+            <label><input type="radio" name="lang" value="en" checked><span>English</span></label>
+            <label><input type="radio" name="lang" value="fr"><span>Francais</span></label>
+          </div></fieldset>
+      </div></details>
+    </form>
+    <div class="phone" aria-live="polite">
+      <div class="phone-bar"><i></i> Message to NMC <small>+250 791 504 912</small></div>
+      <div class="bubble" id="bubble"></div>
+      <div class="send">
+        <a class="btn btn-wa" id="waGo" href="#" target="_blank" rel="noopener">Open in WhatsApp</a>
+        <button class="btn btn-line" id="copy" type="button">Copy message</button>
+        <a class="btn btn-line" id="mailGo" href="#">Email instead</a>
+      </div>
+      <p class="fine"><span class="tc">to confirm</span> The clinic's site shows a WhatsApp label without a number; this preview uses the call number. If WhatsApp does not open, copy the message and call.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="doctors" data-reveal>
+  <header class="sh"><span class="no">03</span><h2>The people, by speciality</h2><p>Names and titles exactly as the clinic lists them. Consulting days are not published: <span class="tc">to confirm</span>.</p></header>
+  <div class="spec">
+    <h3><span>Urological surgery</span><em>Clinic's website</em></h3>
+    <div class="people">
+      <article class="person"><button class="ph" data-lb="img/p/njinou.webp" data-cap="Dr Bertin Njinou Ngninkeu"><img src="img/p/njinou.webp" width="340" height="340" alt="Portrait of Dr Bertin Njinou Ngninkeu" loading="lazy"></button>
+        <h4>Dr Bertin Njinou Ngninkeu</h4><p>Endoscopic, Laparoscopy and Robotic Urological Surgeon</p><p class="m">20+ years of experience (clinic's wording)</p><p class="d"><span class="tc">to confirm</span> consulting days</p>
+        <button class="ask" data-ask-doc="Dr Bertin Njinou Ngninkeu">Ask for Dr Njinou</button></article>
+      <article class="person"><button class="ph" data-lb="img/p/niyonkuru.webp" data-cap="Dr Jean Marie Vianney Niyonkuru"><img src="img/p/niyonkuru.webp" width="350" height="350" alt="Portrait of Dr Jean Marie Vianney Niyonkuru" loading="lazy"></button>
+        <h4>Dr Jean Marie Vianney Niyonkuru</h4><p>Urological Surgeon</p><p class="d"><span class="tc">to confirm</span> consulting days</p>
+        <button class="ask" data-ask-doc="Dr Jean Marie Vianney Niyonkuru">Ask for Dr Niyonkuru</button></article>
+    </div>
+    <p class="also"><b>Also named as urologists on the clinic's Google profile:</b> Dr Emmanuel Muhawenimana, Dr Florence Umurangwa, Dr Nestor Bihonda. <span class="tc">to confirm</span> titles, photos and days.</p>
+  </div>
+  <div class="spec two">
+    <div><h3><span>Laboratory</span><em>Clinic's website</em></h3>
+      <div class="people small">
+        <article class="person"><button class="ph" data-lb="img/p/appien.webp" data-cap="Appien Ndatimana"><img src="img/p/appien.webp" width="350" height="350" alt="Portrait of Appien Ndatimana" loading="lazy"></button><h4>Appien Ndatimana</h4><p>Laboratorist</p></article>
+        <article class="person"><button class="ph" data-lb="img/p/zita.webp" data-cap="Zita Umuhoza"><img src="img/p/zita.webp" width="350" height="350" alt="Portrait of Zita Umuhoza" loading="lazy"></button><h4>Zita Umuhoza</h4><p>Laboratorist</p></article>
+      </div></div>
+    <div><h3><span>Nursing</span><em>Clinic's website</em></h3>
+      <div class="people small">
+        <article class="person"><button class="ph" data-lb="img/p/martine.webp" data-cap="Martine Uwitije"><img src="img/p/martine.webp" width="350" height="350" alt="Portrait of Martine Uwitije" loading="lazy"></button><h4>Martine Uwitije</h4><p>Nurse</p></article>
+      </div></div>
+  </div>
+</section>
+
+<section class="sec" id="care" data-reveal>
+  <header class="sh"><span class="no">04</span><h2>What they treat</h2><p>Eight conditions listed on the clinic's site. Open one for the clinic's own description and symptoms.</p></header>
+  <div class="acc" id="acc"></div>
+  <p class="fine">Descriptions and symptom lists are the clinic's own text, shortened. This is general information, not a diagnosis. Also listed on its About page: urinary tract infections, erectile dysfunction, testicular cancer, paediatric urology. <span class="tc">to confirm</span> consultation fees and procedure prices (not published).</p>
+</section>
+
+<section class="sec ins" id="insurers" data-reveal>
+  <header class="sh"><span class="no">05</span><h2>Does my insurer count?</h2><p>The seven partners shown on the clinic's site. Type to filter, tap to ask.</p></header>
+  <div class="finder">
+    <label class="sel full"><span>Your insurer</span><input id="iq" type="search" placeholder="Eden, MSH, Cigna, RSSB..." autocomplete="off"></label>
+    <div class="tiles" id="tiles"></div>
+    <div class="verdict" id="verdict" aria-live="polite">Choose an insurer to see what the clinic's site says.</div>
+  </div>
+</section>
+
+<section class="sec" id="inside" data-reveal>
+  <header class="sh"><span class="no">06</span><h2>Before you arrive</h2><p>The clinic's own photographs, from the lane to the treatment room. Tap one to enlarge.</p></header>
+  <div class="mosaic" id="mosaic"></div>
+</section>
+
+<section class="sec visit" id="visit" data-reveal>
+  <header class="sh"><span class="no">07</span><h2>Finding the gate</h2><p>Show this to your driver, or open it straight in Maps.</p></header>
+  <div class="route">
+    <div class="driver" id="driver">
+      <p class="dl">Show your driver</p>
+      <p class="addr">19 KG 529 St<br>Kimihurura, Kigali</p>
+      <p class="pc">Maps code 23XX+QP <small>(as listed on Google)</small></p>
+      <p class="nm">Nyarutarama Medical Center</p>
+      <a class="btn btn-wa dcall" href="tel:+250791504912">Call from the gate +250 791 504 912</a>
+    </div>
+    <div class="acts">
+      <a class="btn btn-wa" href="https://www.google.com/maps/place/Nyarutarama+medical+center/@-1.950568,30.0993109,17z" target="_blank" rel="noopener">Open in Google Maps</a>
+      <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=-1.950568,30.0993109" target="_blank" rel="noopener">Directions from here</a>
+      <button class="btn btn-line" id="copyAddr" type="button">Copy address</button>
+      <a class="btn btn-line" id="shareAddr" href="#" target="_blank" rel="noopener">Send location to a friend</a>
+    </div>
+    <div class="arrive">
+      <figure><img src="img/p/26.webp" width="1200" height="667" alt="Cobbled drive and the building from the lane" loading="lazy"><figcaption>The cobbled drive</figcaption></figure>
+      <p>Look for the stone gate with blue gateposts, then the cobbled drive. <span class="tc">to confirm</span> parking, nearest landmark, wheelchair access (a ramp appears in the clinic's photos) and what to bring to a first visit.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="fgrid">
+    <div><img src="img/p/logo1-s.webp" width="64" height="64" alt=""><h3>Nyarutarama Medical Center</h3><p>International Center of Urology<br>19 KG 529 St, Kimihurura, Kigali</p></div>
+    <div><h4>Contact</h4><p><a href="tel:+250791504912">+250 791 504 912</a><br><a href="mailto:info@nmc-rw.com">info@nmc-rw.com</a></p>
+      <p><a href="https://www.instagram.com/nyarutaramamedicalcenter/" rel="noopener">Instagram</a> / <a href="https://www.tiktok.com/@nyarutaramamedicalcenter" rel="noopener">TikTok</a> / <a href="https://x.com/NyarutaramaMC" rel="noopener">X</a></p></div>
+    <div><h4>Kigali time</h4><p class="clock" id="clock">--:--</p><p id="clockState">&nbsp;</p><p class="fine">Mon-Fri 08:00-18:00, Sat 09:00-15:00, Sun on appointment.</p></div>
+  </div>
+  <p class="legal">Website preview prepared by Spectre Studio for Nyarutarama Medical Center. Facts, photos and portraits come from nyarutaramamedicalcenter.com, the clinic's Google profile and its social pages; lines marked to confirm wait for the clinic. Not the live site.</p>
+</footer>
+
+<div class="dock" id="dock"><a class="btn btn-wa" href="#book">Book a message</a><a class="btn btn-line" href="tel:+250791504912">Call</a></div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Enlarged photo" hidden>
+  <button class="lb-x" id="lbx" aria-label="Close">Close</button>
+  <button class="lb-p" id="lbp" aria-label="Previous photo">&lsaquo;</button>
+  <figure><img id="lbi" alt=""><figcaption id="lbc"></figcaption></figure>
+  <button class="lb-n" id="lbn" aria-label="Next photo">&rsaquo;</button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
