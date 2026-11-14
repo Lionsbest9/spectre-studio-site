@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://lionsbest9.github.io/spectre-studio-site/demos/keva/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="./photos/airport-sign-700.webp">
-  <script type="module" crossorigin src="./assets/index-C6PV8DLs.js"></script>
+  <script type="module" crossorigin src="./assets/index-BZH2tgIb.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/index-DNS6i_uJ.css">
 </head>
 <body>
@@ -32,7 +32,7 @@
   <nav class="nav" aria-label="Sections">
     <a href="#distance">Distance</a><a href="#rooms">Rooms</a><a href="#arrival">Arrival</a><a href="#reviews">Scores</a><a href="#find">Find us</a>
   </nav>
-  <a class="btn btn-call" href="tel:+250788771071">Call</a>
+  <a class="btn btn-call" href="tel:+250783939126">Call</a>
   <i class="progress" id="progress" aria-hidden="true"></i>
 </header>
 
@@ -69,7 +69,7 @@
     <p class="lede reveal d2">Keva Guest House is in Kanombe, Kicukiro, listed at about one kilometre from Kigali International Airport. Rooms, a restaurant and a bar, with a reception listed as open 24 hours.</p>
     <div class="cta reveal d3">
       <a class="btn btn-main" href="#arrival">Plan my arrival</a>
-      <a class="btn btn-ghost" href="tel:+250788771071">Call +250 788 771 071</a>
+      <a class="btn btn-ghost" href="https://wa.me/250783939126" target="_blank" rel="noopener">WhatsApp 0783 939 126</a>
     </div>
     <p class="status reveal d3"><span class="dot"></span><span id="kigaliNow">Kigali time</span><span class="sep">·</span><span>Reception: 24 hours per booking listings <b class="tc">to confirm</b></span></p>
   </div>
@@ -178,7 +178,6 @@
           <label>Guests<input type="number" name="guests" min="1" max="10" value="1" inputmode="numeric"></label>
         </div>
         <label>Flight number (optional)<input name="flight" placeholder="e.g. WB 100" maxlength="12"></label>
-        <label>Send to<select name="to" id="to"><option value="+250788771071">Main: +250 788 771 071</option><option value="+250783939126">Second: 0783 939 126</option></select></label>
         <label class="check"><input type="checkbox" name="shuttle" checked><span>I would like to ask about the airport shuttle</span></label>
       </form>
       <div class="preview" aria-live="polite">
@@ -186,11 +185,12 @@
         <p class="pv-b" id="pv"></p>
         <p class="pv-late" id="late" hidden>Late landing noted. The desk is listed as open 24 hours; the message tells them when to expect you.</p>
         <div class="pv-act">
-          <a class="btn btn-main" id="sms" href="sms:+250788771071">Send as SMS</a>
+          <a class="btn btn-main" id="wa" href="https://wa.me/250783939126" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <a class="btn btn-ghost-d" id="sms" href="sms:+250783939126">Send as SMS</a>
           <button class="btn btn-ghost-d" id="copy" type="button">Copy message</button>
-          <a class="btn btn-ghost-d" href="tel:+250788771071">Call instead</a>
+          <a class="btn btn-ghost-d" href="tel:+250783939126">Call instead</a>
         </div>
-        <p class="fine">Main number as listed on most booking sites; the second listed number is in the contact section. WhatsApp: <span class="tc">to confirm</span> whether it is on this number.</p>
+        <p class="fine">Goes to Keva Guest House on WhatsApp, 0783 939 126. Nothing is sent from this page; you press send in WhatsApp.</p>
       </div>
     </div>
   </div>
@@ -233,15 +233,15 @@
         <p class="fine">Plus code 24QP+Q9 (Google Maps).</p>
         <div class="route" aria-label="Schematic: the airport and Keva, about 1 km apart, not to scale">
           <svg viewBox="0 0 420 90" aria-hidden="true"><path d="M40 45 H380" stroke="#0b1520" stroke-width="3" stroke-dasharray="4 10" stroke-linecap="round"/><circle cx="40" cy="45" r="14" fill="#0b1520"/><path d="M33 45l14-1-6-8 3-1 8 8 6-1v4l-6-1-8 8-3-1 6-8z" fill="#f2b827" transform="translate(-6,0) scale(.9)"/><rect x="368" y="31" width="28" height="28" rx="5" fill="#f2b827"/><path d="M376 38v14M376 46l7-8M378 44l6 8" stroke="#0b1520" stroke-width="2.4" fill="none" stroke-linecap="round"/><text x="210" y="36" text-anchor="middle" font-family="Overpass Variable,sans-serif" font-weight="700" font-size="12" fill="#b27d00">about 1 km (listed)</text></svg>
-          <ol class="steps"><li>Ask the desk about the airport shuttle (on request, fee per person).</li><li>Or call the desk for directions from the terminal: +250 788 771 071.</li><li>Or open the map below. Exact route <span class="tc">to confirm</span>.</li></ol>
+          <ol class="steps"><li>Ask the desk about the airport shuttle (on request, fee per person).</li><li>Or WhatsApp or call the desk for directions from the terminal: 0783 939 126.</li><li>Or open the map below. Exact route <span class="tc">to confirm</span>.</li></ol>
           <p class="fine">Schematic above, not to scale.</p>
         </div>
         <a class="btn btn-main dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Keva+Guest+House+KK+105+St+Kanombe+Kigali">Open in Google Maps</a>
       </div>
       <div class="phones">
-        <a class="phone" href="tel:+250788771071"><span>Call the desk</span><b>+250 788 771 071</b><small>listed on booking sites</small></a>
-        <a class="phone" href="tel:+250783939126"><span>Second number</span><b>0783 939 126</b><small>listed on Google Maps · <span class="tc">to confirm</span></small></a>
-        <p class="fine">WhatsApp: <span class="tc">to confirm</span>. Email: none found.</p>
+        <a class="phone" href="https://wa.me/250783939126" target="_blank" rel="noopener"><span>WhatsApp or call</span><b>0783 939 126</b><small>Keva Guest House on WhatsApp</small></a>
+        <a class="phone" href="tel:+250788771071"><span>Also</span><b>0788 771 071</b><small>listed on booking sites, calls only</small></a>
+        <p class="fine">Email: none found.</p>
       </div>
     </div>
   </div>
@@ -250,12 +250,12 @@
 
 <footer class="foot">
   <div class="wrap foot-in">
-    <div><b>Keva Guest House</b><br>KK 105 St, Kanombe, Kicukiro, Kigali<br><a href="tel:+250788771071">+250 788 771 071</a></div>
+    <div><b>Keva Guest House</b><br>KK 105 St, Kanombe, Kicukiro, Kigali<br><a href="tel:+250783939126">+250 783 939 126</a> (WhatsApp)</div>
     <div>Kigali now: <b id="clock">--:--</b><br><span id="clockDay"></span></div>
     <div class="credit">Preview by Spectre Studio, not yet the official site. Facts from public booking listings, checked 14 Nov 2026. Photo of the area: Dave Proffer, CC BY 2.0, Wikimedia Commons.</div>
   </div>
 </footer>
 
-<div class="mbar" aria-label="Quick contact"><a href="tel:+250788771071">Call</a><a href="#arrival">Plan arrival</a></div>
+<div class="mbar" aria-label="Quick contact"><a href="https://wa.me/250783939126" target="_blank" rel="noopener">WhatsApp</a><a href="#arrival">Plan arrival</a></div>
 </body>
 </html>
