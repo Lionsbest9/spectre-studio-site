@@ -1,47 +1,251 @@
 <!doctype html>
-<html lang="en" data-architecture="index-to-detail">
+<html lang="en-GB" data-architecture="long-scroll-stack">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inside Afrika Boutique Hotel, Kiyovu, Kigali: nine doors</title>
-    <meta name="description" content="Inside Afrika Boutique Hotel on KN 46 Street, Kiyovu, Kigali. An Art Deco house with an outdoor pool, a winery and breakfast from 06:00. Open a door. Preview site." />
+    <title>Inside Afrika Boutique Hotel, Kiyovu, Kigali</title>
+    <meta name="description" content="Inside Afrika Boutique Hotel on KN 46 Street, Kiyovu, Kigali: an Art Deco house with nine rooms as listed, an outdoor pool, a winery and breakfast from 06:00. Reserve direct by phone. Preview site." />
     <meta name="robots" content="noindex" />
     <meta property="og:title" content="Inside Afrika Boutique Hotel, Kigali" />
-    <meta property="og:description" content="An Art Deco house in Kiyovu with a pool and a winery. Open a door." />
-    <meta property="og:image" content="../insideafrika-og.jpg" />
+    <meta property="og:description" content="An Art Deco house in Kiyovu with nine rooms, a pool and a winery. Reserve direct with the house." />
+    <meta property="og:image" content="https://lionsbest9.github.io/spectre-studio-site/demos/insideafrika/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#e9ebe3" />
-    <link rel="icon" href="../insideafrika-favicon.svg" type="image/svg+xml" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#22382c" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
-    <script type="module" crossorigin src="../trio-assets/insideafrika-CiDovALT.js"></script>
-    <link rel="modulepreload" crossorigin href="../trio-assets/util-CygybDpK.js">
-    <link rel="stylesheet" crossorigin href="../trio-assets/insideafrika-BLezWqd8.css">
+    <script type="module" crossorigin src="./insideafrika-assets/index-CyBcsUny.js"></script>
+    <link rel="stylesheet" crossorigin href="./insideafrika-assets/index-DtQxyaEL.css">
   </head>
   <body>
+    <a class="skip" href="#reserve">Skip to reserving a room</a>
+    <p class="ribbon">A preview by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the hotel's official site.</p>
+
+    <header class="top" id="top">
+      <a class="mark" href="#arrival" aria-label="Inside Afrika, back to the top">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="3" fill="#22382c" /><path d="M11 33V18a9 9 0 0 1 18 0v15z" fill="none" stroke="#c39a4a" stroke-width="1.6" /><path d="M15 33V19a5 5 0 0 1 10 0v14" fill="none" stroke="#c39a4a" stroke-width="0.9" opacity=".6" /><circle cx="23.4" cy="25" r="1.3" fill="#e6d4a3" /></svg>
+        <span>Inside Afrika<small>Boutique hotel · Kiyovu</small></span>
+      </a>
+      <nav class="chapters" aria-label="Sections">
+        <a href="#rooms">Rooms</a>
+        <a href="#rates">Rates</a>
+        <a href="#house">The house</a>
+        <a href="#halls">Halls &amp; wine</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#here">Way here</a>
+      </nav>
+      <p class="count" aria-hidden="true"><span id="chapNum">I</span><small>/ VIII</small></p>
+      <a class="pill" href="#reserve">Reserve</a>
+      <button class="menu-b" type="button" id="menuB" aria-expanded="false" aria-controls="sheet"><span class="burger" aria-hidden="true"></span><span>Menu</span></button>
+      <i class="progress" aria-hidden="true"></i>
+      <nav class="sheet" id="sheet" aria-label="All sections" hidden>
+        <a href="#rooms"><b>II</b> Rooms</a><a href="#rates"><b>III</b> Rates and times</a><a href="#house"><b>IV</b> The house</a><a href="#halls"><b>V</b> Halls and wine</a><a href="#gallery"><b>VI</b> Gallery</a><a href="#here"><b>VII</b> The way here</a><a href="#reserve"><b>VIII</b> Reserve</a>
+        <a class="sheet-call" href="tel:+250722503698">Call +250 722 503 698</a>
+      </nav>
+    </header>
+
     <main>
-      <!-- the index: a corridor of nine doors -->
-      <section class="lobby" id="lobby" data-view="corridor" aria-labelledby="h-hero">
-        <a class="ring" href="#/reserve">Reserve</a>
-        <svg class="fan" viewBox="0 0 200 100" aria-hidden="true"><g id="rays"></g><path d="M40 100a60 60 0 0 1 120 0" /><path d="M70 100a30 30 0 0 1 60 0" /></svg>
-        <p class="over">Boutique hotel · Kiyovu, Kigali</p>
-        <h1 id="h-hero">Inside Afrika</h1>
-        <p class="lead">An Art Deco house with a pool and a winery. <em>Choose a door.</em></p>
-        <nav class="doors" id="doors" aria-label="The nine doors"></nav>
-        <p class="foot">KN 46 Street, Kiyovu · <a href="tel:+250722503698">+250 722 503 698</a> · <span>Kigali time <b id="clock">--:--</b></span> · <a href="https://www.facebook.com/insideAfrikaltd" rel="noopener">Facebook</a><span class="pv">Preview made for Inside Afrika by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the official site.</span></p>
+      <!-- I · arrival -->
+      <section class="arrival chapter" id="arrival" data-num="I" aria-labelledby="h1">
+        <div class="copy">
+          <p class="over" data-rise>Boutique hotel · KN 46 Street, Kiyovu, Kigali</p>
+          <h1 id="h1" data-rise><span>Inside</span> <span>Afrika</span></h1>
+          <p class="lead" data-rise>An Art Deco house on one floor, with nine rooms as listed, an outdoor pool and its own winery. About ten minutes' walk from downtown.</p>
+          <div class="cta" data-rise>
+            <a class="btn plan" href="#reserve">Plan your stay <span aria-hidden="true">↓</span></a>
+            <a class="btn line call" href="tel:+250722503698">Call +250 722 503 698</a>
+          </div>
+          <p class="how" data-rise>Reserve direct with the house, by phone. Planning an event? <a href="#halls">See the halls and wine evenings</a>.</p>
+          <ul class="glance" data-rise>
+            <li><b>US$125</b><span>single, bed and breakfast, as last listed</span></li>
+            <li><b>06:00</b><span>breakfast, until 10:00</span></li>
+            <li><b>4.1 km</b><span>to the Convention Centre</span></li>
+            <li><b>10.5 km</b><span>to the airport, shuttle on request</span></li>
+          </ul>
+          <p class="now" id="now" aria-live="off"><i class="dot" aria-hidden="true"></i><span id="nowText">Kigali time --:-- · the front desk is open 24 hours</span></p>
+        </div>
+
+        <figure class="arch" data-rise>
+          <div class="arch-in" id="archIn">
+            <svg class="fan" viewBox="0 0 200 110" aria-hidden="true"><g id="rays"></g><path d="M36 106a64 64 0 0 1 128 0" /><path d="M66 106a34 34 0 0 1 68 0" /></svg>
+            <div class="window"><img id="heroImg" src="./insideafrika-assets/gold-s-BdZIxPyE.webp" srcset="./insideafrika-assets/gold-s-BdZIxPyE.webp 560w, ./insideafrika-assets/gold-BKYtYRlW.webp 1000w" sizes="(max-width: 860px) 70vw, 34vw" alt="A painted panel of brass and black zigzags, in the imigongo tradition of Rwanda" width="560" height="570" fetchpriority="high" /><span class="leaf l" aria-hidden="true"></span><span class="leaf r" aria-hidden="true"></span></div>
+            <span class="frame" aria-hidden="true"></span>
+          </div>
+          <figcaption><mark>Illustrative</mark> Imigongo-style painting, not the house. <a href="https://commons.wikimedia.org/wiki/File:Imigongo_art.jpg" rel="noopener">Photo: Emile Maurice Dusengumukiza, CC BY-SA 4.0</a></figcaption>
+        </figure>
+        <a class="next" href="#rooms">The rooms <span aria-hidden="true">↓</span></a>
       </section>
 
-      <!-- the detail: one room at a time, filled by main.js from content.js -->
-      <section class="room" id="room" hidden aria-live="polite" data-fit>
-        <header class="bar">
-          <a class="back" href="#/">← The corridor</a>
-          <p class="where"><a id="prev" href="#/">‹</a><span id="num">I</span><a id="next" href="#/">›</a></p>
-          <a class="ring small" href="#/reserve">Reserve</a>
-        </header>
-        <div class="plate" id="plate"></div>
-        <article class="sheet" id="sheet" tabindex="-1"></article>
+      <!-- II · rooms -->
+      <section class="chapter rooms" id="rooms" data-num="II" aria-labelledby="roH">
+        <header class="chead" data-rise><p class="num">II</p><h2 id="roH">Nine rooms, each one its own</h2><p>Single or double, each decorated on its own with Rwandan and other African art. Open one to see what is in it.</p></header>
+        <div class="roomlist" id="roomlist"></div>
+        <div class="every" data-rise>
+          <p class="every-k">In every room</p>
+          <ul id="every"></ul>
+          <p class="tc"><mark>To confirm</mark> The exact count: two listings say eleven.</p>
+        </div>
+      </section>
+
+      <!-- III · rates and times -->
+      <section class="chapter rates" id="rates" data-num="III" aria-labelledby="raH">
+        <header class="chead" data-rise><p class="num">III</p><h2 id="raH">What it costs, and when</h2><p>The last listed rates are bed and breakfast. Ask the house for today's rate when you call.</p></header>
+        <div class="ticket" data-rise>
+          <dl class="rate">
+            <div><dt>Single</dt><dd><b>US$125</b> a night</dd></div>
+            <div><dt>Double</dt><dd><b>US$145</b> a night</dd></div>
+          </dl>
+          <dl class="times">
+            <div><dt>Check-in</dt><dd>From 12:00</dd></div>
+            <div><dt>Check-out</dt><dd>By 11:00</dd></div>
+            <div><dt>Front desk</dt><dd>Open 24 hours</dd></div>
+            <div><dt>Paying</dt><dd>Cards and cash</dd></div>
+          </dl>
+          <p class="tc"><mark>To confirm</mark> Current rates (these are from a travel directory and may be old), and whether breakfast is in every rate.</p>
+        </div>
+        <ul class="know" data-rise>
+          <li class="air"><b>Arriving by air?</b> Kigali International Airport is 10.5 km away, and the house collects guests at any hour when asked ahead. <mark>To confirm</mark> the fee.</li>
+          <li><b>No restaurant or bar in the house.</b> Restaurants and bars are a short walk away in Kiyovu. Guests may use a shared kitchen, and there is coffee and tea in the lobby.</li>
+          <li><b>Wired and wireless internet</b> in the rooms. <mark>To confirm</mark> the speed today.</li>
+        </ul>
+      </section>
+
+      <!-- IV · the house (opens through an arch) -->
+      <section class="chapter house" id="house" data-num="IV" aria-labelledby="hoH">
+        <div class="house-in">
+          <header class="chead light" data-rise><p class="num">IV</p><h2 id="hoH">Inside the house</h2><p>A pool, a garden, a winery and a desk that never closes, behind one Art Deco front.</p></header>
+          <div class="features" id="features"></div>
+          <aside class="voice" data-rise>
+            <p>Guests praise <b>the staff</b>, <b>the pool</b> and <b>the views over the city</b>.</p>
+            <p class="score">7.4 / 10 on Traveloka, from 29 reviews</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- V · halls and wine -->
+      <section class="chapter halls" id="halls" data-num="V" aria-labelledby="haH">
+        <header class="chead" data-rise><p class="num">V</p><h2 id="haH">Halls, and evenings of wine</h2><p>What booking sites do not sell: a hall for your occasion, and the house's own wine.</p></header>
+        <div class="pair">
+          <article class="offer" data-rise>
+            <svg viewBox="0 0 200 200" aria-hidden="true"><path d="M100 170V70M100 170 40 80M100 170l60-90M100 170 66 62M100 170l34-108M100 170 28 118M100 170l72-52"/><path d="M36 176h128"/></svg>
+            <h3>A hall for your occasion</h3>
+            <p>A banquet hall and a function hall for a dinner or a launch, a business centre in the house, and proposal packages.</p>
+            <p class="tc"><mark>To confirm</mark> Capacities, hire rates, catering, what a proposal package includes, and photographs of the halls.</p>
+            <button class="btn line" type="button" data-kind="hall">Ask about a hall</button>
+          </article>
+          <article class="offer" data-rise style="--d: 90ms">
+            <svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="82" cy="92" r="12"/><circle cx="106" cy="92" r="12"/><circle cx="130" cy="92" r="12"/><circle cx="94" cy="113" r="12"/><circle cx="118" cy="113" r="12"/><circle cx="106" cy="134" r="12"/><path d="M106 80V52M106 60q22-22 44-6-12 22-44 6"/><path d="M60 176h92"/></svg>
+            <h3>Wine release evenings</h3>
+            <p>Inside Afrika has its own winery on the premises and holds evenings when a new wine is released. Call the house for the next date.</p>
+            <p class="tc"><mark>To confirm</mark> What is made, the next release date, and a photograph of the winery.</p>
+            <button class="btn line" type="button" data-kind="wine">Ask about the next evening</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- VI · gallery -->
+      <section class="chapter gallery" id="gallery" data-num="VI" aria-labelledby="gaH">
+        <header class="chead" data-rise><p class="num">VI</p><h2 id="gaH">Kiyovu, and the art of Rwanda</h2><p>The city around the house, in a neighbourhood rich in Rwandan and African art. Illustrative photographs, not the house. <mark>To confirm</mark> the house's own photographs of rooms, pool and halls go here.</p></header>
+        <div class="grid" id="grid"></div>
+        <p class="swipe" aria-hidden="true">Swipe for more<span id="phCount"></span></p>
+        <p class="credits" id="credits"></p>
+      </section>
+
+      <!-- VII · the way here -->
+      <section class="chapter here" id="here" data-num="VII" aria-labelledby="heH">
+        <header class="chead" data-rise><p class="num">VII</p><h2 id="heH">About ten minutes' walk from downtown</h2><p>KN 46 Street, Kiyovu, the old quarter of central Kigali, among restaurants and bars.</p></header>
+        <div class="way">
+          <ol class="dist" id="dist" data-rise aria-label="Distances from the house, as listed"></ol>
+          <div class="way-side" data-rise>
+            <dl class="facts">
+              <div><dt>Address</dt><dd>KN 46 Street, Kiyovu, Kigali</dd></div>
+              <div><dt>Airport shuttle</dt><dd>At any hour, when asked ahead</dd></div>
+              <div><dt>Parking</dt><dd>Free, limited spaces</dd></div>
+              <div><dt>Post</dt><dd>P.O. Box 545, Kigali</dd></div>
+            </dl>
+            <p class="tc"><mark>To confirm</mark> The shuttle fee.</p>
+            <div class="acts">
+              <a class="btn line" href="https://www.google.com/maps/search/?api=1&query=Inside%20Afrika%20Boutique%20Hotel%20Kigali" rel="noopener">Google Maps</a>
+              <a class="btn line" href="tel:+250722503698">Call for directions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIII · reserve -->
+      <section class="chapter reserve" id="reserve" data-num="VIII" aria-labelledby="reH">
+        <header class="chead light" data-rise><p class="num">VIII</p><h2 id="reH">Reserve with the house</h2><p>Fill this in and the page writes what to say on the phone, or an email. Nothing is sent from here.</p></header>
+        <div class="composer">
+          <form id="comp" novalidate data-rise>
+            <fieldset class="kinds">
+              <legend>What are you asking about?</legend>
+              <div class="chips" id="kinds"></div>
+            </fieldset>
+            <div class="row r1">
+              <label class="field"><span>Arriving <i class="opt">(or the date)</i></span><input type="date" name="date" id="fDate" /></label>
+              <label class="field"><span>Name <i class="opt">(optional)</i></span><input name="name" id="fName" autocomplete="name" maxlength="50" /></label>
+            </div>
+            <div class="row r2">
+              <div class="field stay-only"><span id="nLab">Nights</span><div class="step" role="group" aria-labelledby="nLab"><button type="button" data-step="nights" data-d="-1" aria-label="One night fewer">−</button><output id="nOut" name="nightsOut">2</output><button type="button" data-step="nights" data-d="1" aria-label="One night more">+</button></div></div>
+              <div class="field"><span id="gLab">Guests</span><div class="step" role="group" aria-labelledby="gLab"><button type="button" data-step="guests" data-d="-1" aria-label="One guest fewer">−</button><output id="gOut" name="guestsOut">2</output><button type="button" data-step="guests" data-d="1" aria-label="One guest more">+</button></div></div>
+              <label class="field stay-only"><span>Room</span><select name="room" id="fRoom"><option value="double">Double</option><option value="single">Single</option><option value="balcony">Balcony, if free</option></select></label>
+              <label class="check stay-only wide"><input type="checkbox" name="pickup" id="fPickup" /><span>Collect me from the airport</span></label>
+            </div>
+          </form>
+
+          <article class="out" data-rise aria-live="polite">
+            <p class="sum" id="sum"></p>
+            <div class="tabs" role="tablist" aria-label="How to send it">
+              <button role="tab" id="tCall" aria-selected="true" aria-controls="pCall">Say it on the phone</button>
+              <button role="tab" id="tMail" aria-selected="false" aria-controls="pMail" tabindex="-1">Write an email</button>
+            </div>
+            <div class="panel" id="pCall" role="tabpanel" aria-labelledby="tCall">
+              <ol class="script" id="script"></ol>
+              <a class="btn gold" href="tel:+250722503698">Call +250 722 503 698</a>
+              <p class="hint">The front desk is open 24 hours. <mark>To confirm</mark> that this is still the house's number.</p>
+            </div>
+            <div class="panel" id="pMail" role="tabpanel" aria-labelledby="tMail" hidden>
+              <pre class="mail" id="mail"></pre>
+              <div class="acts">
+                <a class="btn gold" id="mailto" href="mailto:info@inside-africa.com">Open it in your email</a>
+                <button class="btn ghost" type="button" id="copy">Copy the message</button>
+              </div>
+              <p class="hint">To info@inside-africa.com, the address the Rwanda Hospitality Association lists. <mark>To confirm</mark> that it is read. You can also send it through the house's <a href="https://www.facebook.com/insideAfrikaltd" rel="noopener">Facebook page</a>.</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
+
+    <footer class="foot">
+      <div class="foot-in">
+        <p class="foot-name">Inside Afrika<small>Boutique Hotel</small></p>
+        <p>KN 46 Street, Kiyovu · P.O. Box 545, Kigali<br /><a href="tel:+250722503698">+250 722 503 698</a> · <a href="https://www.facebook.com/insideAfrikaltd" rel="noopener">Facebook</a><br /><a href="mailto:info@inside-africa.com">info@inside-africa.com</a>&nbsp;<mark>To confirm</mark></p>
+        <p>Kigali time <b id="clock">--:--</b> · Front desk open 24 hours</p>
+        <p class="pv">Preview made for Inside Afrika by <a href="https://lionsbest9.github.io/spectre-studio-site/" rel="noopener">Spectre Studio</a>. Not yet the official site. Photographs from Wikimedia Commons, credited in the <a href="#gallery">gallery</a>.</p>
+      </div>
+    </footer>
+
+    <nav class="dock" id="dock" aria-label="Contact the house">
+      <a class="d-call" href="tel:+250722503698" aria-label="Call the house, +250 722 503 698"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>Call<i> the house</i></span></a>
+      <a class="d-mail" href="https://www.google.com/maps/search/?api=1&query=Inside%20Afrika%20Boutique%20Hotel%20Kigali" rel="noopener" aria-label="Directions in Google Maps"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span>Directions</span></a>
+      <a class="d-res" href="#reserve">Reserve</a>
+    </nav>
+
+    <dialog class="lb" id="lb" aria-label="Photograph">
+      <figure>
+        <div class="lb-stage" id="lbStage"><img id="lbImg" alt="" /></div>
+        <figcaption><span id="lbCap"></span> <a id="lbCredit" rel="noopener"></a></figcaption>
+      </figure>
+      <p class="lb-n" id="lbN" aria-live="polite"></p>
+      <button class="lb-x" type="button" id="lbClose" aria-label="Close the photograph">×</button>
+      <button class="lb-p" type="button" id="lbPrev" aria-label="Previous photograph">‹</button>
+      <button class="lb-nx" type="button" id="lbNext" aria-label="Next photograph">›</button>
+    </dialog>
+
   </body>
 </html>
